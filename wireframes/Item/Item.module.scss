@@ -1,0 +1,21 @@
+.Item {
+    flex: var(--flex);
+
+    &.Mobile {
+        @media (min-width: 769px) {
+            display: none;
+        }
+    }
+
+    &.Desktop {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &.Common {
+        @media (max-width: 768px) {
+            align-self: stretch;
+        }
+    }
+}

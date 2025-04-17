@@ -1,0 +1,16 @@
+.Box {
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--background-color);
+    padding: var(--padding-y) var(--padding-x);
+    box-sizing: border-box;
+
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.Shadow {
+        box-shadow: 4px 4px 26px 0px #1f100326;
+    }
+}

@@ -1,0 +1,10 @@
+.DesktopItem {
+    flex: var(--flex);
+    justify-content: var(--justify-content);
+    align-items: var(--align-items);
+    display: block;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}

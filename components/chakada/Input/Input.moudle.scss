@@ -1,0 +1,20 @@
+.Input {
+    width: fit-content;
+    padding: var(--padding-y) var(--padding-x);
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    border: 1px solid #e2e2e2;
+
+    // &.Basic {
+    //     background-color: var(--background-color);
+    // }
+
+    // &.Outlined {
+    //     background-color: inherit;
+    //     border: 1px solid var(--background-color);
+    // }
+
+    &.Full {
+        width: 100%;
+    }
+}

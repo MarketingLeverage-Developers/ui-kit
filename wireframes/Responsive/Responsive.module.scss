@@ -1,0 +1,10 @@
+.Responsive {
+    display: flex;
+    gap: var(--gap);
+
+    align-items: var(--align-items);
+
+    @media (max-width: 768px) {
+        flex-direction: var(--responsive);
+    }
+}
