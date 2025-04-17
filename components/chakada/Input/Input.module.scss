@@ -1,6 +1,7 @@
 .Input {
     width: fit-content;
     padding: var(--padding-y) var(--padding-x);
+    box-sizing: border-box;
     border-radius: 5px;
     background-color: #fbfbfb;
     border: 1px solid #e2e2e2;

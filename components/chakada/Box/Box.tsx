@@ -36,7 +36,7 @@ const Box = ({
         [styles.Shadow]: shadow,
     });
 
-    return <div {...props} className={className} style={{ ...cssVariables }} />;
+    return <div {...props} className={className} style={{ ...cssVariables, ...props.style }} />;
 };
 
 export default Box;

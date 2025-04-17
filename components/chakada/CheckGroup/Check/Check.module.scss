@@ -1,0 +1,11 @@
+.Check {
+    width: var(--box-20);
+    height: var(--box-20);
+    border-radius: 50%;
+    border: 1px solid #e2e2e2;
+
+    &.Active {
+        background-color: #417ef0;
+        border: none;
+    }
+}
