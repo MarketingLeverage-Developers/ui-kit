@@ -41,6 +41,7 @@
     --space-120: clamp(60px, calc(120 / var(--inner) * 100vw), 120px);
     --space-130: clamp(65px, calc(130 / var(--inner) * 100vw), 130px);
     --space-150: clamp(75px, calc(150 / var(--inner) * 100vw), 150px);
+    --space-200: clamp(100px, calc(150 / var(--inner) * 100vw), 200px);
     --box-20: clamp(11px, calc(20 / var(--inner) * 100vw), 20px);
     --box-25: clamp(14px, calc(25 / var(--inner) * 100vw), 25px);
     --box-30: clamp(17px, calc(30 / var(--inner) * 100vw), 30px);

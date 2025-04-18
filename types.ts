@@ -6,7 +6,27 @@ export interface CSSPropertiesWithVars extends React.CSSProperties {
 }
 
 export type HexColor = `#${string}`;
-export type SpaceSize = 0 | 7 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100 | 110 | 120 | 130 | 150;
+export type SpaceSize =
+    | 0
+    | 7
+    | 15
+    | 20
+    | 25
+    | 30
+    | 35
+    | 40
+    | 45
+    | 50
+    | 60
+    | 70
+    | 80
+    | 90
+    | 100
+    | 110
+    | 120
+    | 130
+    | 150
+    | 200;
 export type FontSize =
     | 14
     | 15

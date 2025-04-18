@@ -5,7 +5,7 @@ import styles from './Flex.module.scss';
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-    align?: 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline';
+    align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline';
     justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
     gap?: number;
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';

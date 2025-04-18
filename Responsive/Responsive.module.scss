@@ -1,8 +1,13 @@
 .Responsive {
     display: flex;
     gap: var(--gap);
+    flex-direction: var(--flex-direction);
 
     align-items: var(--align-items);
+    justify-content: var(--justify-content);
+
+    width: var(--width, auto);
+    height: var(--height, auto);
 
     @media (max-width: 768px) {
         flex-direction: var(--responsive);
