@@ -1,0 +1,18 @@
+.ButtonD {
+    width: fit-content;
+    padding: var(--padding-y) var(--padding-x);
+    border-radius: 50%;
+
+    &.Basic {
+        background-color: var(--background-color);
+    }
+
+    &.Outlined {
+        background-color: inherit;
+        border: 1px solid var(--background-color);
+    }
+
+    &.Full {
+        width: 100%;
+    }
+}

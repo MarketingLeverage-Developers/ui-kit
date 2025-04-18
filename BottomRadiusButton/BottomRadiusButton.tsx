@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from '../Button/Button';
 import styles from './BottomRadiusButton.module.scss';
+import ButtonA from '../Button/A/ButtonA';
 
-type BottomRadiusButton = React.ComponentProps<typeof Button>;
+type BottomRadiusButton = React.ComponentProps<typeof ButtonA>;
 
 const BottomRadiusButton = ({ ...props }: BottomRadiusButton) => {
-    return <Button {...props} className={styles.BottomRadiusButton} />;
+    return <ButtonA {...props} className={styles.BottomRadiusButton} />;
 };
 
 export default BottomRadiusButton;

@@ -1,24 +1,9 @@
-import React, { HTMLAttributes } from 'react';
-import styles from './Input.module.scss';
+import React from 'react';
+import styles from './InputA.module.scss';
 import classNames from 'classnames';
-import { SpaceSize } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, InputProps } from '@/ui-kit/types';
 
-type HexColor = `#${string}`;
-
-type BaiscInputProps = HTMLAttributes<HTMLInputElement> & {
-    paddingY?: SpaceSize;
-    paddingX?: SpaceSize;
-    backgroundColor?: HexColor;
-    color?: HexColor;
-    variant?: 'contained' | 'outlined';
-    full?: boolean;
-};
-
-interface CSSPropertiesWithVars extends React.CSSProperties {
-    [key: `--${string}`]: string | number;
-}
-
-const Input = ({
+const InputA = ({
     paddingY = 0,
     paddingX = 0,
     backgroundColor = '#fff',
@@ -26,7 +11,7 @@ const Input = ({
     variant = 'contained',
     full,
     ...props
-}: BaiscInputProps) => {
+}: InputProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--background-color': backgroundColor,
         '--color': color,
@@ -34,7 +19,7 @@ const Input = ({
         '--padding-x': `var(--space-${paddingX})`,
     };
 
-    const combinedStyles = classNames(styles.Input, {
+    const combinedStyles = classNames(styles.InputA, {
         // [styles.Basic]: variant === 'contained',
         // [styles.Outlined]: variant === 'outlined',
         [styles.Full]: full,
@@ -43,4 +28,4 @@ const Input = ({
     return <input {...props} className={combinedStyles} style={{ ...cssVariables }} />;
 };
 
-export default Input;
+export default InputA;

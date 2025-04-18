@@ -1,10 +1,10 @@
 import TabGroup from '@/headless/TabGroup/TabGroup';
-import Check from './Check/Check';
 import Flex from '@/ui-kit/Flex/Flex';
+import Item from './Item/Item';
 
-type CheckGroupProps = React.ComponentProps<typeof TabGroup>;
+type CheckGroupAProps = React.ComponentProps<typeof TabGroup>;
 
-const CheckGroup = (props: CheckGroupProps) => {
+const CheckGroupA = (props: CheckGroupAProps) => {
     return (
         <TabGroup {...props}>
             <Flex gap={15}>{props.children}</Flex>
@@ -12,6 +12,6 @@ const CheckGroup = (props: CheckGroupProps) => {
     );
 };
 
-export default CheckGroup;
+export default CheckGroupA;
 
-CheckGroup.Check = Check;
+CheckGroupA.Item = Item;

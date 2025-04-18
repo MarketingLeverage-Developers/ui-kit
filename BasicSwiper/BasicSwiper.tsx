@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import styles from './BasicSwiper.module.scss';
 import Circle from '@/ui-kit//Circle/Circle';
 import Padding from '@/ui-kit/Padding/Padding';
+import ButtonD from '../Button/D/ButtonD';
 
 type BasicSwiperProps = {
     children: React.ReactNode;
@@ -15,8 +16,8 @@ type BasicSwiperProps = {
 };
 
 const BasicSwiper = ({ slidesPerView = 1, children }: BasicSwiperProps) => {
-    const prevRef = useRef<HTMLButtonElement>(null);
-    const nextRef = useRef<HTMLButtonElement>(null);
+    const prevRef = useRef<HTMLSpanElement>(null);
+    const nextRef = useRef<HTMLSpanElement>(null);
 
     return (
         <>
@@ -51,12 +52,12 @@ const BasicSwiper = ({ slidesPerView = 1, children }: BasicSwiperProps) => {
             </Swiper>
 
             <Padding y={15}>
-                <Circle ref={prevRef} size={70}>
-                    Prev
-                </Circle>
-                <Circle ref={nextRef} size={70} backgroundColor="#417EF0">
-                    Next
-                </Circle>
+                <span ref={prevRef}>
+                    <ButtonD paddingX={30} paddingY={30} variant="outlined" backgroundColor="#A6A6A6"></ButtonD>
+                </span>
+                <span ref={nextRef}>
+                    <ButtonD paddingX={30} paddingY={30} backgroundColor="#417EF0"></ButtonD>
+                </span>
             </Padding>
         </>
     );

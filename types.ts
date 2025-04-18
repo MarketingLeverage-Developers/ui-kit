@@ -1,3 +1,6 @@
+import TabGroup from '@/headless/TabGroup/TabGroup';
+import { HTMLAttributes } from 'react';
+
 export interface CSSPropertiesWithVars extends React.CSSProperties {
     [key: `--${string}`]: string | number;
 }
@@ -57,4 +60,25 @@ export type BoxSize =
     | 135
     | 140
     | 145
-    | 150;
+    | 150
+    | 175
+    | 200
+    | 250;
+
+export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+    paddingY?: SpaceSize;
+    paddingX?: SpaceSize;
+    backgroundColor?: HexColor;
+    color?: HexColor;
+    full?: boolean;
+    variant?: 'contained' | 'outlined';
+};
+
+export type InputProps = HTMLAttributes<HTMLInputElement> & {
+    paddingY?: SpaceSize;
+    paddingX?: SpaceSize;
+    backgroundColor?: HexColor;
+    color?: HexColor;
+    variant?: 'contained' | 'outlined';
+    full?: boolean;
+};

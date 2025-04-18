@@ -1,17 +1,17 @@
 import classNames from 'classnames';
-import styles from './Check.module.scss';
+import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import Flex from '@/ui-kit/Flex/Flex';
 import Text from '@/ui-kit/Text/Text';
 
-type CheckProps = React.ComponentProps<typeof TabGroup.Item> & {
+type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
     label: string;
 };
 
-const Check = ({ label, ...props }: CheckProps) => {
+const Item = ({ label, ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
 
-    const className = classNames(styles.Check, {
+    const className = classNames(styles.Item, {
         [styles.Active]: isActiveTab(props.value),
     });
 
@@ -25,4 +25,4 @@ const Check = ({ label, ...props }: CheckProps) => {
     );
 };
 
-export default Check;
+export default Item;

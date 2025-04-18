@@ -1,7 +1,10 @@
-.Box {
+.BoxA {
+    position: relative;
+
     width: 100%;
     height: var(--height, auto);
-    border-radius: 20px;
+    border-radius: var(--border-radius);
+    // border-radius: var(--border-radius, 0);
     background-color: var(--background-color);
     padding: var(--padding-y) var(--padding-x);
     box-sizing: border-box;

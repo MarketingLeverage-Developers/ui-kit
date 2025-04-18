@@ -68,5 +68,9 @@
     --box-140: clamp(80px, calc(140 / var(--inner) * 100vw), 140px);
     --box-145: clamp(83px, calc(145 / var(--inner) * 100vw), 145px);
     --box-150: clamp(86px, calc(150 / var(--inner) * 100vw), 150px);
+    --box-175: clamp(92px, calc(200 / var(--inner) * 100vw), 175px);
+    --box-200: clamp(100px, calc(200 / var(--inner) * 100vw), 200px);
+    --box-250: clamp(123px, calc(250 / var(--inner) * 100vw), 250px);
+
     --inner: 1920;
 }
