@@ -9,6 +9,8 @@ export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
     gap?: number;
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+    width?: number | string;
+    height?: number | string;
 };
 
 const Flex = ({
@@ -18,16 +20,27 @@ const Flex = ({
     justify = 'start',
     gap = 0,
     wrap = 'nowrap',
+    width,
+    height,
     style,
     className,
     ...props
 }: FlexProps) => {
+    const dimensionToString = (dim?: number | string): string => {
+        if (typeof dim === 'number') {
+            return `${dim}px`;
+        }
+        return dim || 'auto';
+    };
+
     const cssVariables: React.CSSProperties = {
         '--flex-direction': direction,
         '--align-items': align,
         '--justify-content': justify,
         '--wrap': wrap,
         '--gap': `var(--space-${gap})`,
+        '--width': dimensionToString(width),
+        '--height': dimensionToString(height),
     } as React.CSSProperties;
 
     return (

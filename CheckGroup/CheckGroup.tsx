@@ -1,7 +1,6 @@
 import TabGroup from '@/headless/TabGroup/TabGroup';
 import Check from './Check/Check';
-import Flex from '@/ui-kit/wireframes/Flex/Flex';
-// import styles from './CheckGroup.module.scss';
+import Flex from '@/ui-kit/Flex/Flex';
 
 type CheckGroupProps = React.ComponentProps<typeof TabGroup>;
 

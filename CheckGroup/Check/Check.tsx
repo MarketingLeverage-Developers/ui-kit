@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import styles from './Check.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
-import Flex from '@/ui-kit/wireframes/Flex/Flex';
-import Text from '@/ui-kit/wireframes/Text/Text';
+import Flex from '@/ui-kit/Flex/Flex';
+import Text from '@/ui-kit/Text/Text';
 
 type CheckProps = React.ComponentProps<typeof TabGroup.Item> & {
     label: string;

@@ -6,8 +6,8 @@ import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './BasicSwiper.module.scss';
-import Circle from '@/ui-kit/components/chakada/Circle/Circle';
-import Padding from '@/ui-kit/wireframes/Padding/Padding';
+import Circle from '@/ui-kit//Circle/Circle';
+import Padding from '@/ui-kit/Padding/Padding';
 
 type BasicSwiperProps = {
     children: React.ReactNode;

@@ -1,5 +1,6 @@
 .Box {
     width: 100%;
+    height: var(--height, auto);
     border-radius: 20px;
     background-color: var(--background-color);
     padding: var(--padding-y) var(--padding-x);

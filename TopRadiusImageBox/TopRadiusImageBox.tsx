@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '../Box/Box';
-import Padding from '@/ui-kit/wireframes/Padding/Padding';
+import Padding from '@/ui-kit/Padding/Padding';
 import styles from './TopRadiusImageBox.module.scss';
 
 type TopRadiusImageBoxProps = {
