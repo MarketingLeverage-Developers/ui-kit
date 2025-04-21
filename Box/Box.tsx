@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import styles from './BoxA.module.scss';
+import styles from './Box.module.scss';
 import classNames from 'classnames';
 import { SpaceSize } from '@/ui-kit/types';
 import { dimensionToString } from '@/ui-kit/utils';
@@ -21,7 +21,7 @@ interface CSSPropertiesWithVars extends React.CSSProperties {
     [key: `--${string}`]: string | number;
 }
 
-const BoxA = ({
+const Box = ({
     paddingY = 0,
     paddingX = 0,
     backgroundColor = '#fff',
@@ -41,7 +41,7 @@ const BoxA = ({
         '--border-radius': dimensionToString(radius),
     };
 
-    const className = classNames(styles.BoxA, props.className, {
+    const className = classNames(styles.Box, props.className, {
         [styles.Shadow]: shadow,
     });
 
@@ -53,4 +53,4 @@ const BoxA = ({
     );
 };
 
-export default BoxA;
+export default Box;

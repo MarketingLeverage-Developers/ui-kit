@@ -5,8 +5,8 @@ import styles from './Image.module.scss';
 
 type ImageProps = HTMLAttributes<HTMLImageElement> & {
     image: string;
-    width: BoxSize;
-    height: BoxSize;
+    width?: BoxSize;
+    height?: BoxSize;
     alt?: string;
     radius?: string | number;
 };

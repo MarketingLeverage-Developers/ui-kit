@@ -1,0 +1,19 @@
+.RightItem {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+
+    font-size: var(--font-22);
+    font-weight: 600;
+
+    width: var(--box-250);
+
+    background-color: #f0f0f0;
+
+    &.Active {
+        background-color: var(--active-background-color);
+        color: #fff;
+    }
+}

@@ -1,4 +1,4 @@
-import BoxA from '@/ui-kit/Box/A/BoxA';
+import Box from '@/ui-kit/Box/Box';
 import InputA from '@/ui-kit/Input/A/InputA';
 import Flex from '@/ui-kit/Flex/Flex';
 import Padding from '@/ui-kit/Padding/Padding';
@@ -12,7 +12,7 @@ type InquiryBoxA = {
 
 const InquiryBoxA = ({ children }: InquiryBoxA) => {
     return (
-        <BoxA paddingY={50} paddingX={35} shadow>
+        <Box paddingY={50} paddingX={35} shadow>
             <Padding y={15}>
                 <Text p size={38} weight={600} align="center">
                     상담신청
@@ -37,7 +37,7 @@ const InquiryBoxA = ({ children }: InquiryBoxA) => {
                     </Text>
                 </ButtonA>
             </Padding>
-        </BoxA>
+        </Box>
     );
 };
 

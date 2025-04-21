@@ -1,0 +1,14 @@
+.ItemBox {
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+
+    width: var(--box-100);
+    height: var(--box-100);
+
+    background-color: #fff;
+
+    img {
+        max-width: var(--box-50);
+        max-height: var(--box-50);
+    }
+}

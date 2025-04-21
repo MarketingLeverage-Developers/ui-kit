@@ -1,4 +1,4 @@
-import BoxA from '@/ui-kit/Box/A/BoxA';
+import Box from '@/ui-kit/Box/Box';
 import React from 'react';
 import styles from './ArticleBoxA.module.scss';
 import ImageBox from './ImageBox/ImageBox';
@@ -9,7 +9,7 @@ type ArticleBoxAProps = {
 };
 
 const ArticleBoxA = ({ children }: ArticleBoxAProps) => {
-    return <BoxA className={styles.ArticleBoxA}>{children}</BoxA>;
+    return <Box className={styles.ArticleBoxA}>{children}</Box>;
 };
 
 export default ArticleBoxA;

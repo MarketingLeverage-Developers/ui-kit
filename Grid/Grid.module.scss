@@ -1,0 +1,15 @@
+/* Grid.module.scss */
+.Grid {
+    display: grid;
+    grid-template-columns: var(--grid-template-columns, none);
+    grid-template-rows: var(--grid-template-rows, none);
+    gap: var(--gap, 0);
+    column-gap: var(--column-gap, var(--gap, 0));
+    row-gap: var(--row-gap, var(--gap, 0));
+    width: var(--width, auto);
+    height: var(--height, auto);
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

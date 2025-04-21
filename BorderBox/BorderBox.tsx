@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './BorderBox.module.scss';
-import BoxA from '../Box/A/BoxA';
+import Box from '../Box/Box';
 
-type BorderBoxProps = React.ComponentProps<typeof BoxA>;
+type BorderBoxProps = React.ComponentProps<typeof Box>;
 
 const BorderBox = ({ ...props }: BorderBoxProps) => {
-    return <BoxA {...props} className={styles.BorderBox}></BoxA>;
+    return <Box {...props} className={styles.BorderBox}></Box>;
 };
 
 export default BorderBox;
