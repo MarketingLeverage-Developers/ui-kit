@@ -1,2 +1,26 @@
 .Item {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+
+    font-size: var(--font-22);
+    font-weight: 600;
+
+    flex: 1;
+
+    background-color: #f0f0f0;
+
+    &.Active {
+        background-color: var(--active-background-color);
+        color: #fff;
+    }
+    &:first-child {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    /* 3) 마지막 아이템 오른쪽 모서리 둥글게 */
+    &:last-child {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
 }

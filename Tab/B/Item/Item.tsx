@@ -5,13 +5,15 @@ import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
     activeBackgroundColor?: HexColor;
+    variant?: 'combined' | 'outlined';
 };
 
-const Item = ({ activeBackgroundColor = '#E88731', ...props }: ItemProps) => {
+const Item = ({ activeBackgroundColor = '#E88731', variant, ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
 
     const className = classNames(styles.Item, {
         [styles.Active]: isActiveTab(props.value),
+        [styles.Outlined]: variant === 'outlined',
     });
 
     const cssVariables: CSSPropertiesWithVars = {

@@ -1,0 +1,28 @@
+.RightItem {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+
+    font-size: var(--font-22);
+
+    flex: 1;
+
+    background-color: #fff;
+
+    &.Outlined {
+        border: 1px solid #e2e2e2;
+    }
+
+    &.Active {
+        background-color: var(--active-background-color);
+        color: var(--active-background-color);
+        font-weight: 600;
+
+        &.Outlined {
+            background-color: #fff;
+            border: 1px solid var(--active-background-color);
+        }
+    }
+}

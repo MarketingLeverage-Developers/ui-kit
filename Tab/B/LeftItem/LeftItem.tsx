@@ -1,17 +1,19 @@
 import classNames from 'classnames';
-import styles from './Item.module.scss';
+import styles from './LeftItem.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 
-type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
+type LeftItemProps = React.ComponentProps<typeof TabGroup.Item> & {
     activeBackgroundColor?: HexColor;
+    variant?: 'combined' | 'outlined';
 };
 
-const Item = ({ activeBackgroundColor = '#E88731', ...props }: ItemProps) => {
+const LeftItem = ({ activeBackgroundColor = '#E88731', variant, ...props }: LeftItemProps) => {
     const { isActiveTab } = useTabGroup();
 
-    const className = classNames(styles.Item, {
+    const className = classNames(styles.LeftItem, {
         [styles.Active]: isActiveTab(props.value),
+        [styles.Outlined]: variant === 'outlined',
     });
 
     const cssVariables: CSSPropertiesWithVars = {
@@ -25,4 +27,4 @@ const Item = ({ activeBackgroundColor = '#E88731', ...props }: ItemProps) => {
     );
 };
 
-export default Item;
+export default LeftItem;
