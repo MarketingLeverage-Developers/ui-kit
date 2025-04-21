@@ -2,9 +2,9 @@ import TabGroup from '@/headless/TabGroup/TabGroup';
 import Flex from '@/ui-kit/Flex/Flex';
 import Item from './Item/Item';
 
-type CheckGroupAProps = React.ComponentProps<typeof TabGroup>;
+type RadioTabAProps = React.ComponentProps<typeof TabGroup>;
 
-const CheckGroupA = (props: CheckGroupAProps) => {
+const RadioTabA = (props: RadioTabAProps) => {
     return (
         <TabGroup {...props}>
             <Flex gap={15}>{props.children}</Flex>
@@ -12,6 +12,6 @@ const CheckGroupA = (props: CheckGroupAProps) => {
     );
 };
 
-export default CheckGroupA;
+export default RadioTabA;
 
-CheckGroupA.Item = Item;
+RadioTabA.Item = Item;

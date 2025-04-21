@@ -1,0 +1,18 @@
+.DropdownA {
+}
+
+.Button {
+    background-color: inherit;
+    text-align: left;
+    width: 100%;
+    padding: var(--space-20) var(--space-25);
+}
+
+.Box {
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+}
+
+.Hidden {
+    transition: all 0.3s ease-out, /* 높이 애니메이션 */ opacity 0.2s ease-out; /* 투명도 애니메이션 */
+}

@@ -1,0 +1,26 @@
+/* Item.module.scss */
+.Item {
+    position: relative; /* ::after 위치 기준 */
+    width: var(--box-20);
+    height: var(--box-20);
+    border-radius: 50%;
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+
+    &.Active {
+        background-color: #417ef0;
+        border: none;
+
+        /* 체크 마크 넣기 */
+        &::after {
+            content: '✔'; /* 체크 문자 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 30%; /* 필요에 따라 조정 */
+            line-height: 1; /* 세로 정렬 보정 */
+        }
+    }
+}

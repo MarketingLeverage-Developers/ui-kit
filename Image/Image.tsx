@@ -1,20 +1,20 @@
 import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/types';
-import { dimensionToString } from '@/ui-kit/utils';
+import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
 import React, { HTMLAttributes } from 'react';
 import styles from './Image.module.scss';
 
 type ImageProps = HTMLAttributes<HTMLImageElement> & {
     image: string;
-    width?: BoxSize;
-    height?: BoxSize;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
     alt?: string;
     radius?: string | number;
 };
 
 const Image = ({ image, width, height, alt, radius = 0, ...props }: ImageProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--width': `var(--box-${width})`,
-        '--height': `var(--box-${height})`,
+        '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
         '--border-radius': dimensionToString(radius),
     };
     return (

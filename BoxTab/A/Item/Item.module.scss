@@ -1,3 +1,7 @@
+.Item {
+    background-color: inherit;
+}
+
 .ItemBox {
     border-radius: 12px;
     border: 1px solid #e2e2e2;
@@ -6,6 +10,10 @@
     height: var(--box-100);
 
     background-color: #fff;
+
+    &.Active {
+        border: 1px solid #417ef0;
+    }
 
     img {
         max-width: var(--box-50);
