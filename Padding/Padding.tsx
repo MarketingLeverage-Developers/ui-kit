@@ -1,10 +1,11 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './Padding.module.scss';
+import { SpaceSize } from '../types';
 
 type PaddingProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
-    x?: number;
-    y?: number;
+    x?: SpaceSize;
+    y?: SpaceSize;
 };
 
 interface CSSPropertiesWithVars extends React.CSSProperties {
