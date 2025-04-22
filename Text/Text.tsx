@@ -9,7 +9,7 @@ export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
     color?: string;
     align?: 'left' | 'center' | 'right';
     decoration?: 'none' | 'underline' | 'overline' | 'line-through';
-    height?: number;
+    height?: FontSize;
     children: React.ReactNode;
     line?: number;
     p?: boolean;

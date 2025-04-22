@@ -83,7 +83,8 @@ export type BoxSize =
     | 150
     | 175
     | 200
-    | 250;
+    | 250
+    | 400;
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
     paddingY?: SpaceSize;

@@ -1,8 +1,8 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './Box.module.scss';
 import classNames from 'classnames';
-import { SpaceSize } from '@/ui-kit/types';
-import { dimensionToString } from '@/ui-kit/utils';
+import { BoxSize, SpaceSize } from '@/ui-kit/types';
+import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
 
 type HexColor = `#${string}`;
 
@@ -12,7 +12,8 @@ type BoxAProps = HTMLAttributes<HTMLDivElement> & {
     backgroundColor?: HexColor;
     backgroundImage?: string;
     shadow?: boolean;
-    height?: number | string;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
     radius?: number | string;
     absolute?: React.ReactNode;
 };
@@ -27,6 +28,7 @@ const Box = ({
     backgroundColor = '#fff',
     backgroundImage = '',
     shadow,
+    width,
     height,
     radius = 20,
     absolute,
@@ -37,7 +39,8 @@ const Box = ({
         '--padding-y': `var(--space-${paddingY})`,
         '--padding-x': `var(--space-${paddingX})`,
         '--background-image': `url(${backgroundImage})`,
-        '--height': dimensionToString(height),
+        '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
         '--border-radius': dimensionToString(radius),
     };
 

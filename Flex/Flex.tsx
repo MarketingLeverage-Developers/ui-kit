@@ -1,16 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Flex.module.scss';
+import { SpaceSize } from '../types';
 
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline';
     justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
-    gap?: number;
+    gap?: SpaceSize;
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-    width?: number | string;
-    height?: number | string;
+    width?: SpaceSize | string;
+    height?: SpaceSize | string;
 };
 
 const Flex = ({

@@ -1,7 +1,7 @@
 .Box {
     position: relative;
 
-    width: 100%;
+    width: var(--width, 100%);
     height: var(--height, auto);
     border-radius: var(--border-radius);
     // border-radius: var(--border-radius, 0);

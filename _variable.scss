@@ -72,6 +72,7 @@
     --box-175: clamp(92px, calc(200 / var(--inner) * 100vw), 175px);
     --box-200: clamp(100px, calc(200 / var(--inner) * 100vw), 200px);
     --box-250: clamp(123px, calc(250 / var(--inner) * 100vw), 250px);
+    --box-400: clamp(192px, calc(400 / var(--inner) * 100vw), 400px);
 
     --inner: 1920;
 }

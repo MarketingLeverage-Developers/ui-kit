@@ -1,4 +1,5 @@
 .Image {
     width: var(--width, auto);
     height: var(--height, auto);
+    border-radius: var(--border-radius);
 }
