@@ -8,7 +8,9 @@ type TabProps = React.ComponentProps<typeof TabGroup>;
 const TabA = (props: TabProps) => {
     return (
         <TabGroup {...props}>
-            <Flex className={styles.TabA}>{props.children}</Flex>
+            <Flex className={styles.TabA} style={{ width: '100%' }}>
+                {props.children}
+            </Flex>
         </TabGroup>
     );
 };

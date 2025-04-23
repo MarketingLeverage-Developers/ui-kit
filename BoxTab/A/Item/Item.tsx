@@ -21,7 +21,12 @@ const Item = ({ image, label, value }: ItemProps) => {
     return (
         <TabGroup.Item value={value} className={styles.Item}>
             <Flex direction="column" gap={15} align="center">
-                <Flex justify="center" align="center" className={className}>
+                <Flex
+                    justify="center"
+                    align="center"
+                    className={className}
+                    style={{ width: 'var(--box-100)', height: 'var(--box-100)' }}
+                >
                     <img src={image} alt="이미지" />
                 </Flex>
 
