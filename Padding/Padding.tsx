@@ -22,7 +22,7 @@ const Padding = ({ x = 0, y = 0, children, ...props }: PaddingProps) => {
     };
 
     return (
-        <div className={styles.Padding} style={{ ...cssVariables }}>
+        <div {...props} className={styles.Padding} style={{ ...cssVariables, ...props.style }}>
             {children}
         </div>
     );
