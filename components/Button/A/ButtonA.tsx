@@ -25,7 +25,7 @@ const ButtonA = ({
         [styles.Full]: full,
     });
 
-    return <button {...props} className={combinedStyles} style={{ ...cssVariables }} />;
+    return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
 };
 
 export default ButtonA;

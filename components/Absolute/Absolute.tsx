@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSPropertiesWithVars } from '../types';
+import { CSSPropertiesWithVars } from '../../types';
 import styles from './Absolute.module.scss';
 
 type AbsoluteProps = {

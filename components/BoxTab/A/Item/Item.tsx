@@ -4,6 +4,7 @@ import Flex from '@/ui-kit/components/Flex/Flex';
 import Text from '@/ui-kit/components/Text/Text';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import classNames from 'classnames';
+import useRouting from '@/hooks/useRouting';
 
 type ItemProps = {
     image: string;
@@ -13,13 +14,14 @@ type ItemProps = {
 
 const Item = ({ image, label, value }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
+    const { setTab } = useRouting({ queryKey: 'carBrandUuid' });
 
     const className = classNames(styles.ItemBox, {
         [styles.Active]: isActiveTab(value),
     });
 
     return (
-        <TabGroup.Item value={value} className={styles.Item}>
+        <TabGroup.Item value={value} className={styles.Item} onClick={() => setTab(value)}>
             <Flex direction="column" gap={15} align="center">
                 <Flex
                     justify="center"
