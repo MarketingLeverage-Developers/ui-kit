@@ -1,0 +1,26 @@
+.PagingButton {
+    background: inherit;
+    font-size: var(--font-18);
+    color: #666;
+    border: none;
+    cursor: pointer;
+
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.Disabled {
+        color: var(--base-color-quaternary);
+        fill: var(--base-color-quaternary) !important;
+        cursor: auto;
+    }
+    &.Active {
+        background-color: var(--button-color);
+        border-radius: 50%;
+        padding: 10px;
+        color: #fff;
+        font-weight: 600;
+    }
+}
