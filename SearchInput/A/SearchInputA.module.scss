@@ -1,0 +1,30 @@
+.SearchInputA {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding: var(--space-20) var(--space-20);
+        box-sizing: border-box;
+        border-radius: 30px;
+        background-color: inherit;
+        border: 1px solid #e2e2e2;
+        font-size: var(--font-16);
+
+        outline: none;
+
+        &::placeholder {
+            color: #a6a6a6;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+
+        background-color: var(--button-color);
+    }
+}
