@@ -9,7 +9,7 @@ type ItemProps = {
     image: string;
     label: string;
     value: string;
-    onItemClick: (value: string) => void;
+    onItemClick?: (value: string) => void;
 };
 
 const Item = ({ image, label, value, onItemClick }: ItemProps) => {
