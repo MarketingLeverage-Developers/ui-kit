@@ -7,12 +7,14 @@ import LeftArrow from '@/ui-kit/assets/images/left-arrow.png';
 import RightArrow from '@/ui-kit/assets/images/right-arrow.png';
 import DoubleLeftArrow from '@/ui-kit/assets/images/double-left-arrow.png';
 import DoubleRightArrow from '@/ui-kit/assets/images/double-right-arrow.png';
+import { HexColor } from '@/ui-kit/types';
 
 type PagingButtonsProps = {
+    buttonColor: HexColor;
     onPagingButtonClick: (paginationValue: PaginationValueType) => void;
 };
 
-const PagingButtons = ({ onPagingButtonClick }: PagingButtonsProps) => {
+const PagingButtons = ({ buttonColor, onPagingButtonClick }: PagingButtonsProps) => {
     const handleFastPrevButtonClick = async (paginationValue: PaginationValueType) => {
         await onPagingButtonClick(paginationValue);
     };
@@ -37,7 +39,7 @@ const PagingButtons = ({ onPagingButtonClick }: PagingButtonsProps) => {
             <Pagination.Prev onPrevClick={handlePrevButtonClick}>
                 <Image image={LeftArrow.src} height={20} />
             </Pagination.Prev>
-            <Pagination.Pages onPagesClick={handlePagesButtonClick} />
+            <Pagination.Pages buttonColor={buttonColor} onPagesClick={handlePagesButtonClick} />
             <Pagination.Next onNextClick={handleNextButtonClick}>
                 <Image image={RightArrow.src} height={20} />
             </Pagination.Next>
