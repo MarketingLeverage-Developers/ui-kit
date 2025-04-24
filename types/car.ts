@@ -17,6 +17,11 @@ export interface Car {
     isPromotion: boolean;
     isImmediately: boolean;
     carBrandLogo: string;
+
+    advPayment: string;
+    monthContract: string;
+    monthRentalCost: number;
+    originCost: number;
 }
 
 export interface CarImages {
