@@ -6,6 +6,7 @@ import { BoxSize, SpaceSize } from '../../types';
 export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     gridTemplateColumns?: string;
+    mobileTeplateColumns?: string;
     gridTemplateRows?: string;
     gap?: SpaceSize;
     columnGap?: SpaceSize;
@@ -17,6 +18,7 @@ export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
 const Grid = ({
     children,
     gridTemplateColumns,
+    mobileTeplateColumns,
     gridTemplateRows,
     gap = 0,
     columnGap,
@@ -37,6 +39,7 @@ const Grid = ({
     // CSS 변수로 동적 값 전달
     const cssVariables: React.CSSProperties = {
         '--grid-template-columns': gridTemplateColumns || 'none',
+        '--mobile-teplate-columns': mobileTeplateColumns || 'repeat(1, 1fr)',
         '--grid-template-rows': gridTemplateRows || 'none',
         '--gap': `var(--space-${gap})`,
         '--column-gap': columnGap !== undefined ? `var(--space-${columnGap})` : undefined,
