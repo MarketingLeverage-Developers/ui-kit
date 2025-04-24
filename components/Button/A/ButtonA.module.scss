@@ -2,6 +2,7 @@
     width: fit-content;
     padding: var(--padding-y) var(--padding-x);
     border-radius: 33px;
+    cursor: pointer;
 
     &.Basic {
         background-color: var(--background-color);
