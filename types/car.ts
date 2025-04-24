@@ -28,7 +28,7 @@ export interface ImageWithColors {
     uuid: string;
     category: 'ex' | 'in'; // "ex" 또는 "in"
     path: string; // 이미지 URL
-    colors: ColorInfo[]; // 선택 가능한 색상들
+    color: ColorInfo; // 선택 가능한 색상들
 }
 
 export interface ColorInfo {
