@@ -1,0 +1,24 @@
+.Content {
+    width: var(--width);
+    background-color: var(--header-color);
+    z-index: 100;
+    border-radius: 20px;
+    transition: opacity 300ms, transform 300ms;
+
+    .Header {
+        // width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: var(--space-20) var(--space-25);
+        background-color: var(--header-color);
+        font-size: var(--font-24);
+        font-weight: 600;
+        color: #fff;
+    }
+    .Body {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: var(--space-20) var(--space-25);
+        background-color: #fff;
+    }
+}

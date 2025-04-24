@@ -1,0 +1,13 @@
+.Close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--base-color-secondary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--base-color-quaternary);
+
+    cursor: pointer;
+}
