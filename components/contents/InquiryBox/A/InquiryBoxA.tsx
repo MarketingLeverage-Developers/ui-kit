@@ -1,5 +1,5 @@
 import Box from '@/ui-kit/components/contents/Box/Box';
-import InputA from '@/ui-kit/components/Input/A/InputA';
+import InputA from '@/ui-kit/components/contents/Input/A/InputA';
 import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import Padding from '@/ui-kit/components/layouts/Padding/Padding';
 import Text from '@/ui-kit/components/contents/Text/Text';

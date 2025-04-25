@@ -1,7 +1,7 @@
 'use client';
+import { dimensionToString } from '@/ui-kit/utils';
 import React from 'react';
 import { Container as MapDiv, Marker, NaverMap, NavermapsProvider, useNavermaps } from 'react-naver-maps';
-import { dimensionToString } from '../../utils';
 
 type LocationMapProps = {
     latitude: number;
