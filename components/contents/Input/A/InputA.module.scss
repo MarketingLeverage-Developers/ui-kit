@@ -6,14 +6,18 @@
     background-color: #fbfbfb;
     border: 1px solid #e2e2e2;
 
-    // &.Basic {
-    //     background-color: var(--background-color);
-    // }
-
-    // &.Outlined {
-    //     background-color: inherit;
-    //     border: 1px solid var(--background-color);
-    // }
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
+    }
 
     &.Full {
         width: 100%;

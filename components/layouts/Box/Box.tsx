@@ -16,6 +16,8 @@ type BoxAProps = HTMLAttributes<HTMLDivElement> & {
     height?: BoxSize | string;
     radius?: number | string;
     absolute?: React.ReactNode;
+    borderWeight?: number;
+    borderColor?: HexColor;
 };
 
 interface CSSPropertiesWithVars extends React.CSSProperties {
@@ -31,6 +33,8 @@ const Box = ({
     width,
     height,
     radius = 20,
+    borderWeight = 0,
+    borderColor = '#E2E2E2',
     absolute,
     ...props
 }: BoxAProps) => {
@@ -42,6 +46,8 @@ const Box = ({
         '--width': dimensionToVariable(width),
         '--height': dimensionToVariable(height),
         '--border-radius': dimensionToString(radius),
+        '--border-weight': `${borderWeight}px`,
+        '--border-color': borderColor,
     };
 
     const className = classNames(styles.Box, props.className, {

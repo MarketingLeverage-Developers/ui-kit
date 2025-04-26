@@ -4,7 +4,6 @@
     width: var(--width, 100%);
     height: var(--height, auto);
     border-radius: var(--border-radius);
-    // border-radius: var(--border-radius, 0);
     background-color: var(--background-color);
     padding: var(--padding-y) var(--padding-x);
     box-sizing: border-box;
@@ -14,6 +13,7 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    border: var(--border-weight) solid var(--border-color);
     &.Shadow {
         box-shadow: 4px 4px 26px 0px #1f100326;
     }

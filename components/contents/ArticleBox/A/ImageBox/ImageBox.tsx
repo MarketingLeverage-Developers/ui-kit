@@ -1,7 +1,7 @@
 import React from 'react';
 import Padding from '@/ui-kit/components/layouts/Padding/Padding';
 import styles from './ImageBox.module.scss';
-import Box from '@/ui-kit/components/contents/Box/Box';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 
 type ImageBoxProps = {
     image: string;

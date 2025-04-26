@@ -1,4 +1,4 @@
-import Box from '@/ui-kit/components/contents/Box/Box';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 import React from 'react';
 import styles from './ArticleBoxA.module.scss';
 import ImageBox from './ImageBox/ImageBox';

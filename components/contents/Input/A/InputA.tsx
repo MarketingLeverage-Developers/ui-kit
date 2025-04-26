@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import styles from './InputA.module.scss';
 import classNames from 'classnames';
-import { CSSPropertiesWithVars, InputProps } from '@/ui-kit/types';
+import { ContentSize, CSSPropertiesWithVars } from '@/ui-kit/types';
 
-const InputA = ({
-    paddingY = 0,
-    paddingX = 0,
-    backgroundColor = '#fff',
-    color = '#000',
-    variant = 'contained',
-    full,
-    ...props
-}: InputProps) => {
-    const cssVariables: CSSPropertiesWithVars = {
-        '--background-color': backgroundColor,
-        '--color': color,
-        '--padding-y': `var(--space-${paddingY})`,
-        '--padding-x': `var(--space-${paddingX})`,
-    };
+type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
+type InputAProps = BaseInputProps & {
+    size?: ContentSize;
+    full?: boolean;
+};
 
-    const combinedStyles = classNames(styles.InputA, {
-        // [styles.Basic]: variant === 'contained',
-        // [styles.Outlined]: variant === 'outlined',
+const InputA = ({ size = 'md', full, ...props }: InputAProps) => {
+    const cssVariables: CSSPropertiesWithVars = {};
+
+    const combinedStyles = classNames(styles.InputA, props.className, {
+        [styles.Sm]: size === 'sm',
+        [styles.Md]: size === 'md',
+        [styles.Lg]: size === 'lg',
         [styles.Full]: full,
     });
 
-    return <input {...props} className={combinedStyles} style={{ ...cssVariables }} />;
+    return <input {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
 };
 
 export default InputA;

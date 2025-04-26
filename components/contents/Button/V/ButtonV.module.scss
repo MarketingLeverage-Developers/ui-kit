@@ -1,9 +1,12 @@
-.ButtonA {
+.ButtonV {
     width: fit-content;
-    border-radius: 45px;
+    border-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     color: #fff;
-    cursor: pointer;
     background-color: var(--color);
+
+    cursor: pointer;
 
     &.Sm {
         padding: var(--space-15) var(--space-25);

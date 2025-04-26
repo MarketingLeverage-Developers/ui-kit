@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './DropdownA.module.scss';
+import styles from './AccordionF.module.scss';
 import Accordion from '@/headless/Accordion/Accordion';
 import Text from '@/ui-kit/components/contents/Text/Text';
 
@@ -8,7 +8,7 @@ type AccordionProps = {
     label: string;
 };
 
-const DropdownA = ({ children, label }: AccordionProps) => {
+const AccordionF = ({ children, label }: AccordionProps) => {
     return (
         <Accordion>
             <Accordion.Box className={styles.Box}>
@@ -25,4 +25,4 @@ const DropdownA = ({ children, label }: AccordionProps) => {
     );
 };
 
-export default DropdownA;
+export default AccordionF;

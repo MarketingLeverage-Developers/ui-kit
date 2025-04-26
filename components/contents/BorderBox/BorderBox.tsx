@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BorderBox.module.scss';
-import Box from '../Box/Box';
+import Box from '../../layouts/Box/Box';
 
 type BorderBoxProps = React.ComponentProps<typeof Box>;
 

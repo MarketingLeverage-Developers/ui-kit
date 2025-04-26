@@ -1,4 +1,4 @@
-import Box from '@/ui-kit/components/contents/Box/Box';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 import Text from '@/ui-kit/components/contents/Text/Text';
 import React from 'react';
 import styles from './Title.module.scss';

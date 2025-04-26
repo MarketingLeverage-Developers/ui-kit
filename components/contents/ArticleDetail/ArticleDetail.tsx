@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '../Box/Box';
+import Box from '../../layouts/Box/Box';
 import Title from './Title/Title';
 import SubArea from './SubArea/SubArea';
 import Content from './Content/Content';

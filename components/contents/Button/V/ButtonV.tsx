@@ -1,20 +1,20 @@
 import React, { HTMLAttributes } from 'react';
-import styles from './ButtonA.module.scss';
+import styles from './ButtonV.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 
-type ButtonAProps = HTMLAttributes<HTMLButtonElement> & {
+type ButtonVProps = HTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     full?: boolean;
 };
 
-const ButtonA = ({ color = '#E88731', size = 'md', full, ...props }: ButtonAProps) => {
+const ButtonV = ({ color = '#E88731', size = 'md', full, ...props }: ButtonVProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
     };
 
-    const combinedStyles = classNames(styles.ButtonA, props.className, {
+    const combinedStyles = classNames(styles.ButtonV, props.className, {
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
@@ -24,4 +24,4 @@ const ButtonA = ({ color = '#E88731', size = 'md', full, ...props }: ButtonAProp
     return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
 };
 
-export default ButtonA;
+export default ButtonV;

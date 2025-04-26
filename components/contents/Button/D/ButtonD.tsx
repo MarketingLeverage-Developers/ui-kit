@@ -1,31 +1,27 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styles from './ButtonD.module.scss';
 import classNames from 'classnames';
-import { ButtonProps, CSSPropertiesWithVars, SpaceSize } from '@/ui-kit/types';
+import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 
-const ButtonD = ({
-    paddingY = 0,
-    paddingX = 0,
-    backgroundColor = '#fff',
-    color = '#000',
-    variant = 'contained',
-    full,
-    ...props
-}: ButtonProps) => {
+type ButtonDProps = HTMLAttributes<HTMLButtonElement> & {
+    size?: ContentSize;
+    color?: HexColor;
+    full?: boolean;
+};
+
+const ButtonD = ({ color = '#E88731', size = 'md', full, ...props }: ButtonDProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--background-color': backgroundColor,
         '--color': color,
-        '--padding-y': `var(--space-${paddingY})`,
-        '--padding-x': `var(--space-${paddingX})`,
     };
 
     const combinedStyles = classNames(styles.ButtonD, props.className, {
-        [styles.Basic]: variant === 'contained',
-        [styles.Outlined]: variant === 'outlined',
+        [styles.Sm]: size === 'sm',
+        [styles.Md]: size === 'md',
+        [styles.Lg]: size === 'lg',
         [styles.Full]: full,
     });
 
-    return <button {...props} className={combinedStyles} style={{ ...cssVariables }} />;
+    return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
 };
 
 export default ButtonD;

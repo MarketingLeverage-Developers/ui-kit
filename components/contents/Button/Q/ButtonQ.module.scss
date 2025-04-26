@@ -1,0 +1,23 @@
+.ButtonQ {
+    width: fit-content;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+
+    color: #fff;
+    background-color: var(--color);
+
+    cursor: pointer;
+
+    &.Sm {
+        width: var(--box-40);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        width: var(--box-50);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        width: var(--box-60);
+        font-size: var(--font-22);
+    }
+}

@@ -6,9 +6,9 @@ import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './BasicSwiper.module.scss';
-import Circle from '@/ui-kit//Circle/Circle';
 import Padding from '@/ui-kit/components/layouts/Padding/Padding';
-import ButtonD from '../Button/D/ButtonD';
+import ButtonT from '../Button/T/ButtonT';
+import ButtonQ from '../Button/Q/ButtonQ';
 
 type BasicSwiperProps = {
     children: React.ReactNode;
@@ -53,10 +53,10 @@ const BasicSwiper = ({ slidesPerView = 1, children }: BasicSwiperProps) => {
 
             <Padding y={15}>
                 <span ref={prevRef}>
-                    <ButtonD paddingX={30} paddingY={30} variant="outlined" backgroundColor="#A6A6A6"></ButtonD>
+                    <ButtonT size="lg" color="#A6A6A6"></ButtonT>
                 </span>
                 <span ref={nextRef}>
-                    <ButtonD paddingX={30} paddingY={30} backgroundColor="#417EF0"></ButtonD>
+                    <ButtonQ size="lg" color="#417EF0"></ButtonQ>
                 </span>
             </Padding>
         </>

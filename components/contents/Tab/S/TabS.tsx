@@ -2,12 +2,12 @@ import React from 'react';
 import Item from './Item/Item';
 import TabGroup from '@/headless/TabGroup/TabGroup';
 
-type BoxTabAProps = React.ComponentProps<typeof TabGroup>;
+type TabSProps = React.ComponentProps<typeof TabGroup>;
 
-const BoxTabA = (props: BoxTabAProps) => {
+const TabS = (props: TabSProps) => {
     return <TabGroup {...props}>{props.children}</TabGroup>;
 };
 
-export default BoxTabA;
+export default TabS;
 
-BoxTabA.Item = Item;
+TabS.Item = Item;

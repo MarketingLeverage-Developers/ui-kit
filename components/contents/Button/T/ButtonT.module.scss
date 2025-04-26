@@ -1,6 +1,8 @@
-.ButtonD {
+.ButtonT {
     width: fit-content;
-    border-radius: 45px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+
     color: var(--color);
     border: 1px solid var(--color);
     background-color: inherit;
@@ -8,18 +10,15 @@
     cursor: pointer;
 
     &.Sm {
-        padding: var(--space-15) var(--space-25);
+        width: var(--box-40);
         font-size: var(--font-18);
     }
     &.Md {
-        padding: var(--space-20) var(--space-30);
+        width: var(--box-50);
         font-size: var(--font-20);
     }
     &.Lg {
-        padding: var(--space-25) var(--space-35);
+        width: var(--box-60);
         font-size: var(--font-22);
-    }
-    &.Full {
-        width: 100%;
     }
 }

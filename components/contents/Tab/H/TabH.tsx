@@ -1,22 +1,22 @@
 import TabGroup from '@/headless/TabGroup/TabGroup';
-import styles from './TabB.module.scss';
+import styles from './TabH.module.scss';
 import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import Item from './Item/Item';
 import LeftItem from './LeftItem/LeftItem';
 import RightItem from './RightItem/RightItem';
 
-type TabBProps = React.ComponentProps<typeof TabGroup>;
+type TabHProps = React.ComponentProps<typeof TabGroup>;
 
-const TabB = (props: TabBProps) => {
+const TabH = (props: TabHProps) => {
     return (
         <TabGroup {...props}>
-            <Flex className={styles.TabB}>{props.children}</Flex>
+            <Flex className={styles.TabH}>{props.children}</Flex>
         </TabGroup>
     );
 };
 
-export default TabB;
+export default TabH;
 
-TabB.Item = Item;
-TabB.LeftItem = LeftItem;
-TabB.RightItem = RightItem;
+TabH.Item = Item;
+TabH.LeftItem = LeftItem;
+TabH.RightItem = RightItem;
