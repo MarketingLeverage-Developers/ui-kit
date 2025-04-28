@@ -21,19 +21,15 @@ const Item = ({ image, label, value, onItemClick }: ItemProps) => {
 
     return (
         <TabGroup.Item value={value} className={styles.Item} onClick={() => onItemClick(value)}>
-            <Flex direction="column" gap={15} align="center">
-                <Flex
-                    justify="center"
-                    align="center"
-                    className={className}
-                    style={{ width: 'var(--box-100)', height: 'var(--box-100)' }}
-                >
+            <Flex direction="column" gap={15} align="center" width={100}>
+                <Flex justify="center" align="center" className={className}>
                     <img src={image} alt="이미지" />
                 </Flex>
-
-                <Text size={20} weight={500} color="#111">
-                    {label}
-                </Text>
+                <Flex>
+                    <Text size={18} weight={500} color="#111" align="center">
+                        {label}
+                    </Text>
+                </Flex>
             </Flex>
         </TabGroup.Item>
     );
