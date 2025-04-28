@@ -8,6 +8,9 @@ import Box from '@/ui-kit/components/layouts/Box/Box';
 import ButtonT from '../../Button/T/ButtonT';
 import ButtonQ from '../../Button/Q/ButtonQ';
 import Flex from '../../../layouts/Flex/Flex';
+import LeftArrow from '../../../../assets/images/swiper-left-arrow.png';
+import RightArrow from '../../../../assets/images/swiper-right-arrow.png';
+import Image from '../../Image/Image';
 
 type SwiperAProps = {
     children: React.ReactNode;
@@ -41,10 +44,12 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
 
             <Box padding={{ y: 15 }}>
                 <Flex gap={15} justify="end">
-                    {/* slidePrev */}
-                    <ButtonT size="lg" color="#A6A6A6" onClick={() => swiperRef.current?.slidePrev()} />
-                    {/* slideNext */}
-                    <ButtonQ size="lg" color="#417EF0" onClick={() => swiperRef.current?.slideNext()} />
+                    <ButtonT size="lg" color="#A6A6A6" onClick={() => swiperRef.current?.slidePrev()}>
+                        <Image image={LeftArrow.src} width={25} height={25} />
+                    </ButtonT>
+                    <ButtonQ size="lg" color="#417EF0" onClick={() => swiperRef.current?.slideNext()}>
+                        <Image image={RightArrow.src} width={25} height={25} />
+                    </ButtonQ>
                 </Flex>
             </Box>
         </>
