@@ -1,6 +1,6 @@
 .Backdrop {
     background-color: #f0f0f0d9;
-    z-index: var(--z-index-backdrop2);
+    z-index: 1000;
 
     transition: opacity 300ms, transform 300ms;
 }

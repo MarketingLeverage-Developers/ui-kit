@@ -1,7 +1,7 @@
 .Content {
     width: var(--width);
     background-color: var(--header-color);
-    z-index: 100;
+    z-index: 1001;
     border-radius: 20px;
     transition: opacity 300ms, transform 300ms;
 
