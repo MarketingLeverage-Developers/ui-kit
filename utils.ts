@@ -18,3 +18,11 @@ export const dimensionToSpace = (dim?: number | string): string => {
     }
     return dim || 'auto';
 };
+
+export const formatNumberWithCommas = (num: number) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+export const formatNumberAsManRounded = (num: number) => {
+    return `${(num / 10000).toFixed(1)}만`;
+};
