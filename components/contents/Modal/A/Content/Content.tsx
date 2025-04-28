@@ -8,15 +8,24 @@ import { dimensionToVariable } from '@/ui-kit/utils';
 type ContentProps = HTMLAttributes<HTMLDivElement> & {
     title: string;
     width?: string;
+    height?: string;
     backgroundColor?: HexColor;
     children: React.ReactNode;
 };
 
-const Content = ({ width = '50%', backgroundColor = '#e88731', title, children, ...props }: ContentProps) => {
+const Content = ({
+    width = '40%',
+    height = '50%',
+    backgroundColor = '#e88731',
+    title,
+    children,
+    ...props
+}: ContentProps) => {
     const combinedStyle = classNames(styles.Content, props.className);
 
     const contentVariables: CSSPropertiesWithVars = {
         '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
     };
 
     const headerVariables: CSSPropertiesWithVars = {
