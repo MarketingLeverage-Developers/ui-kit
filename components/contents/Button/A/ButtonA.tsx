@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styles from './ButtonA.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 
-type ButtonAProps = HTMLAttributes<HTMLButtonElement> & {
+type ButtonAProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     full?: boolean;
