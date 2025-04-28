@@ -1,3 +1,4 @@
+'use client';
 import Modal from '@/headless/Modal/Modal';
 import React from 'react';
 import Trigger from './Trigger/Trigger';

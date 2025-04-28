@@ -1,0 +1,37 @@
+/* ToggleA.module.scss */
+.ToggleA {
+    display: inline-block;
+    width: var(--box-25);
+    height: var(--box-25);
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.2s ease;
+
+    // 호버 시 살짝 강조
+    &:hover {
+        border-color: #999;
+    }
+
+    // Active 상태일 때
+    &.Active {
+        background-color: var(--color);
+        border: none;
+
+        // 체크 표시
+        &::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            width: 6px;
+            height: 12px;
+            // border: solid red;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            transform: translate(-50%, -50%);
+        }
+    }
+}
