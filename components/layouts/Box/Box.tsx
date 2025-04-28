@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import styles from './Box.module.scss';
 import classNames from 'classnames';
 import { BoxSize, SpaceSize } from '@/ui-kit/types';
-import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
+import { dimensionToSpace, dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
 
 type HexColor = `#${string}`;
 
@@ -62,22 +62,22 @@ const Box = ({
         // now padding is always number/string/object
 
         if (typeof padding === 'number' || typeof padding === 'string') {
-            return dimensionToVariable(padding as number | SpaceSize);
+            return dimensionToSpace(padding as number | SpaceSize);
         }
 
         // object: start with x/y defaults
-        const px = padding.x != null ? dimensionToVariable(padding.x) : '0px';
-        const py = padding.y != null ? dimensionToVariable(padding.y) : '0px';
+        const px = padding.x != null ? dimensionToSpace(padding.x) : '0px';
+        const py = padding.y != null ? dimensionToSpace(padding.y) : '0px';
 
         let top = py;
         let bottom = py;
         let left = px;
         let right = px;
 
-        if (padding.t != null) top = dimensionToVariable(padding.t);
-        if (padding.b != null) bottom = dimensionToVariable(padding.b);
-        if (padding.l != null) left = dimensionToVariable(padding.l);
-        if (padding.r != null) right = dimensionToVariable(padding.r);
+        if (padding.t != null) top = dimensionToSpace(padding.t);
+        if (padding.b != null) bottom = dimensionToSpace(padding.b);
+        if (padding.l != null) left = dimensionToSpace(padding.l);
+        if (padding.r != null) right = dimensionToSpace(padding.r);
 
         return `${top} ${right} ${bottom} ${left}`;
     };

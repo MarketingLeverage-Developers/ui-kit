@@ -11,3 +11,10 @@ export const dimensionToVariable = (dim?: number | string): string => {
     }
     return dim || 'auto';
 };
+
+export const dimensionToSpace = (dim?: number | string): string => {
+    if (typeof dim === 'number') {
+        return `var(--space-${dim})`;
+    }
+    return dim || 'auto';
+};
