@@ -3,9 +3,13 @@
 
     width: var(--width, 100%);
     height: var(--height, auto);
-    border-radius: var(--border-radius);
+    border-top-left-radius: var(--border-top-left-radius);
+    border-top-right-radius: var(--border-top-right-radius);
+    border-bottom-left-radius: var(--border-bottom-left-radius);
+    border-bottom-right-radius: var(--border-bottom-right-radius);
     background-color: var(--background-color);
-    padding: var(--padding-y) var(--padding-x);
+
+    padding: var(--padding);
     box-sizing: border-box;
 
     background-image: var(--background-image);

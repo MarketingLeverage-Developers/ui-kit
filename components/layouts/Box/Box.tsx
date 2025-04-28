@@ -6,15 +6,36 @@ import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
 
 type HexColor = `#${string}`;
 
+type RadiusValue = number | string;
+
+type BorderRadius =
+    | RadiusValue
+    | {
+          topLeft?: RadiusValue;
+          topRight?: RadiusValue;
+          bottomLeft?: RadiusValue;
+          bottomRight?: RadiusValue;
+      };
+
+type PaddingSize =
+    | SpaceSize
+    | {
+          x?: SpaceSize;
+          y?: SpaceSize;
+          l?: SpaceSize;
+          r?: SpaceSize;
+          t?: SpaceSize;
+          b?: SpaceSize;
+      };
+
 type BoxAProps = HTMLAttributes<HTMLDivElement> & {
-    paddingY?: SpaceSize;
-    paddingX?: SpaceSize;
-    backgroundColor?: HexColor;
+    padding?: PaddingSize;
+    backgroundColor?: HexColor | 'inherit' | 'transparent';
     backgroundImage?: string;
     shadow?: boolean;
     width?: BoxSize | string;
     height?: BoxSize | string;
-    radius?: number | string;
+    radius?: BorderRadius;
     absolute?: React.ReactNode;
     borderWeight?: number;
     borderColor?: HexColor;
@@ -25,29 +46,64 @@ interface CSSPropertiesWithVars extends React.CSSProperties {
 }
 
 const Box = ({
-    paddingY = 0,
-    paddingX = 0,
-    backgroundColor = '#fff',
+    padding,
+    backgroundColor = 'inherit',
     backgroundImage = '',
     shadow,
     width,
     height,
-    radius = 20,
+    radius = 0,
     borderWeight = 0,
     borderColor = '#E2E2E2',
     absolute,
     ...props
 }: BoxAProps) => {
+    const spacingToString = (padding: PaddingSize | number = 0): string => {
+        // now padding is always number/string/object
+
+        if (typeof padding === 'number' || typeof padding === 'string') {
+            return dimensionToVariable(padding as number | SpaceSize);
+        }
+
+        // object: start with x/y defaults
+        const px = padding.x != null ? dimensionToVariable(padding.x) : '0px';
+        const py = padding.y != null ? dimensionToVariable(padding.y) : '0px';
+
+        let top = py;
+        let bottom = py;
+        let left = px;
+        let right = px;
+
+        if (padding.t != null) top = dimensionToVariable(padding.t);
+        if (padding.b != null) bottom = dimensionToVariable(padding.b);
+        if (padding.l != null) left = dimensionToVariable(padding.l);
+        if (padding.r != null) right = dimensionToVariable(padding.r);
+
+        return `${top} ${right} ${bottom} ${left}`;
+    };
+
     const cssVariables: CSSPropertiesWithVars = {
         '--background-color': backgroundColor,
-        '--padding-y': `var(--space-${paddingY})`,
-        '--padding-x': `var(--space-${paddingX})`,
+
         '--background-image': `url(${backgroundImage})`,
         '--width': dimensionToVariable(width),
         '--height': dimensionToVariable(height),
-        '--border-radius': dimensionToString(radius),
         '--border-weight': `${borderWeight}px`,
         '--border-color': borderColor,
+        ...(typeof radius === 'object'
+            ? {
+                  '--border-top-left-radius': dimensionToString(radius.topLeft ?? 0),
+                  '--border-top-right-radius': dimensionToString(radius.topRight ?? 0),
+                  '--border-bottom-left-radius': dimensionToString(radius.bottomLeft ?? 0),
+                  '--border-bottom-right-radius': dimensionToString(radius.bottomRight ?? 0),
+              }
+            : {
+                  '--border-top-left-radius': dimensionToString(radius ?? 0),
+                  '--border-top-right-radius': dimensionToString(radius ?? 0),
+                  '--border-bottom-left-radius': dimensionToString(radius ?? 0),
+                  '--border-bottom-right-radius': dimensionToString(radius ?? 0),
+              }),
+        '--padding': spacingToString(padding),
     };
 
     const className = classNames(styles.Box, props.className, {

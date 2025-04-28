@@ -8,7 +8,11 @@ type BottomButtonProps = React.ComponentProps<typeof ButtonA> & {
 };
 
 const BottomButton = ({ children, ...props }: BottomButtonProps) => {
-    return <ButtonV full>{children}</ButtonV>;
+    return (
+        <ButtonV {...props} full>
+            {children}
+        </ButtonV>
+    );
 };
 
 export default BottomButton;

@@ -9,7 +9,7 @@ type TitleBoxProps = {
 
 const Title = ({ title }: TitleBoxProps) => {
     return (
-        <Box paddingY={25} paddingX={20} className={styles.Title} radius={0}>
+        <Box padding={{ y: 25, x: 20 }} className={styles.Title} radius={0}>
             <Text size={22} weight={600}>
                 {title}
             </Text>

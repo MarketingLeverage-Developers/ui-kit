@@ -7,7 +7,7 @@ type ContentProps = {
 
 const Content = ({ html }: ContentProps) => {
     return (
-        <Box paddingY={40} paddingX={40} radius={0}>
+        <Box padding={40} radius={0}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </Box>
     );

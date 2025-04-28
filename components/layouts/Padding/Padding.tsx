@@ -1,8 +1,8 @@
 import React, { HTMLAttributes } from 'react';
-import styles from './Padding.module.scss';
+import styles from './Box.module.scss';
 import { SpaceSize } from '../../../types';
 
-type PaddingProps = HTMLAttributes<HTMLDivElement> & {
+type BoxProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     x?: SpaceSize;
     y?: SpaceSize;
@@ -12,20 +12,20 @@ interface CSSPropertiesWithVars extends React.CSSProperties {
     [key: `--${string}`]: string | number;
 }
 
-const Padding = ({ x = 0, y = 0, children, ...props }: PaddingProps) => {
-    const computedPaddingY = `var(--space-${y})`;
-    const computedPaddingX = `var(--space-${x})`;
+const Box = ({ x = 0, y = 0, children, ...props }: BoxProps) => {
+    const computedBoxY = `var(--space-${y})`;
+    const computedBoxX = `var(--space-${x})`;
 
     const cssVariables: CSSPropertiesWithVars = {
-        '--padding-y': computedPaddingY,
-        '--padding-x': computedPaddingX,
+        '--padding-y': computedBoxY,
+        '--padding-x': computedBoxX,
     };
 
     return (
-        <div {...props} className={styles.Padding} style={{ ...cssVariables, ...props.style }}>
+        <div {...props} className={styles.Box} style={{ ...cssVariables, ...props.style }}>
             {children}
         </div>
     );
 };
 
-export default Padding;
+export default Box;

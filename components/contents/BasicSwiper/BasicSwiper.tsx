@@ -6,7 +6,7 @@ import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from './BasicSwiper.module.scss';
-import Padding from '@/ui-kit/components/layouts/Padding/Padding';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 import ButtonT from '../Button/T/ButtonT';
 import ButtonQ from '../Button/Q/ButtonQ';
 
@@ -51,14 +51,14 @@ const BasicSwiper = ({ slidesPerView = 1, children }: BasicSwiperProps) => {
                 {children}
             </Swiper>
 
-            <Padding y={15}>
+            <Box padding={{ y: 15 }}>
                 <span ref={prevRef}>
                     <ButtonT size="lg" color="#A6A6A6"></ButtonT>
                 </span>
                 <span ref={nextRef}>
                     <ButtonQ size="lg" color="#417EF0"></ButtonQ>
                 </span>
-            </Padding>
+            </Box>
         </>
     );
 };

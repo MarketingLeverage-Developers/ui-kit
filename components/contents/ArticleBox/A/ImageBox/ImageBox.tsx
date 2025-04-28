@@ -1,7 +1,6 @@
 import React from 'react';
-import Padding from '@/ui-kit/components/layouts/Padding/Padding';
-import styles from './ImageBox.module.scss';
 import Box from '@/ui-kit/components/layouts/Box/Box';
+import styles from './ImageBox.module.scss';
 
 type ImageBoxProps = {
     image: string;
@@ -12,7 +11,7 @@ type ImageBoxProps = {
 const ImageBox = ({ image, tags, padding }: ImageBoxProps) => {
     return (
         <Box className={styles.ImageBox} backgroundColor="#f5f5f5">
-            <Padding y={padding ? 35 : 0}>
+            <Box padding={padding ? 35 : 0}>
                 <img
                     width={'100%'}
                     height={'100%'}
@@ -21,7 +20,7 @@ const ImageBox = ({ image, tags, padding }: ImageBoxProps) => {
                     style={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                 />
                 <div className={styles.Tags}>{tags}</div>
-            </Padding>
+            </Box>
         </Box>
     );
 };

@@ -1,4 +1,4 @@
-import Padding from '@/ui-kit/components/layouts/Padding/Padding';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 import React from 'react';
 
 type SubAreaProps = {
@@ -6,11 +6,7 @@ type SubAreaProps = {
 };
 
 const SubArea = ({ children }: SubAreaProps) => {
-    return (
-        <Padding y={20} x={15}>
-            {children}
-        </Padding>
-    );
+    return <Box padding={{ y: 20, x: 15 }}>{children}</Box>;
 };
 
 export default SubArea;

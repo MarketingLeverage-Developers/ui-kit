@@ -3,19 +3,42 @@ import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
 import React, { HTMLAttributes } from 'react';
 import styles from './Image.module.scss';
 
+type RadiusValue = number | string;
+
+type BorderRadius =
+    | RadiusValue
+    | {
+          topLeft?: RadiusValue;
+          topRight?: RadiusValue;
+          bottomLeft?: RadiusValue;
+          bottomRight?: RadiusValue;
+      };
+
 type ImageProps = HTMLAttributes<HTMLImageElement> & {
     image: string;
     width?: BoxSize | string;
     height?: BoxSize | string;
     alt?: string;
-    radius?: string | number;
+    radius?: BorderRadius;
 };
 
 const Image = ({ image, width, height, alt, radius = 0, ...props }: ImageProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--width': dimensionToVariable(width),
         '--height': dimensionToVariable(height),
-        '--border-radius': dimensionToString(radius),
+        ...(typeof radius === 'object'
+            ? {
+                  '--border-top-left-radius': dimensionToString(radius.topLeft ?? 0),
+                  '--border-top-right-radius': dimensionToString(radius.topRight ?? 0),
+                  '--border-bottom-left-radius': dimensionToString(radius.bottomLeft ?? 0),
+                  '--border-bottom-right-radius': dimensionToString(radius.bottomRight ?? 0),
+              }
+            : {
+                  '--border-top-left-radius': dimensionToString(radius ?? 0),
+                  '--border-top-right-radius': dimensionToString(radius ?? 0),
+                  '--border-bottom-left-radius': dimensionToString(radius ?? 0),
+                  '--border-bottom-right-radius': dimensionToString(radius ?? 0),
+              }),
     };
     return (
         <img
