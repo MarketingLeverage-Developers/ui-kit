@@ -24,7 +24,7 @@
     .Body {
         flex: 1 1 auto; /* 남은 공간 전부 차지 */
         background-color: #fff;
-        padding: var(--space-20) var(--space-25);
+        // padding: var(--space-20) var(--space-25);
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         overflow-y: auto; /* 본문에서만 세로 스크롤 */
