@@ -1,26 +1,26 @@
 /* Item.module.scss */
 .Item {
     position: relative; /* ::after 위치 기준 */
-    width: var(--box-20);
-    height: var(--box-20);
+    width: var(--box-25);
+    height: var(--box-25);
     border-radius: 50%;
     border: 1px solid #e2e2e2;
     box-sizing: border-box;
 
     &.Active {
-        background-color: #417ef0;
-        border: none;
+        border: 1px solid var(--color);
 
-        /* 체크 마크 넣기 */
         &::after {
-            content: '✔'; /* 체크 문자 */
+            content: ''; // pseudo-element를 보여주기 위한 필수 속성
+            display: block; // 블록 수준 요소로 렌더링
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 60%;
+            height: 65%;
+            border-radius: 50%;
+            background-color: var(--color);
             transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 30%; /* 필요에 따라 조정 */
-            line-height: 1; /* 세로 정렬 보정 */
         }
     }
 }
