@@ -31,6 +31,7 @@
     text-align: var(--text-align);
     text-decoration: var(--text-decoration);
     line-height: var(--line-height);
+    word-break: keep-all;
 
     &.Line {
         display: -webkit-box; // flex-box와 비슷하게 작동하는 구형 웹킷 박스 모델 사용
