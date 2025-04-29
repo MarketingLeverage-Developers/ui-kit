@@ -18,6 +18,7 @@ const ButtonQ = ({ color = '#E88731', size = 'md', full, ...props }: ButtonQProp
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
+        [styles.Xl]: size === 'xl',
     });
 
     return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;

@@ -10,14 +10,19 @@
 
     &.Sm {
         width: var(--box-40);
-        font-size: var(--font-18);
+        font-size: var(--font-14);
     }
     &.Md {
         width: var(--box-50);
-        font-size: var(--font-20);
+        font-size: var(--font-16);
     }
     &.Lg {
         width: var(--box-60);
-        font-size: var(--font-22);
+        font-size: var(--font-18);
+    }
+
+    &.Xl {
+        min-width: var(--box-70);
+        font-size: var(--font-18);
     }
 }
