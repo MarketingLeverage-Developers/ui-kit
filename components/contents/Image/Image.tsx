@@ -42,6 +42,7 @@ const Image = ({ image, width, height, alt, radius = 0, ...props }: ImageProps) 
     };
     return (
         <img
+            {...props}
             loading="lazy"
             src={image}
             alt={alt}
