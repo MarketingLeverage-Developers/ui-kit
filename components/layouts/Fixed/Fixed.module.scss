@@ -1,0 +1,8 @@
+.Fixed {
+    position: fixed;
+    top: var(--top);
+    left: var(--left);
+    bottom: var(--bottom);
+    right: var(--right);
+    z-index: 500;
+}
