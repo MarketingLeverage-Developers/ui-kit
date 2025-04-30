@@ -44,13 +44,13 @@ export interface ColorInfo {
 }
 
 export interface CarTrim {
-    uuid: string;
+    mainTrimId: string;
     trim: string; // 트림 이름
     subTrims: SubTrim[]; // 서브 트림
 }
 
 export interface SubTrim {
-    uuid: string;
+    subTrimId: string;
     subTrim: string; // 서브 트림 이름
     price: number; // 서브 트림 가격
 }
