@@ -1,10 +1,22 @@
-.AccordionF {
+.AccordionA {
 }
 
 .Button {
     background-color: inherit;
     text-align: left;
     width: 100%;
+
+    position: relative;
+
+    cursor: pointer;
+
+    .Absolute {
+        position: absolute;
+        top: 50%;
+        right: var(--space-20);
+        /* 요소 자신의 크기의 절반만큼 되돌리기 */
+        transform: translateY(-50%);
+    }
 }
 
 .Box {
