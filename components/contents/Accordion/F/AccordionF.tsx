@@ -5,7 +5,6 @@ import Text from '@/ui-kit/components/contents/Text/Text';
 import Image from '@/ui-kit/components/contents/Image/Image';
 import ArrowUp from '@/ui-kit/assets/images/accordion-arrow-up.svg';
 import ArrowDown from '@/ui-kit/assets/images/accordion-arrow-down.svg';
-import Absolute from '@/ui-kit/components/layouts/Absolute/Absolute';
 
 type AccordionProps = {
     children: React.ReactNode;
@@ -20,7 +19,7 @@ const AccordionF = ({ children, label }: AccordionProps) => {
             <Accordion.Box className={styles.Box}>
                 <Accordion.Button className={styles.Button}>
                     <div className={styles.Absolute}>
-                        {accordionValue ? <Image image={ArrowUp.src} /> : <Image image={ArrowDown.src} />}
+                        <Image image={accordionValue ? ArrowUp.src : ArrowDown.src} />
                     </div>
                     <Accordion.Visible className={styles.Visible}>
                         <Text size={20} weight={500} color="#383838">
