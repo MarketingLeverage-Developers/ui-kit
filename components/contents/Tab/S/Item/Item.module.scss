@@ -1,10 +1,9 @@
 .Item {
     background-color: inherit;
-}
 
-.ItemBox {
     border-radius: 12px;
     border: 1px solid #e2e2e2;
+    box-sizing: border-box;
 
     width: var(--box-100);
     height: var(--box-100);
@@ -16,7 +15,7 @@
     }
 
     img {
-        max-width: var(--box-50);
-        max-height: var(--box-50);
+        width: 50%;
+        max-height: 50%;
     }
 }
