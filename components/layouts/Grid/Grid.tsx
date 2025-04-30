@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Grid.module.scss';
-import { BoxSize, SpaceSize } from '../../types';
+import { BoxSize, SpaceSize } from '@/ui-kit/types';
 
 export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
@@ -13,6 +13,8 @@ export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
     rowGap?: SpaceSize;
     width?: BoxSize | string;
     height?: BoxSize | string;
+    align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline';
+    justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
 };
 
 const Grid = ({
@@ -26,6 +28,8 @@ const Grid = ({
     width,
     height,
     style,
+    align = 'start',
+    justify = 'start',
     ...props
 }: GridProps) => {
     // width와 height가 숫자면 px 단위를 붙이고, 문자열이면 그대로 사용
@@ -46,6 +50,8 @@ const Grid = ({
         '--row-gap': rowGap !== undefined ? `var(--space-${rowGap})` : undefined,
         '--width': dimensionToString(width),
         '--height': dimensionToString(height),
+        '--align-items': align,
+        '--justify-content': justify,
     } as React.CSSProperties;
 
     return (
