@@ -28,18 +28,18 @@ class FetchAPI {
         this.headers[key] = value;
     }
 
-    private buildUrl(endpoint: string, pathParams?: ParamsObject, queryParams?: ParamsObject): string {
+    private buildUrl(endpoint: string, path?: ParamsObject, query?: ParamsObject): string {
         let url = endpoint;
         // Interpolate path params (e.g. /users/:id)
-        if (pathParams) {
-            for (const [key, val] of Object.entries(pathParams)) {
+        if (path) {
+            for (const [key, val] of Object.entries(path)) {
                 url = url.replace(new RegExp(`:${key}(?=/|$)`, 'g'), encodeURIComponent(String(val)));
             }
         }
         // Build query string with support for array values
-        if (queryParams) {
+        if (query) {
             const usp = new URLSearchParams();
-            for (const [key, val] of Object.entries(queryParams)) {
+            for (const [key, val] of Object.entries(query)) {
                 if (val == null) continue;
                 if (Array.isArray(val)) {
                     val.forEach((v) => usp.append(key, String(v)));
@@ -58,14 +58,14 @@ class FetchAPI {
     public async get<T = any>(
         endpoint: string,
         options: {
-            pathParams?: ParamsObject;
-            queryParams?: ParamsObject;
+            path?: ParamsObject;
+            query?: ParamsObject;
             init?: RequestInit;
             headers?: Record<string, string>;
         } = {}
     ): Promise<T> {
-        const { pathParams, queryParams, init = {}, headers = {} } = options;
-        const finalUrl = this.buildUrl(endpoint, pathParams, queryParams);
+        const { path, query, init = {}, headers = {} } = options;
+        const finalUrl = this.buildUrl(endpoint, path, query);
         console.log('GET →', finalUrl);
         const response = await fetch(finalUrl, {
             method: 'GET',
@@ -78,15 +78,15 @@ class FetchAPI {
     public async post<T = any>(
         endpoint: string,
         options: {
-            pathParams?: ParamsObject;
-            queryParams?: ParamsObject;
+            path?: ParamsObject;
+            query?: ParamsObject;
             body?: any;
             init?: RequestInit;
             headers?: Record<string, string>;
         } = {}
     ): Promise<T> {
-        const { pathParams, queryParams, body, init = {}, headers = {} } = options;
-        const finalUrl = this.buildUrl(endpoint, pathParams, queryParams);
+        const { path, query, body, init = {}, headers = {} } = options;
+        const finalUrl = this.buildUrl(endpoint, path, query);
         console.log('POST →', finalUrl);
         const response = await fetch(finalUrl, {
             method: 'POST',
@@ -104,15 +104,15 @@ class FetchAPI {
     public async put<T = any>(
         endpoint: string,
         options: {
-            pathParams?: ParamsObject;
-            queryParams?: ParamsObject;
+            path?: ParamsObject;
+            query?: ParamsObject;
             body?: any;
             init?: RequestInit;
             headers?: Record<string, string>;
         } = {}
     ): Promise<T> {
-        const { pathParams, queryParams, body, init = {}, headers = {} } = options;
-        const finalUrl = this.buildUrl(endpoint, pathParams, queryParams);
+        const { path, query, body, init = {}, headers = {} } = options;
+        const finalUrl = this.buildUrl(endpoint, path, query);
         console.log('PUT →', finalUrl);
         const response = await fetch(finalUrl, {
             method: 'PUT',
@@ -130,14 +130,14 @@ class FetchAPI {
     public async delete<T = any>(
         endpoint: string,
         options: {
-            pathParams?: ParamsObject;
-            queryParams?: ParamsObject;
+            path?: ParamsObject;
+            query?: ParamsObject;
             init?: RequestInit;
             headers?: Record<string, string>;
         } = {}
     ): Promise<T> {
-        const { pathParams, queryParams, init = {}, headers = {} } = options;
-        const finalUrl = this.buildUrl(endpoint, pathParams, queryParams);
+        const { path, query, init = {}, headers = {} } = options;
+        const finalUrl = this.buildUrl(endpoint, path, query);
         console.log('DELETE →', finalUrl);
         const response = await fetch(finalUrl, {
             method: 'DELETE',
