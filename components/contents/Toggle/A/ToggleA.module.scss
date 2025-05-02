@@ -2,7 +2,9 @@
 .ToggleA {
     display: inline-block;
     width: var(--box-25);
+    min-width: var(--box-25);
     height: var(--box-25);
+
     border: 1px solid #ccc;
     border-radius: 2px;
     background-color: #fff;
@@ -26,7 +28,7 @@
             transform: translate(-50%, -70%) rotate(45deg);
 
             width: 6px;
-            height: 12px;
+            height: var(--box-10);
             border: solid #fff;
             border-width: 0 2px 2px 0;
         }
