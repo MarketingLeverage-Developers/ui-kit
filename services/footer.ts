@@ -5,7 +5,7 @@ import apiClient from './apiClient';
 
 export const getFooter = async () => {
     const response: Response<Footer> = await apiClient.get(`/client/home/footerInfo`, {
-        query: { sitUrl: config.server.siteURL },
+        query: { siteUrl: config.server.siteURL },
     });
     return response;
 };
