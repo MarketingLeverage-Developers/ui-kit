@@ -4,6 +4,10 @@ import { HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
 import { dimensionToVariable } from '@/ui-kit/utils';
+import Flex from '@/ui-kit/components/layouts/Flex/Flex';
+import Image from '@/ui-kit/components/contents/Image/Image';
+import X from '@/ui-kit/assets/images/x.svg';
+import Box from '@/ui-kit/components/layouts/Box/Box';
 
 type ContentProps = HTMLAttributes<HTMLDivElement> & {
     title: string;
@@ -15,7 +19,7 @@ type ContentProps = HTMLAttributes<HTMLDivElement> & {
 
 const Content = ({
     width = '40%',
-    height = '50%',
+    height = 'auto',
     backgroundColor = '#e88731',
     title,
     children,
@@ -35,7 +39,14 @@ const Content = ({
     return (
         <Modal.Content {...props} className={combinedStyle} style={{ ...contentVariables }}>
             <div className={styles.Header} style={{ ...headerVariables }}>
-                {title}
+                <Box padding={{ x: 20 }}>
+                    <Flex justify="space-between">
+                        {title}
+                        <Modal.Close>
+                            <Image image={X.src} alt="닫기" style={{ cursor: 'pointer' }} width={20} />
+                        </Modal.Close>
+                    </Flex>
+                </Box>
             </div>
             <div className={styles.Body}>{children}</div>
         </Modal.Content>
