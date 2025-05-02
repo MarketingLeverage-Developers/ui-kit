@@ -20,9 +20,10 @@ type ImageProps = HTMLAttributes<HTMLImageElement> & {
     height?: BoxSize | string;
     alt?: string;
     radius?: BorderRadius;
+    fit?: 'cover' | 'contain';
 };
 
-const Image = ({ image, width, height, alt, radius = 0, ...props }: ImageProps) => {
+const Image = ({ image, width, height, alt, radius = 0, fit = 'contain', ...props }: ImageProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--width': dimensionToVariable(width),
         '--height': dimensionToVariable(height),
@@ -39,6 +40,7 @@ const Image = ({ image, width, height, alt, radius = 0, ...props }: ImageProps) 
                   '--border-bottom-left-radius': dimensionToString(radius ?? 0),
                   '--border-bottom-right-radius': dimensionToString(radius ?? 0),
               }),
+        '--object-fit': fit,
     };
     return (
         <img

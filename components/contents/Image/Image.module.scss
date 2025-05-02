@@ -6,5 +6,5 @@
     border-bottom-left-radius: var(--border-bottom-left-radius);
     border-bottom-right-radius: var(--border-bottom-right-radius);
 
-    object-fit: contain;
+    object-fit: var(--object-fit);
 }
