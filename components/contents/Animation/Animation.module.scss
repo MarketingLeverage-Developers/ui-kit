@@ -1,0 +1,14 @@
+/* ToggleA.module.scss */
+
+.Animation {
+    /* 초기 상태: 투명, 살짝 아래로 내려간 상태 */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    /* 뷰포트에 들어왔을 때 붙일 클래스 */
+    &.Visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
