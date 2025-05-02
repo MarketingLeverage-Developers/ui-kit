@@ -10,28 +10,25 @@
     position: relative;
     transition: border-color 0.2s ease;
 
-    // 호버 시 살짝 강조
     &:hover {
         border-color: #999;
     }
 
-    // Active 상태일 때
     &.Active {
         background-color: var(--color);
         border: none;
 
-        // 체크 표시
         &::after {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 6px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%) rotate(45deg);
+
             width: 6px;
             height: 12px;
-            // border: solid red;
+            border: solid #fff;
             border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-            transform: translate(-50%, -50%);
         }
     }
 }
