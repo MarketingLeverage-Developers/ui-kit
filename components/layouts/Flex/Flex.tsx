@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Flex.module.scss';
-import { SpaceSize } from '@/ui-kit/types';
+import { SpaceSize } from '@/ui-kit/types/types';
 
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Responsive.module.scss';
-import { dimensionToString } from '../../../utils';
-import { SpaceSize } from '../../../types';
+import { dimensionToString } from '../../../libs/utils';
+import { SpaceSize } from '../../../types/types';
 
 type ResponsiveProps = {
     children: React.ReactNode;

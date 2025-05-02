@@ -1,5 +1,5 @@
 'use client';
-import { dimensionToString } from '@/ui-kit/utils';
+import { dimensionToString } from '@/ui-kit/libs/utils';
 import React from 'react';
 import { Container as MapDiv, Marker, NaverMap, NavermapsProvider, useNavermaps } from 'react-naver-maps';
 

@@ -7,7 +7,7 @@ import LeftArrow from '@/ui-kit/assets/images/left-arrow.png';
 import RightArrow from '@/ui-kit/assets/images/right-arrow.png';
 import DoubleLeftArrow from '@/ui-kit/assets/images/double-left-arrow.png';
 import DoubleRightArrow from '@/ui-kit/assets/images/double-right-arrow.png';
-import { HexColor } from '@/ui-kit/types';
+import { HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type PagingButtonsProps = {

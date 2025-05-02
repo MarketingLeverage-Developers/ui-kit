@@ -1,5 +1,5 @@
-import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/types';
-import { dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
+import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/types/types';
+import { dimensionToString, dimensionToVariable } from '@/ui-kit/libs/utils';
 import React, { HTMLAttributes } from 'react';
 import styles from './Image.module.scss';
 

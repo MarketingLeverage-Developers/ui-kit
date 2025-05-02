@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Fixed.module.scss';
-import { CSSPropertiesWithVars } from '@/ui-kit/types';
+import { CSSPropertiesWithVars } from '@/ui-kit/types/types';
 
 type FixedProps = {
     top?: number;

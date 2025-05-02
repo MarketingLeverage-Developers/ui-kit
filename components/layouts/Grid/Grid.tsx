@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Grid.module.scss';
-import { BoxSize, SpaceSize } from '@/ui-kit/types';
+import { BoxSize, SpaceSize } from '@/ui-kit/types/types';
 
 export type GridProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {

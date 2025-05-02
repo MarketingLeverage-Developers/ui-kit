@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from './InputA.module.scss';
 import classNames from 'classnames';
-import { ContentSize, CSSPropertiesWithVars } from '@/ui-kit/types';
+import { ContentSize, CSSPropertiesWithVars } from '@/ui-kit/types/types';
 
 type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
 type InputAProps = BaseInputProps & {

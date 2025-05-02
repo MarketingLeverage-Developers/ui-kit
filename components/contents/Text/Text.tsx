@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Text.module.scss';
-import { FontSize, FontWeight } from '@/ui-kit/types';
+import { FontSize, FontWeight } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {

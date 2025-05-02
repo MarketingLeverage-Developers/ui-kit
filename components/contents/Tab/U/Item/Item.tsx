@@ -3,7 +3,7 @@ import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import Text from '@/ui-kit/components/contents/Text/Text';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {

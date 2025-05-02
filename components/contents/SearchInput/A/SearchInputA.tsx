@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from './SearchInputA.module.scss';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import Image from '@/ui-kit/components/contents/Image/Image';
 import MagnifyImage from '@/ui-kit/assets/images/magnify.png';
 import { config } from '@/ui-kit/configs/config';

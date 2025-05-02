@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './Box.module.scss';
-import { SpaceSize } from '../../../types';
+import { SpaceSize } from '../../../types/types';
 
 type BoxProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;

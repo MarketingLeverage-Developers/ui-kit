@@ -2,7 +2,7 @@ import Toggle, { useToggle } from '@/headless/Toggle/Toggle';
 import styles from './ToggleA.module.scss';
 import classNames from 'classnames';
 import { MouseEventHandler } from 'react';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type ToggleAProps = {

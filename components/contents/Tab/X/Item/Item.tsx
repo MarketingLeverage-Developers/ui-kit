@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import classNames from 'classnames';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type ItemProps = {

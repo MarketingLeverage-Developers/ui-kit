@@ -1,6 +1,6 @@
 // src/config/config.ts
 
-import { HexColor } from '../types';
+import { HexColor } from '../types/types';
 
 function parseHexColor(raw?: string): HexColor | undefined {
     if (!raw) return undefined;

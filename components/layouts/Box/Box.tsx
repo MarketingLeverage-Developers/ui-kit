@@ -1,8 +1,8 @@
 import React, { HTMLAttributes } from 'react';
 import styles from './Box.module.scss';
 import classNames from 'classnames';
-import { BoxSize, SpaceSize } from '@/ui-kit/types';
-import { dimensionToSpace, dimensionToString, dimensionToVariable } from '@/ui-kit/utils';
+import { BoxSize, SpaceSize } from '@/ui-kit/types/types';
+import { dimensionToSpace, dimensionToString, dimensionToVariable } from '@/ui-kit/libs/utils';
 
 type HexColor = `#${string}`;
 

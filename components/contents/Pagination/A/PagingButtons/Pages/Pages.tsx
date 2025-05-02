@@ -3,7 +3,7 @@ import { usePagination } from '@/headless/Pagination/Pagination';
 import React from 'react';
 import styles from '../PagingButtons.module.scss';
 import { PaginationValueType } from '@/headless/Pagination/Pagination';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 
 // type PagesProps = React.ReactCo
 
