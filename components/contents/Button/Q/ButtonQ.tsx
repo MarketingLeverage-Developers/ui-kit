@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import styles from './ButtonQ.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 type ButtonQProps = HTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
@@ -9,7 +10,7 @@ type ButtonQProps = HTMLAttributes<HTMLButtonElement> & {
     full?: boolean;
 };
 
-const ButtonQ = ({ color = '#E88731', size = 'md', full, ...props }: ButtonQProps) => {
+const ButtonQ = ({ color = config.theme.primaryColor ?? '#E88731', size = 'md', full, ...props }: ButtonQProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
     };

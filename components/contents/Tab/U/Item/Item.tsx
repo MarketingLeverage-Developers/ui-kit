@@ -4,13 +4,14 @@ import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import Text from '@/ui-kit/components/contents/Text/Text';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
     label: string;
     color?: HexColor;
 };
 
-const Item = ({ label, color = '#E88731', ...props }: ItemProps) => {
+const Item = ({ label, color = config.theme.primaryColor ?? '#E88731', ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
 
     const className = classNames(styles.Item, {

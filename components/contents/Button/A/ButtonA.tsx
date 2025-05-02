@@ -2,6 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import styles from './ButtonA.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 type ButtonAProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
@@ -9,7 +10,7 @@ type ButtonAProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     full?: boolean;
 };
 
-const ButtonA = ({ color = '#E88731', size = 'md', full, ...props }: ButtonAProps) => {
+const ButtonA = ({ color = config.theme.primaryColor ?? '#E88731', size = 'md', full, ...props }: ButtonAProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
     };

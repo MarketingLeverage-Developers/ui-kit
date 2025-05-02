@@ -3,6 +3,7 @@ import styles from './ToggleA.module.scss';
 import classNames from 'classnames';
 import { MouseEventHandler } from 'react';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 type ToggleAProps = {
     onToggleClick: (value: boolean) => void;
@@ -10,7 +11,7 @@ type ToggleAProps = {
     color?: HexColor;
 };
 
-const ToggleA = ({ onToggleClick, defaultValue, color = '#E88731' }: ToggleAProps) => {
+const ToggleA = ({ onToggleClick, defaultValue, color = config.theme.primaryColor ?? '#E88731' }: ToggleAProps) => {
     const { changeToggle } = useToggle();
 
     const handleToggleClick: MouseEventHandler<HTMLButtonElement> = (e) => {

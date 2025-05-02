@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './Text.module.scss';
 import { FontSize, FontWeight } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
     size?: FontSize;
@@ -22,7 +23,7 @@ interface CSSPropertiesWithVars extends React.CSSProperties {
 const Text = ({
     size = 14,
     weight = 400,
-    color = '#000',
+    color = config.theme.textColor ?? '#000',
     align = 'left',
     decoration = 'none',
     height = size,

@@ -8,6 +8,7 @@ import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import Image from '@/ui-kit/components/contents/Image/Image';
 import X from '@/ui-kit/assets/images/x.svg';
 import Box from '@/ui-kit/components/layouts/Box/Box';
+import { config } from '@/ui-kit/configs/config';
 
 type ContentProps = HTMLAttributes<HTMLDivElement> & {
     title: string;
@@ -20,7 +21,7 @@ type ContentProps = HTMLAttributes<HTMLDivElement> & {
 const Content = ({
     width = '40%',
     height = 'auto',
-    backgroundColor = '#e88731',
+    backgroundColor = config.theme.primaryColor ?? '#E88731',
     title,
     children,
     ...props

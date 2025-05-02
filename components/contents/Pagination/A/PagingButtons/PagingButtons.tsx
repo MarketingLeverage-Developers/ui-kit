@@ -8,13 +8,14 @@ import RightArrow from '@/ui-kit/assets/images/right-arrow.png';
 import DoubleLeftArrow from '@/ui-kit/assets/images/double-left-arrow.png';
 import DoubleRightArrow from '@/ui-kit/assets/images/double-right-arrow.png';
 import { HexColor } from '@/ui-kit/types';
+import { config } from '@/ui-kit/configs/config';
 
 type PagingButtonsProps = {
-    buttonColor: HexColor;
+    buttonColor?: HexColor;
     onPagingButtonClick: (paginationValue: PaginationValueType) => void;
 };
 
-const PagingButtons = ({ buttonColor, onPagingButtonClick }: PagingButtonsProps) => {
+const PagingButtons = ({ buttonColor = config.theme.primaryColor, onPagingButtonClick }: PagingButtonsProps) => {
     const handleFastPrevButtonClick = async (paginationValue: PaginationValueType) => {
         await onPagingButtonClick(paginationValue);
     };
