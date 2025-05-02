@@ -4,9 +4,15 @@ import { Response } from '../types/response';
 import { Review } from '../types/review';
 import apiClient from './apiClient';
 
-export const getReviewList = async () => {
+export type GetReviewListQuery = {
+    [key: string]: any;
+    page: string;
+    size: string;
+};
+
+export const getReviewList = async ({ query }: Request<undefined, GetReviewListQuery, undefined>) => {
     const response: Response<Review[]> = await apiClient.get(`/client/review`, {
-        query: { siteUrl: config.server.siteURL },
+        query: { siteUrl: config.server.siteURL, ...query },
     });
     return response;
 };
