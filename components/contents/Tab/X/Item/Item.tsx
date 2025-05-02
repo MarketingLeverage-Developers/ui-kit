@@ -17,7 +17,7 @@ const Item = ({ image, value, onItemClick }: ItemProps) => {
     });
 
     return (
-        <TabGroup.Item value={value} className={className} onClick={() => onItemClick(value)}>
+        <TabGroup.Item value={value} className={className} onTabGroupItemClick={() => onItemClick(value)}>
             <img src={image} alt="이미지" />
         </TabGroup.Item>
     );
