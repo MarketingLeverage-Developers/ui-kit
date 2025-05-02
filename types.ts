@@ -54,6 +54,8 @@ export type FontSize =
 export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 export type BoxSize =
+    | 10
+    | 15
     | 20
     | 25
     | 30
