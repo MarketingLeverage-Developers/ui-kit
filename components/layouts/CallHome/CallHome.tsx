@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { callHome } from '@/ui-kit/services';
 
 type ApiData = any; // 실제 데이터 타입에 맞게 수정하세요.
@@ -10,13 +10,17 @@ interface ApiCallerProps {}
 export default function CallHome({}: ApiCallerProps) {
     const searchParams = useSearchParams();
     const paramsObj: Record<string, string> = Object.fromEntries(searchParams.entries());
+    const router = useRouter();
 
     useEffect(() => {
         (async () => {
             try {
                 await callHome({ query: paramsObj });
-            } catch (e) {
-                console.log(e);
+            } catch (e: any) {
+                if (true) {
+                    router.push('/403');
+                    return;
+                }
             }
         })();
     }, []);
