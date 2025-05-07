@@ -66,7 +66,6 @@ class FetchAPI {
     ): Promise<T> {
         const { path, query, init = {}, headers = {} } = options;
         const finalUrl = this.buildUrl(endpoint, path, query);
-        console.log('GET →', finalUrl);
         const response = await fetch(finalUrl, {
             method: 'GET',
             headers: { ...this.headers, ...headers },
