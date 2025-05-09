@@ -1,7 +1,6 @@
 .Item {
     padding-top: var(--space-20);
     padding-bottom: var(--space-20);
-
     font-size: var(--font-22);
 
     flex: 1;
@@ -10,6 +9,22 @@
 
     &.Outlined {
         border: 1px solid #e2e2e2;
+    }
+
+    &.Sm {
+        padding-top: var(--space-10);
+        padding-bottom: var(--space-10);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding-top: var(--space-15);
+        padding-bottom: var(--space-15);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-20);
+        font-size: var(--font-22);
     }
 
     &.Active {

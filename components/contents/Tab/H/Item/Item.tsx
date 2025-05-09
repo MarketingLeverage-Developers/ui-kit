@@ -1,20 +1,24 @@
 import classNames from 'classnames';
 import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
+import { ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
 import { config } from '@/ui-kit/configs/config';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
     color?: HexColor;
     variant?: 'combined' | 'outlined';
+    size?: ContentSize;
 };
 
-const Item = ({ color = config.theme.primaryColor ?? '#E88731', variant, ...props }: ItemProps) => {
+const Item = ({ size = 'md', color = config.theme.primaryColor ?? '#E88731', variant, ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
 
     const className = classNames(styles.Item, {
         [styles.Active]: isActiveTab(props.value),
         [styles.Outlined]: variant === 'outlined',
+        [styles.Sm]: size === 'sm',
+        [styles.Md]: size === 'md',
+        [styles.Lg]: size === 'lg',
     });
 
     const cssVariables: CSSPropertiesWithVars = {
