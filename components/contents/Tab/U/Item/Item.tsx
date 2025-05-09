@@ -23,7 +23,7 @@ const Item = ({ label, color = config.theme.primaryColor ?? '#E88731', ...props 
     };
 
     return (
-        <TabGroup.Item {...props} style={{ background: 'inherit', ...cssVariables }}>
+        <TabGroup.Item {...props} style={{ background: 'inherit', ...cssVariables }} className={styles.Wrapper}>
             <Flex gap={15} align="center">
                 <div className={className} />
                 <Text size={18}>{label}</Text>

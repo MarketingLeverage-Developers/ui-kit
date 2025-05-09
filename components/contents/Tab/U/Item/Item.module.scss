@@ -1,11 +1,17 @@
 /* Item.module.scss */
+.Wrapper {
+    border: none;
+    background-color: inherit;
+}
+
 .Item {
     position: relative; /* ::after 위치 기준 */
     width: var(--box-25);
     height: var(--box-25);
     border-radius: 50%;
-    border: 1px solid #e2e2e2;
     box-sizing: border-box;
+
+    border: none;
 
     &.Active {
         border: 1px solid var(--color);

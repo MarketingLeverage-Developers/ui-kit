@@ -1,46 +1,30 @@
+import SelectGroup from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
 import styles from './AccordionF.module.scss';
-import Accordion, { useAccordion } from '@/headless/Accordion/Accordion';
-import Text from '@/ui-kit/components/contents/Text/Text';
-import Image from '@/ui-kit/components/contents/Image/Image';
-import ArrowUp from '@/ui-kit/assets/images/accordion-arrow-up.svg';
-import ArrowDown from '@/ui-kit/assets/images/accordion-arrow-down.svg';
+import Accordion from '@/headless/Accordion/Accordion';
+import Item from './Item/Item';
+import Button from './Visible/Visible';
+import Content from './Hidden/Hidden';
+import Hidden from './Hidden/Hidden';
+import Visible from './Visible/Visible';
 
-type AccordionProps = {
+type AccordionFProps = {
     children: React.ReactNode;
-    label: string;
+    defaultValue: string;
 };
 
-const AccordionF = ({ children, label }: AccordionProps) => {
-    const { accordionValue } = useAccordion();
-
+const AccordionF = ({ children, defaultValue }: AccordionFProps) => {
     return (
-        <>
-            <Accordion.Box className={styles.Box}>
-                <Accordion.Button className={styles.Button}>
-                    <div className={styles.Absolute}>
-                        <Image image={accordionValue ? ArrowUp.src : ArrowDown.src} />
-                    </div>
-                    <Accordion.Visible className={styles.Visible}>
-                        <Text size={20} weight={500} color="#383838">
-                            {label}
-                        </Text>
-                    </Accordion.Visible>
-                </Accordion.Button>
-                <Accordion.Hidden className={styles.Hidden}>{children}</Accordion.Hidden>
-            </Accordion.Box>
-        </>
+        <SelectGroup defaultValue={defaultValue}>
+            <Accordion>
+                <Accordion.Box className={styles.Box}>{children}</Accordion.Box>
+            </Accordion>
+        </SelectGroup>
     );
 };
 
-export default withProvider(AccordionF);
+export default AccordionF;
 
-function withProvider<P extends {}>(WrappedComponent: React.ComponentType<P>): React.FC<P> {
-    return (props: P) => {
-        return (
-            <Accordion>
-                <WrappedComponent {...(props as any)} />
-            </Accordion>
-        );
-    };
-}
+AccordionF.Item = Item;
+AccordionF.Hidden = Hidden;
+AccordionF.Visible = Visible;

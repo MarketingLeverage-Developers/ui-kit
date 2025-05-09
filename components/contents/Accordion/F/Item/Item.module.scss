@@ -1,0 +1,14 @@
+.Item {
+    list-style-type: none; /* 불릿 타입 자체를 없앰 */
+}
+.LabelWrapper {
+    width: 100%;
+    padding: var(--space-10) 0;
+    display: flex;
+    justify-content: space-between;
+
+    .Label {
+        font-size: var(--font-16);
+        color: #a6a6a6;
+    }
+}
