@@ -1,0 +1,18 @@
+.sidebar {
+    grid-area: sidebar;
+    // background: var(--base-color-senary);
+    margin: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+    // border-right: 1px solid var(--base-color-quaternary);
+    // box-shadow: inset 0 0 7.5px rgba(0, 0, 0, 0.1); /* 안쪽 그림자 추가 */
+    z-index: var(--z-index-sidebar);
+
+    @media (max-width: 1280px) {
+        width: fit-content;
+        justify-self: start;
+    }
+}

@@ -1,0 +1,6 @@
+.Content {
+    /* flex: [flex-grow] [flex-shrink] [flex-basis] */
+    flex: 0 100%;
+    height: 100%;
+    overflow: auto; /* 필요에 따라 내부 내용이 넘칠 경우 처리 */
+}
