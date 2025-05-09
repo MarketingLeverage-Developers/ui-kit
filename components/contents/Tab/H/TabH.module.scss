@@ -1,3 +1,28 @@
 .TabH {
     width: 100%;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+
+    &.Sm {
+        height: var(--box-40);
+        font-size: var(--font-18);
+
+        button {
+            font-size: var(--font-18);
+        }
+    }
+    &.Md {
+        height: var(--box-50);
+        font-size: var(--font-20);
+        button {
+            font-size: var(--font-20);
+        }
+    }
+    &.Lg {
+        height: var(--box-60);
+        font-size: var(--font-22);
+        button {
+            font-size: var(--font-22);
+        }
+    }
 }

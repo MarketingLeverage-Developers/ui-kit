@@ -16,9 +16,9 @@ const Item = ({ size = 'md', color = config.theme.primaryColor ?? '#E88731', var
     const className = classNames(styles.Item, {
         [styles.Active]: isActiveTab(props.value),
         [styles.Outlined]: variant === 'outlined',
-        [styles.Sm]: size === 'sm',
-        [styles.Md]: size === 'md',
-        [styles.Lg]: size === 'lg',
+        // [styles.Sm]: size === 'sm',
+        // [styles.Md]: size === 'md',
+        // [styles.Lg]: size === 'lg',
     });
 
     const cssVariables: CSSPropertiesWithVars = {
