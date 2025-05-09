@@ -1,3 +1,4 @@
+import { config } from '../configs/config';
 import { Request } from '../types/request';
 import apiClient from './apiClient';
 
@@ -8,14 +9,13 @@ export interface PostInquiryBody {
     lastPhone: string;
     carModel: string;
     carRentType: string;
-    siteUrl: string;
     inquireLocation: string;
 }
 
 type PostInquiryRequest = Request<PostInquiryBody>;
 
 export const postInquiry = async ({ body }: PostInquiryRequest) => {
-    await apiClient.post('/client/inquire', { body });
+    await apiClient.post('/client/inquire', { body: { ...body, siteUrl: config.server.siteURL } });
 };
 
 // body: {

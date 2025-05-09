@@ -1,6 +1,6 @@
 import React from 'react';
-import { CSSPropertiesWithVars } from '../../types';
 import styles from './Absolute.module.scss';
+import { CSSPropertiesWithVars } from '@/ui-kit/types/types';
 
 type AbsoluteProps = {
     top?: number;
