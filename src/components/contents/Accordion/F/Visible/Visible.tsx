@@ -1,5 +1,5 @@
-import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
-import Accordion, { useAccordion } from 'headless/Accordion/Accordion';
+import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
+import Accordion, { useAccordion } from '@/headless/Accordion/Accordion';
 import Flex from '../../../../layouts/Flex/Flex';
 import styles from './Visible.module.scss';
 import Image from '../../../Image/Image';

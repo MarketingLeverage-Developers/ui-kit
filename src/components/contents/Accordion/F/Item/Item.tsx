@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
+import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
 import { FaCheck } from 'react-icons/fa6';
 import styles from './Item.module.scss';
 import { useAccordion } from '@/headless/Accordion/Accordion';

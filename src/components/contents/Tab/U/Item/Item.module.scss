@@ -11,10 +11,10 @@
     border-radius: 50%;
     box-sizing: border-box;
 
-    border: none;
+    border: 1px solid #e2e2e2;
 
     &.Active {
-        border: 1px solid var(--color);
+        border: 1px solid var(--color, var(--primary-color));
 
         &::after {
             content: ''; // pseudo-element를 보여주기 위한 필수 속성
@@ -25,7 +25,7 @@
             width: 60%;
             height: 65%;
             border-radius: 50%;
-            background-color: var(--color);
+            background-color: var(--color, var(--primary-color));
             transform: translate(-50%, -50%);
         }
     }

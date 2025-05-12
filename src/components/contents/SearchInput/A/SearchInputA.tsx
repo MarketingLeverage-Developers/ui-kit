@@ -2,7 +2,7 @@ import React, { InputHTMLAttributes } from 'react';
 import styles from './SearchInputA.module.scss';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import Image from '../../Image/Image';
-import MagnifyImage from '../../../../../assets/images/magnify.png';
+import MagnifyImage from '../../../../assets/images/magnify.png';
 
 type SearchInputAProps = InputHTMLAttributes<HTMLInputElement> & { buttonColor?: HexColor; onButtonClick?: () => void };
 

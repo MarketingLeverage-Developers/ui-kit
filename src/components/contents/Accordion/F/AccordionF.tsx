@@ -1,4 +1,4 @@
-import SelectGroup from 'headless/SelectGroup/SelectGroup';
+import SelectGroup from '@/headless/SelectGroup/SelectGroup';
 import React from 'react';
 import styles from './AccordionF.module.scss';
 import Accordion from '@/headless/Accordion/Accordion';
