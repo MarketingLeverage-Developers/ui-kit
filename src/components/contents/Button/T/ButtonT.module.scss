@@ -9,6 +9,11 @@
 
     cursor: pointer;
 
+    &:hover {
+        background-color: var(--hover-color, none);
+        border: 1px solid var(--hover-color, var(--color));
+    }
+
     &.Sm {
         width: var(--box-40);
         font-size: var(--font-18);

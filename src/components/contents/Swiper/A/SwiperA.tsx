@@ -11,6 +11,7 @@ import LeftArrow from '../../../../assets/images/swiper-left-arrow.png';
 import RightArrow from '../../../../assets/images/swiper-right-arrow.png';
 import Image from '../../Image/Image';
 import Box from '../../../layouts/Box/Box';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 type SwiperAProps = {
     children: React.ReactNode;
@@ -44,12 +45,23 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
 
             <Box padding={{ y: 15 }}>
                 <Flex gap={15} justify="end">
-                    <ButtonT size="lg" color="#A6A6A6" onClick={() => swiperRef.current?.slidePrev()}>
-                        <Image image={LeftArrow.src} width={25} height={25} />
+                    <ButtonT
+                        size="lg"
+                        color="#A6A6A6"
+                        hoverColor="#417EF0"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                    >
+                        <MdKeyboardArrowLeft size={30} />
                     </ButtonT>
-                    <ButtonQ size="lg" color="#417EF0" onClick={() => swiperRef.current?.slideNext()}>
-                        <Image image={RightArrow.src} width={25} height={25} />
-                    </ButtonQ>
+
+                    <ButtonT
+                        size="lg"
+                        color="#A6A6A6"
+                        hoverColor="#417EF0"
+                        onClick={() => swiperRef.current?.slideNext()}
+                    >
+                        <MdKeyboardArrowRight size={30} />
+                    </ButtonT>
                 </Flex>
             </Box>
         </>

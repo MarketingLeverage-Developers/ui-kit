@@ -25,7 +25,9 @@ const Item = ({ label, color, ...props }: ItemProps) => {
         <TabGroup.Item {...props} style={{ background: 'inherit', ...cssVariables }} className={styles.Wrapper}>
             <Flex gap={15} align="center">
                 <div className={className} />
-                <Text size={18}>{label}</Text>
+                <Text size={18} color="#383838">
+                    {label}
+                </Text>
             </Flex>
         </TabGroup.Item>
     );

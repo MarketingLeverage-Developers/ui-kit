@@ -27,7 +27,7 @@
 
     font-size: var(--font-size);
     font-weight: var(--font-weight);
-    color: var(--color);
+    color: var(--color, var(--text-color));
     text-align: var(--text-align);
     text-decoration: var(--text-decoration);
     line-height: var(--line-height);

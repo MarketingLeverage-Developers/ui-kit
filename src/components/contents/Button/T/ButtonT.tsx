@@ -7,11 +7,13 @@ type ButtonTProps = HTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     full?: boolean;
+    hoverColor?: HexColor;
 };
 
-const ButtonT = ({ color, size = 'md', full, ...props }: ButtonTProps) => {
+const ButtonT = ({ color, hoverColor, size = 'md', full, ...props }: ButtonTProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
+        '--hover-color': hoverColor,
     };
 
     const combinedStyles = classNames(styles.ButtonT, props.className, {
