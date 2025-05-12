@@ -51,7 +51,7 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
                         hoverColor="#417EF0"
                         onClick={() => swiperRef.current?.slidePrev()}
                     >
-                        <MdKeyboardArrowLeft size={30} />
+                        <MdKeyboardArrowLeft color="#383838" size={30} />
                     </ButtonT>
 
                     <ButtonT
@@ -60,7 +60,7 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
                         hoverColor="#417EF0"
                         onClick={() => swiperRef.current?.slideNext()}
                     >
-                        <MdKeyboardArrowRight size={30} />
+                        <MdKeyboardArrowRight color="#383838" size={30} />
                     </ButtonT>
                 </Flex>
             </Box>
