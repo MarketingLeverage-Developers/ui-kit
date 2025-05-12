@@ -8,7 +8,7 @@ type SearchInputAProps = InputHTMLAttributes<HTMLInputElement> & { buttonColor?:
 
 const SearchInputA = ({ color, onButtonClick, ...props }: SearchInputAProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--button-color': color,
+        '--color': color,
     };
 
     return (

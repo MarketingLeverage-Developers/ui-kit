@@ -12,14 +12,9 @@
     height: 100%;
 
     &.Active {
-        background-color: var(--active-background-color);
+        background-color: var(--color);
         color: #fff;
         font-weight: 600;
-
-        // &.Outlined {
-        //     background-color: #fff;
-        //     border: 1px solid var(--active-background-color);
-        // }
     }
 
     &:first-child {

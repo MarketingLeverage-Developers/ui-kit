@@ -10,7 +10,7 @@
     background-color: #f0f0f0;
 
     &.Active {
-        background-color: var(--active-background-color);
+        background-color: var(--color, var(--primary-color));
         color: #fff;
     }
     &:first-child {

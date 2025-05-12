@@ -4,17 +4,17 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import styles from './SwiperA.module.scss';
+import styles from './SwiperB.module.scss';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import classNames from 'classnames';
 
-type SwiperAProps = {
+type SwiperBProps = {
     children: React.ReactNode;
     slidesPerView?: number;
     prevLocation?: number;
 };
 
-const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
+const SwiperB = ({ slidesPerView = 1, children }: SwiperBProps) => {
     // Swiper 인스턴스를 보관할 ref
     const swiperRef = useRef<any>(null);
 
@@ -22,9 +22,9 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
     const nextClassName = classNames(styles.Button, styles.Next);
 
     return (
-        <div className={styles.Wrapper}>
+        <div>
             <Swiper
-                className={styles.SwiperA}
+                className={styles.SwiperB}
                 modules={[Autoplay, Navigation]}
                 spaceBetween={25}
                 slidesPerView={slidesPerView}
@@ -43,17 +43,19 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
                 {children}
             </Swiper>
 
-            <div className={prevClassName} onClick={() => swiperRef.current?.slidePrev()}>
-                <MdKeyboardArrowLeft className={styles.Icon} />
-            </div>
-            <div className={nextClassName} onClick={() => swiperRef.current?.slidePrev()}>
-                <MdKeyboardArrowRight className={styles.Icon} onClick={() => swiperRef.current?.slideNext()} />
+            <div className={styles.ButtonWrapper}>
+                <div className={prevClassName} onClick={() => swiperRef.current?.slidePrev()}>
+                    <MdKeyboardArrowLeft className={styles.Icon} />
+                </div>
+                <div className={nextClassName} onClick={() => swiperRef.current?.slidePrev()}>
+                    <MdKeyboardArrowRight className={styles.Icon} onClick={() => swiperRef.current?.slideNext()} />
+                </div>
             </div>
         </div>
     );
 };
 
-export default SwiperA;
+export default SwiperB;
 
 // const Button = () => {
 

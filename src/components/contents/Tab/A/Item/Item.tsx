@@ -15,7 +15,7 @@ const Item = ({ color, ...props }: ItemProps) => {
     });
 
     const cssVariables: CSSPropertiesWithVars = {
-        '--active-background-color': color,
+        '--color': color,
     };
 
     return (

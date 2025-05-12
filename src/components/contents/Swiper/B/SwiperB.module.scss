@@ -1,14 +1,7 @@
-.Wrapper {
-    position: relative;
-    height: 100%;
-}
-.SwiperA {
+.SwiperB {
 }
 
 .Button {
-    position: absolute;
-    z-index: 200;
-
     width: var(--box-55);
     height: var(--box-55);
     border-radius: 50%;
@@ -46,4 +39,11 @@
     top: 50%;
     transform: translateY(-50%);
     right: var(--space-20);
+}
+
+.ButtonWrapper {
+    padding-top: var(--space-45);
+    display: flex;
+    justify-content: end;
+    gap: var(--space-15);
 }

@@ -21,7 +21,7 @@ const Item = ({ size = 'md', color, variant, ...props }: ItemProps) => {
     });
 
     const cssVariables: CSSPropertiesWithVars = {
-        '--active-background-color': color,
+        '--color': color,
     };
 
     return (

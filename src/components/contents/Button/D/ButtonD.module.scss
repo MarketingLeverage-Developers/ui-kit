@@ -1,8 +1,8 @@
 .ButtonD {
     width: fit-content;
     border-radius: 45px;
-    color: var(--color);
-    border: 1px solid var(--color);
+    color: var(--color, var(--primary-color));
+    border: 1px solid var(--color, var(--primary-color));
     background-color: inherit;
 
     cursor: pointer;

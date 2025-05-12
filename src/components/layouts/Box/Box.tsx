@@ -30,7 +30,7 @@ type PaddingSize =
 
 type BoxAProps = HTMLAttributes<HTMLDivElement> & {
     padding?: PaddingSize;
-    backgroundColor?: HexColor | 'inherit' | 'transparent';
+    backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
     backgroundImage?: string;
     shadow?: boolean;
     width?: BoxSize | string;

@@ -4,7 +4,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     color: #fff;
-    background-color: var(--color);
+    background-color: var(--color, var(--primary-color));
 
     cursor: pointer;
 

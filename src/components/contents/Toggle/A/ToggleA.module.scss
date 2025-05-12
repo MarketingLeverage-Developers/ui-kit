@@ -17,7 +17,7 @@
     }
 
     &.Active {
-        background-color: var(--color);
+        background-color: var(--color, var(--primary-color));
         border: none;
 
         &::after {

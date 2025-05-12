@@ -10,7 +10,7 @@
     background-color: #fff;
 
     &.Active {
-        border: 2px solid var(--color);
+        border: 2px solid var(--color, var(--primary-color));
     }
 
     img {

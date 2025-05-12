@@ -25,6 +25,6 @@
         aspect-ratio: 1/1;
         border-radius: 50%;
 
-        background-color: var(--button-color);
+        background-color: var(--color, var(--primary-color));
     }
 }

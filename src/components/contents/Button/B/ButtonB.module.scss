@@ -3,7 +3,7 @@
     border-radius: 8px;
     color: #fff;
     cursor: pointer;
-    background-color: var(--color);
+    background-color: var(--color, var(--primary-color));
     border: none;
 
     &.Xs {
