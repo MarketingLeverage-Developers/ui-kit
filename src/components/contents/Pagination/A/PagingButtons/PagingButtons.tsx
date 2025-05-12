@@ -4,7 +4,7 @@ import { PaginationValueType } from '@/headless/Pagination/Pagination';
 import { HexColor } from '../../../../../types';
 import Flex from '../../../../layouts/Flex/Flex';
 import Image from '../../../Image/Image';
-import DoubleLeftArrow from '../../../../../assets/images/x.svg';
+import DoubleLeftArrow from '../../../../../assets/images/double-left-arrow.png';
 import LeftArrow from '../../../../../assets/images/left-arrow.png';
 import RightArrow from '../../../../../assets/images/right-arrow.png';
 import DoubleRightArrow from '../../../../../assets/images/double-right-arrow.png';
