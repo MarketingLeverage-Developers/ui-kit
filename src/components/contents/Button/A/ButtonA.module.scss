@@ -1,0 +1,28 @@
+.ButtonA {
+    width: fit-content;
+    border-radius: 45px;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--color, var(--primary-color));
+
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
+    }
+    &.Full {
+        width: 100%;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
