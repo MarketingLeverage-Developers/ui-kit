@@ -1,6 +1,6 @@
 .Content {
     position: absolute;
-    top: 100%;
+    top: calc(100% + var(--space-7));
     left: 50%;
     transform: translateX(-50%);
     padding: var(--space-7) var(--space-15);
