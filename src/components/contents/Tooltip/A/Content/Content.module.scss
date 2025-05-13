@@ -1,0 +1,29 @@
+.Content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-7) var(--space-15);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--color, var(--primary-color));
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--font-14);
+    color: #fff;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; /* Content 바깥으로 붙이기 */
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        border-width: 6px; /* 화살표 크기 */
+        border-style: solid;
+        border-color: transparent /* 왼쪽 */ transparent /* 오른쪽 */ var(--color, var(--primary-color)) /* 아래쪽 */
+            transparent; /* 위쪽 */
+        width: 0;
+        height: 0;
+    }
+}
