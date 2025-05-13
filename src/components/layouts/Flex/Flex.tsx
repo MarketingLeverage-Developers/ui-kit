@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './Flex.module.scss';
 import { SpaceSize } from '../../../types';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
@@ -40,8 +41,8 @@ const Flex = ({
         '--justify-content': justify,
         '--wrap': wrap,
         '--gap': `var(--space-${gap})`,
-        '--width': dimensionToString(width),
-        '--height': dimensionToString(height),
+        '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
     } as React.CSSProperties;
 
     return (
