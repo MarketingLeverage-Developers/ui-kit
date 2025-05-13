@@ -2,6 +2,7 @@ import { BoxSize, CSSPropertiesWithVars } from '../../../types';
 import { dimensionToString, dimensionToVariable } from '../../../utils';
 import React, { HTMLAttributes } from 'react';
 import styles from './Image.module.scss';
+import classNames from 'classnames';
 
 type RadiusValue = number | string;
 
@@ -42,13 +43,16 @@ const Image = ({ image, width, height, alt, radius = 0, fit = 'contain', ...prop
               }),
         '--object-fit': fit,
     };
+
+    const className = classNames(styles.Image, props.className);
+
     return (
         <img
             {...props}
             loading="lazy"
             src={image}
             alt={alt}
-            className={styles.Image}
+            className={className}
             style={{ ...cssVariables, ...props.style }}
         />
     );

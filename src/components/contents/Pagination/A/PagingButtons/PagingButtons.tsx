@@ -3,11 +3,11 @@ import Pagination from '../PaginationA';
 import { PaginationValueType } from '@/headless/Pagination/Pagination';
 import { HexColor } from '../../../../../types';
 import Flex from '../../../../layouts/Flex/Flex';
-import Image from '../../../Image/Image';
-import DoubleLeftArrow from '../../../../../assets/images/double-left-arrow.png';
-import LeftArrow from '../../../../../assets/images/left-arrow.png';
-import RightArrow from '../../../../../assets/images/right-arrow.png';
-import DoubleRightArrow from '../../../../../assets/images/double-right-arrow.png';
+import styles from './PagingButtons.module.scss';
+import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
+import { MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 type PagingButtonsProps = {
     buttonColor?: HexColor;
@@ -34,17 +34,17 @@ const PagingButtons = ({ buttonColor, onPagingButtonClick }: PagingButtonsProps)
     return (
         <Flex justify="center" align="center">
             <Pagination.FastPrev onFastPrevClick={handleFastPrevButtonClick}>
-                <Image image={DoubleLeftArrow.src} height={20} />
+                <MdOutlineKeyboardDoubleArrowLeft className={styles.Icon} />
             </Pagination.FastPrev>
             <Pagination.Prev onPrevClick={handlePrevButtonClick}>
-                <Image image={LeftArrow.src} height={20} />
+                <MdOutlineKeyboardArrowLeft className={styles.Icon} />
             </Pagination.Prev>
             <Pagination.Pages buttonColor={buttonColor} onPagesClick={handlePagesButtonClick} />
             <Pagination.Next onNextClick={handleNextButtonClick}>
-                <Image image={RightArrow.src} height={20} />
+                <MdOutlineKeyboardArrowRight className={styles.Icon} />
             </Pagination.Next>
             <Pagination.FastNext onFastNextClick={handleFastNextButtonClick}>
-                <Image image={DoubleRightArrow.src} height={20} />
+                <MdOutlineKeyboardDoubleArrowRight className={styles.Icon} />
             </Pagination.FastNext>
         </Flex>
     );

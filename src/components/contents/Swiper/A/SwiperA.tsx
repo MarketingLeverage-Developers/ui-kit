@@ -46,8 +46,8 @@ const SwiperA = ({ slidesPerView = 1, children }: SwiperAProps) => {
             <div className={prevClassName} onClick={() => swiperRef.current?.slidePrev()}>
                 <MdKeyboardArrowLeft className={styles.Icon} />
             </div>
-            <div className={nextClassName} onClick={() => swiperRef.current?.slidePrev()}>
-                <MdKeyboardArrowRight className={styles.Icon} onClick={() => swiperRef.current?.slideNext()} />
+            <div className={nextClassName} onClick={() => swiperRef.current?.slideNext()}>
+                <MdKeyboardArrowRight className={styles.Icon} />
             </div>
         </div>
     );
