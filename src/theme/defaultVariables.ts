@@ -3,6 +3,7 @@ export const defaultVariables: Record<string, string> = {
     '--inner': '1920',
 
     // --font sizes
+    '--font-13': 'clamp(12px, calc(14 / var(--inner) * 100vw), 13px)',
     '--font-14': 'clamp(12px, calc(14 / var(--inner) * 100vw), 14px)',
     '--font-15': 'clamp(13px, calc(15 / var(--inner) * 100vw), 15px)',
     '--font-16': 'clamp(14px, calc(16 / var(--inner) * 100vw), 16px)',

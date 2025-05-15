@@ -2,10 +2,9 @@
 
 import React from 'react';
 import styles from './AccordionA.module.scss';
-import ArrowUp from '../../../../assets/images/accordion-arrow-up.svg';
-import ArrowDown from '../../../../assets/images/accordion-arrow-down.svg';
-import Image from '../../Image/Image';
 import Accordion, { useAccordion } from '@/headless/Accordion/Accordion';
+import { MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 type AccordionAProps = {
     visible: React.ReactNode;
@@ -21,7 +20,7 @@ const AccordionA = ({ visible, hidden }: AccordionAProps) => {
         <Accordion.Box className={styles.Box}>
             <Accordion.Button className={styles.Button}>
                 <div className={styles.Absolute}>
-                    <Image image={accordionValue ? ArrowUp.src : ArrowDown.src} />
+                    {accordionValue ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                 </div>
                 <Accordion.Visible className={styles.Visible}>{visible}</Accordion.Visible>
             </Accordion.Button>

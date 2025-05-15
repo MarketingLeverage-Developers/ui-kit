@@ -1,6 +1,6 @@
 import React from 'react';
 import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
-import { FaCheck } from 'react-icons/fa6';
+import { FiCheck } from 'react-icons/fi';
 import styles from './Item.module.scss';
 import { useAccordion } from '@/headless/Accordion/Accordion';
 
@@ -31,7 +31,7 @@ const Item = ({ value, onItemClick }: ItemProps) => {
         <SelectGroup.Item className={styles.Item} value={value} onSelectGroupItemClick={handleClick}>
             <div className={styles.LabelWrapper}>
                 <div className={styles.Label}>{displayLabel}</div>
-                {isCurrentItem && <FaCheck width={16} color="#f98131" />}
+                {isCurrentItem && <FiCheck width={16} color="#f98131" />}
             </div>
         </SelectGroup.Item>
     );

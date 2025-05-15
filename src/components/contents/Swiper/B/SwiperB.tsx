@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import styles from './SwiperB.module.scss';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import classNames from 'classnames';
+import type { Swiper as SwiperCore } from 'swiper';
 
 type SwiperBProps = {
     children: React.ReactNode;
@@ -35,7 +36,7 @@ const SwiperB = ({ slidesPerView = 1, children }: SwiperBProps) => {
                     disableOnInteraction: false,
                 }}
                 // onSwiper 콜백으로 인스턴스 저장
-                onSwiper={(swiper) => {
+                onSwiper={(swiper: SwiperCore) => {
                     swiperRef.current = swiper;
                 }}
                 // 기존 Navigation 설정은 제거해도 됩니다.

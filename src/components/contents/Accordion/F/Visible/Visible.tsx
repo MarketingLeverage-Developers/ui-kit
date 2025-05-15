@@ -2,9 +2,8 @@ import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup'
 import Accordion, { useAccordion } from '@/headless/Accordion/Accordion';
 import Flex from '../../../../layouts/Flex/Flex';
 import styles from './Visible.module.scss';
-import Image from '../../../Image/Image';
-import ArrowUp from '../../../../../assets/images/accordion-arrow-up.svg';
-import ArrowDown from '../../../../../assets/images/accordion-arrow-down.svg';
+import { MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 type VisibleProps = {};
 
@@ -19,7 +18,7 @@ const Visible = ({}: VisibleProps) => {
         <Accordion.Visible>
             <Accordion.Button className={styles.Visible}>
                 <div className={styles.Absolute}>
-                    <Image image={accordionValue ? ArrowUp.src ?? ArrowUp : ArrowDown.src ?? ArrowDown} />
+                    {accordionValue ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
                 </div>
                 <Flex gap={7} align="center">
                     <SelectGroup.Display />
