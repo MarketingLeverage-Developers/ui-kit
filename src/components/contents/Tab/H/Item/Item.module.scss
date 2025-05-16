@@ -12,7 +12,7 @@
     height: 100%;
 
     &.Active {
-        background-color: var(--color);
+        background-color: var(--color, var(--primary-color));
         color: #fff;
         font-weight: 600;
     }

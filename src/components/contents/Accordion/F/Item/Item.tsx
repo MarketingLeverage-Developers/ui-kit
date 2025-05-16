@@ -1,12 +1,11 @@
-import React from 'react';
 import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
 import { FiCheck } from 'react-icons/fi';
 import styles from './Item.module.scss';
 import { useAccordion } from '@/headless/Accordion/Accordion';
 
 type ItemProps = {
-    value: string | { label: string; value: string };
-    onItemClick?: (value: string | { label: string; value: string }) => void;
+    value: string | { label: string; value: any };
+    onItemClick?: (value: string | { label: string; value: any }) => void;
 };
 
 const Item = ({ value, onItemClick }: ItemProps) => {

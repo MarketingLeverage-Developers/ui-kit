@@ -10,7 +10,7 @@ import Visible from './Visible/Visible';
 
 type AccordionFProps = {
     children: React.ReactNode;
-    defaultValue: string;
+    defaultValue: string | { label: string; value: any };
 };
 
 const AccordionF = ({ children, defaultValue }: AccordionFProps) => {
