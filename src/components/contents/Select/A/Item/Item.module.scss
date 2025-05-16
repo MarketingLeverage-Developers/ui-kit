@@ -1,0 +1,24 @@
+.Item {
+    height: 32px;
+    padding: 0 6px;
+    margin: 0 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-family: Pretendard;
+    font-weight: var(--font-weight-semi-bold); /* Block: basic-select */
+    .basic-select__box {
+        font-size: var(--font-size-sm);
+        cursor: pointer;
+        align-self: flex-start;
+    }
+
+    color: var(--base-color-primary);
+    border-radius: var(--border-radius);
+
+    &:hover {
+        background-color: var(--hover-color-primary);
+    }
+    &--active {
+    }
+}

@@ -1,0 +1,15 @@
+/* Block: basic-select-trigger */
+.Trigger {
+    width: auto;
+    height: var(--box-50);
+    text-align: left;
+    padding: var(--space-20) var(--space-25);
+    border-radius: 8px;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--font-16);
+}

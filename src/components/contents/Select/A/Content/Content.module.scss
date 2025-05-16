@@ -1,0 +1,23 @@
+/* Block: basic-select, Element: content */
+.Content {
+    height: auto;
+    width: 240px;
+    padding: 6px 0;
+    border-radius: 6px;
+    border: 1px solid var(--base-color-quaternary);
+    background-color: var(--base-color-secondary);
+    position: absolute;
+    left: 0;
+    top: 28px;
+    list-style: none;
+    box-shadow: var(--brand-shadow-primary);
+    z-index: 500;
+
+    &.Open {
+        transition: opacity 400ms, transform 400ms;
+    }
+
+    &.Close {
+        transition: opacity 400ms, transform 400ms;
+    }
+}
