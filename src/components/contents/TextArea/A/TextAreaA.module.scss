@@ -1,0 +1,29 @@
+.TextAreaA {
+    width: fit-content; // 고정된 너비
+    height: var(--height, var(--box-300));
+    padding: var(--padding-y, 12px) var(--padding-x, 16px);
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    border: 1px solid #e2e2e2;
+    resize: none; // 크기 조절 막기 (textarea 고유 기능)
+    display: block;
+
+    // 사이즈별 클래스는 필요시 해제 가능
+    // &.Sm {
+    //     padding: var(--space-15) var(--space-25);
+    //     font-size: var(--font-14);
+    // }
+    // &.Md {
+    //     padding: var(--space-20) var(--space-30);
+    //     font-size: var(--font-15);
+    // }
+    // &.Lg {
+    //     padding: var(--space-25) var(--space-40);
+    //     font-size: var(--font-16);
+    // }
+
+    &.Full {
+        width: 100%;
+    }
+}
