@@ -1,5 +1,5 @@
-import Dropdown from 'headless/Dropdown/Dropdown';
-import SelectGroup from 'headless/SelectGroup/SelectGroup';
+import Dropdown from '@/headless/Dropdown/Dropdown';
+import SelectGroup from '@/headless/SelectGroup/SelectGroup';
 import React from 'react';
 import styles from './SelectA.module.scss';
 import Item from './Item/Item';
