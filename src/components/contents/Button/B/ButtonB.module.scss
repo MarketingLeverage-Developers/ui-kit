@@ -6,6 +6,11 @@
     background-color: var(--color, var(--primary-color));
     border: none;
 
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
     &.Xs {
         padding: var(--space-10) var(--space-15);
         font-size: var(--font-16);
