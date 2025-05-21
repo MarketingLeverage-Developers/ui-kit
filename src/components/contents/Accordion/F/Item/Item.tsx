@@ -29,8 +29,8 @@ const Item = ({ value, onItemClick }: ItemProps) => {
     return (
         <SelectGroup.Item className={styles.Item} value={value} onSelectGroupItemClick={handleClick}>
             <div className={styles.LabelWrapper}>
-                <div className={styles.Label}>{displayLabel}</div>
-                {isCurrentItem && <FiCheck width={16} color="#f98131" />}
+                {/* <div className={styles.Label}>{displayLabel}</div> */}
+                {/* {isCurrentItem && <FiCheck width={16} color="#f98131" />} */}
             </div>
         </SelectGroup.Item>
     );
