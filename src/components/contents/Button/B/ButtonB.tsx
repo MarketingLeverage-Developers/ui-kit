@@ -15,6 +15,7 @@ const ButtonB = ({ color, size = 'md', full, ...props }: ButtonBProps) => {
     };
 
     const combinedStyles = classNames(styles.ButtonB, props.className, {
+        [styles.Xxs]: size === '2xs',
         [styles.Xs]: size === 'xs',
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
