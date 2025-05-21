@@ -22,4 +22,5 @@
     &.Shadow {
         box-shadow: 4px 4px 26px 0px #1f100326;
     }
+    box-shadow: var(--box-shadow);
 }
