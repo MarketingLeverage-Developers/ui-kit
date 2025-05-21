@@ -1,0 +1,36 @@
+.SearchInputB {
+    position: relative;
+
+    input {
+        width: 100%;
+        height: var(--box-60);
+        padding: var(--space-20) var(--space-20);
+        box-sizing: border-box;
+        background-color: inherit;
+        border: none;
+        border-bottom: 1px solid #e2e2e2;
+        font-size: var(--font-15);
+
+        outline: none;
+
+        &::placeholder {
+            color: #a6a6a6;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        border: none;
+        height: 100%;
+        aspect-ratio: 1/1;
+        background-color: inherit;
+        // border-radius: 50%;
+
+        // background-color: var(--color, var(--primary-color));
+        .Icon {
+            size: var(--font-24);
+            color: var(--color, var(--primary-color));
+        }
+    }
+}
