@@ -33,6 +33,7 @@ type BoxAProps = HTMLAttributes<HTMLDivElement> & {
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
     backgroundImage?: string;
     shadow?: boolean;
+    boxShadow?: string;
     width?: BoxSize | string;
     height?: BoxSize | string;
     radius?: BorderRadius;
@@ -51,6 +52,7 @@ const Box = ({
     backgroundColor = 'inherit',
     backgroundImage = '',
     shadow,
+    boxShadow = 'none',
     width,
     height,
     radius = 0,
@@ -92,6 +94,7 @@ const Box = ({
         '--height': dimensionToVariable(height),
         '--border-weight': `${borderWeight}px`,
         '--border-color': borderColor,
+        '--box-shadow': boxShadow,
         ...(typeof radius === 'object'
             ? {
                   '--border-top-left-radius': dimensionToString(radius.topLeft ?? 0),
