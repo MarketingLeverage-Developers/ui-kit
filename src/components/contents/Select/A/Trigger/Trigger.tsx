@@ -1,6 +1,7 @@
 import Dropdown from '@/headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
 import styles from './Trigger.module.scss';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 type TriggerProps = {
     // icon: React.ReactNode;
@@ -18,6 +19,7 @@ const Trigger = ({}: TriggerProps) => {
     return (
         <Dropdown.Trigger className={styles.Trigger}>
             <SelectGroup.Display className={styles.Display} />
+            <MdKeyboardArrowDown className={styles.Icon} />
         </Dropdown.Trigger>
     );
 };
