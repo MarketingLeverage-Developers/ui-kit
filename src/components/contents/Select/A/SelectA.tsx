@@ -5,10 +5,11 @@ import styles from './SelectA.module.scss';
 import Item from './Item/Item';
 import Content from './Content/Content';
 import Trigger from './Trigger/Trigger';
+import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 
 type SelectAProps = {
     children: React.ReactNode;
-    defaultValue: string;
+    defaultValue: SelectGroupValue;
 };
 
 const SelectA = ({ children, defaultValue }: SelectAProps) => {
