@@ -4,12 +4,11 @@ import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../../types';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & {
-    color?: HexColor;
     variant?: 'combined' | 'outlined';
     size?: ContentSize;
 };
 
-const Item = ({ size = 'md', color, variant, ...props }: ItemProps) => {
+const Item = ({ size = 'md', variant, ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
 
     const className = classNames(styles.Item, {
@@ -20,12 +19,8 @@ const Item = ({ size = 'md', color, variant, ...props }: ItemProps) => {
         // [styles.Lg]: size === 'lg',
     });
 
-    const cssVariables: CSSPropertiesWithVars = {
-        '--color': color,
-    };
-
     return (
-        <TabGroup.Item {...props} className={className} style={{ ...props, ...cssVariables }}>
+        <TabGroup.Item {...props} className={className} style={{ ...props }}>
             {props.children}
         </TabGroup.Item>
     );
