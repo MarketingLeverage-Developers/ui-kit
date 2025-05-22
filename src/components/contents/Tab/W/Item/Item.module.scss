@@ -1,0 +1,32 @@
+.Item {
+    // font-size: var(--font-22);
+    // width: fit-content;
+    // flex: 1;
+    border: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #474747;
+    border-radius: 8px;
+    border: 1px solid #d5d5d5;
+    // &.Outlined {
+    //     border: 1px solid #e2e2e2;
+    // }
+    // height: 100%;
+    cursor: pointer;
+    &.Active {
+        background-color: var(--color, var(--primary-color));
+        color: #fff;
+        font-weight: 500;
+    }
+
+    &:first-child {
+        // border-top-left-radius: 8px;
+        // border-bottom-left-radius: 8px;
+    }
+
+    /* 3) 마지막 아이템 오른쪽 모서리 둥글게 */
+    &:last-child {
+        // border-top-right-radius: 8px;
+        // border-bottom-right-radius: 8px;
+    }
+}
