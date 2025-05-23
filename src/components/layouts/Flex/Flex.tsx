@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './Flex.module.scss';
-import { SpaceSize } from '../../../types';
+import { BoxSize, SpaceSize } from '../../../types';
 import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -11,8 +11,8 @@ export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
     gap?: SpaceSize;
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-    width?: SpaceSize | string;
-    height?: SpaceSize | string;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
 };
 
 const Flex = ({
