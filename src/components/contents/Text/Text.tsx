@@ -13,6 +13,7 @@ export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
     children: React.ReactNode;
     line?: number;
     p?: boolean;
+    wbreak?: 'break-all' | 'keep-all' | 'break-word';
 };
 
 interface CSSPropertiesWithVars extends React.CSSProperties {
@@ -31,6 +32,7 @@ const Text = ({
     style,
     className,
     p,
+    wbreak = 'break-word',
     ...props
 }: TextProps) => {
     // size가 number면 'px' 단위를 붙이고, 문자열이면 그대로 사용
@@ -48,6 +50,7 @@ const Text = ({
         '--text-decoration': decoration,
         '--line-height': computedLieHeight,
         '--line': line,
+        '--word-break': wbreak,
     };
 
     const combinedStyles = classNames(styles.Text, {
