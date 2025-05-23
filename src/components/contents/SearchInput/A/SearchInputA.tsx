@@ -15,7 +15,7 @@ const SearchInputA = ({ color, onButtonClick, ...props }: SearchInputAProps) => 
         <div className={styles.SearchInputA} style={{ ...props.style, ...cssVariables }}>
             <input {...props} />
             <button onClick={onButtonClick}>
-                <Image image={MagnifyImage.src} width={30} height={30} />
+                <Image image={MagnifyImage} width={30} height={30} />
             </button>
         </div>
     );
