@@ -5,6 +5,7 @@
     cursor: pointer;
     background-color: var(--color, var(--primary-color));
     border: none;
+    word-break: keep-all;
 
     &.Xxs {
         padding: var(--space-7) var(--space-10);
