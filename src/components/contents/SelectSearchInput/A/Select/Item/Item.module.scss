@@ -4,7 +4,6 @@
     // margin: 0 8px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: var(--font-15);
     font-weight: 400; /* Block: basic-select */
@@ -14,7 +13,7 @@
     cursor: pointer;
 
     &:hover {
-        background-color: var(--primary-color);
+        background-color: var(--color, var(--primary-color));
         color: #fff;
     }
 }

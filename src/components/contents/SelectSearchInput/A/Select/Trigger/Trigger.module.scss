@@ -1,0 +1,21 @@
+/* Block: basic-select-trigger */
+.Trigger {
+    width: 100%;
+    height: var(--box-35);
+    padding: 0 var(--space-20);
+    text-align: left;
+    border: none;
+    background-color: inherit;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--font-15);
+    color: #161616 !important;
+}
+
+.Icon {
+    font-size: var(--font-20);
+}

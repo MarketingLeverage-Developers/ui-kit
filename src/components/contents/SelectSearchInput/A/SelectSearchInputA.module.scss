@@ -1,0 +1,48 @@
+.SelectSearchInputA {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+
+    .Select {
+        background-color: inherit;
+        width: var(--box-200);
+    }
+
+    input {
+        width: 100%;
+        padding: var(--space-20) var(--space-20);
+        box-sizing: border-box;
+        border-radius: 30px;
+        border: none;
+        background-color: inherit;
+        font-size: var(--font-16);
+
+        outline: none;
+
+        &::placeholder {
+            color: #a6a6a6;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: none;
+        background-color: inherit;
+
+        color: var(--color, var(--primary-color));
+        // background-color: var(--color, var(--primary-color));
+
+        .Icon {
+            font-size: var(--font-16);
+        }
+        cursor: POINTER;
+    }
+}
