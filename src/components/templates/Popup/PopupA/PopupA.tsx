@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PopupA.module.scss';
 import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
-import { getCookie, setCookie } from '@/utils/cokkies';
+import { getCookie, setCookie } from '../cookies/cookies';
 
 export interface PopupAProps {
     top?: number;
