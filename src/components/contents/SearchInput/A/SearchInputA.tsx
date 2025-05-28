@@ -3,7 +3,7 @@ import styles from './SearchInputA.module.scss';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import { RxMagnifyingGlass } from 'react-icons/rx';
 
-type SearchInputAProps = InputHTMLAttributes<HTMLInputElement> & { buttonColor?: HexColor; onButtonClick?: () => void };
+type SearchInputAProps = InputHTMLAttributes<HTMLInputElement> & { onButtonClick?: () => void };
 
 const SearchInputA = ({ color, onButtonClick, ...props }: SearchInputAProps) => {
     const cssVariables: CSSPropertiesWithVars = {
