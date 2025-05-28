@@ -3,8 +3,7 @@ import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Image from '@/ui-kit/src/components/contents/Image/Image';
-import { FontSize } from '@/types/types';
-import { BoxSize, HexColor } from '@/ui-kit/src/types';
+import { BoxSize, FontSize, HexColor } from '@/ui-kit/src/types';
 
 export interface TemplateAProps extends React.ComponentProps<typeof Box> {
     title?: string;

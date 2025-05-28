@@ -24,7 +24,11 @@
         height: 100%;
         aspect-ratio: 1/1;
         border-radius: 50%;
-
+        border: none;
         background-color: var(--color, var(--primary-color));
+        .Icon {
+            font-size: var(--font-32);
+            color: #ffffff;
+        }
     }
 }

@@ -1,8 +1,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from './SearchInputA.module.scss';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
-import Image from '../../Image/Image';
-import MagnifyImage from '../../../../assets/images/magnify.png';
+import { RxMagnifyingGlass } from 'react-icons/rx';
 
 type SearchInputAProps = InputHTMLAttributes<HTMLInputElement> & { buttonColor?: HexColor; onButtonClick?: () => void };
 
@@ -15,7 +14,7 @@ const SearchInputA = ({ color, onButtonClick, ...props }: SearchInputAProps) => 
         <div className={styles.SearchInputA} style={{ ...props.style, ...cssVariables }}>
             <input {...props} />
             <button onClick={onButtonClick}>
-                <Image image={MagnifyImage} width={30} height={30} />
+                <RxMagnifyingGlass className={styles.Icon} />
             </button>
         </div>
     );
