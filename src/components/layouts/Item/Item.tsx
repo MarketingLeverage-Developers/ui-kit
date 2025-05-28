@@ -8,6 +8,7 @@ type ItemProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     flex?: number;
     mobile?: boolean;
+    tablet?: boolean;
     desktop?: boolean;
     width?: BoxSize | string;
     height?: BoxSize | string;
@@ -17,7 +18,7 @@ interface CSSPropertiesWithVars extends React.CSSProperties {
     [key: `--${string}`]: string | number;
 }
 
-const Item = ({ flex = 1, mobile, desktop, children, width, height, ...props }: ItemProps) => {
+const Item = ({ flex = 1, mobile, tablet, desktop, children, width, height, ...props }: ItemProps) => {
     const computedItem = flex;
 
     const cssVariables: CSSPropertiesWithVars = {
@@ -29,7 +30,8 @@ const Item = ({ flex = 1, mobile, desktop, children, width, height, ...props }: 
     const className = classNames(styles.Item, {
         [styles.Mobile]: mobile,
         [styles.Desktop]: desktop,
-        [styles.Common]: !mobile && !desktop,
+        [styles.Tablet]: tablet,
+        [styles.Common]: !mobile && !desktop && !tablet,
     });
 
     return (
