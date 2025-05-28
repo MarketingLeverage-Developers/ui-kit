@@ -1,5 +1,7 @@
 .Item {
     flex: var(--flex);
+    width: var(--width, auto);
+    height: var(--height, auto);
 
     &.Mobile {
         @media (min-width: 769px) {
