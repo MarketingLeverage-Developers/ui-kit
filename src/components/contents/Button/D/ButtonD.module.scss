@@ -6,6 +6,17 @@
     background-color: inherit;
 
     cursor: pointer;
+    word-break: keep-all;
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
 
     &.Sm {
         padding: var(--space-15) var(--space-25);
