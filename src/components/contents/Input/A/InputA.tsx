@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 import styles from './InputA.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars } from '../../../../types';
@@ -9,17 +9,16 @@ type InputAProps = BaseInputProps & {
     full?: boolean;
 };
 
-const InputA = ({ size = 'md', full, ...props }: InputAProps) => {
+const InputA = forwardRef<HTMLInputElement, InputAProps>(({ size = 'md', full, className, style, ...props }, ref) => {
     const cssVariables: CSSPropertiesWithVars = {};
-
-    const combinedStyles = classNames(styles.InputA, props.className, {
+    const combinedStyles = classNames(styles.InputA, className, {
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
         [styles.Full]: full,
     });
 
-    return <input {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
-};
+    return <input ref={ref} {...props} className={combinedStyles} style={{ ...cssVariables, ...style }} />;
+});
 
 export default InputA;
