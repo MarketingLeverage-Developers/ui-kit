@@ -54,17 +54,15 @@ const PopupA: React.FC<PopupAProps> = ({
         }
     };
 
-    return (
-        bannerOpen && (
-            <div className={styles.PopUpItem} style={{ ...cssVariables }}>
-                <img src={imageSrc} loading="lazy" onClick={handleScrollToContact} alt={altText} />
-                <div className={styles.ButtonWrapper}>
-                    <div onClick={closeToday}>오늘 하루 열지 않기</div>
-                    <div onClick={() => setBannerOpen(false)}>닫기</div>
-                </div>
+    return bannerOpen ? (
+        <div className={styles.PopUpItem} style={{ ...cssVariables }}>
+            <img src={imageSrc} loading="lazy" onClick={handleScrollToContact} alt={altText} />
+            <div className={styles.ButtonWrapper}>
+                <div onClick={closeToday}>오늘 하루 열지 않기</div>
+                <div onClick={() => setBannerOpen(false)}>닫기</div>
             </div>
-        )
-    );
+        </div>
+    ) : null;
 };
 
 export default PopupA;
