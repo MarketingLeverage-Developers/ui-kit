@@ -1,121 +1,124 @@
-/* CalendarA.module.scss */
+:global {
+    .rdp-root {
+        background-color: #fff;
+        width: fit-content;
+        padding: var(--space-20);
+        box-sizing: border-box;
+        border-radius: 20px;
+        border: 1px solid var(--main, #e88731);
+        box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.2);
+    }
 
-.wrapper {
+    .rdp-month {
+        position: relative;
+    }
+
+    .rdp-caption_label {
+        display: none;
+    }
+
+    .rdp-nav {
+        // display: none;
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        // width: 100%;
+    }
+
+    .rdp-weekday {
+        width: var(--box-35);
+        height: var(--box-35);
+        font-size: var(--font-15);
+        vertical-align: middle;
+    }
+
+    .rdp-dropdown {
+        background-color: transparent;
+        border: none;
+
+        option:hover {
+            background-color: orange;
+            color: white;
+        }
+    }
+
+    .rdp-day {
+        width: var(--box-35);
+        height: var(--box-30);
+        cursor: pointer;
+        text-align: center;
+        cursor: pointer;
+
+        .rdp-day_button {
+            width: var(--box-30);
+            height: var(--box-30);
+            padding: 0;
+            box-sizing: content-box;
+            font-size: var(--font-14);
+            background-color: inherit;
+            border: none;
+            border-radius: 50%;
+            color: #161616;
+        }
+        &.rdp-outside {
+            .rdp-day_button {
+                color: #7b7b7b;
+            }
+        }
+        &.rdp-selected {
+            .rdp-day_button {
+                background-color: #e88731;
+                color: #fff;
+            }
+        }
+
+        &.rdp-today {
+            .rdp-day_button {
+                background-color: #ffe8d0;
+            }
+        }
+    }
+}
+
+.Legend {
     display: flex;
-    justify-content: center;
-}
-
-.calendarRoot {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1rem;
-    border: 1px solid #e88731;
-    box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.2);
-    font-family: 'Pretendard', sans-serif;
-    width: 320px;
-}
-
-.month {
-    width: 100%;
-}
-
-.caption {
-    background-color: red;
-}
-
-.nav {
-    background-color: #60a5fa;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: var(--space-15);
+    font-size: var(--font-14);
+    color: #333;
 }
 
-.navButton {
-    // background: transparent;
-    // border: none;
-    // font-size: 1rem;
-    // cursor: pointer;
-    display: none;
-}
-
-.table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-.head_row,
-.row {
-    display: table-row;
-}
-
-.head_cell,
-.cell {
-    text-align: center;
-    padding: 0.25rem;
-    font-size: 0.875rem;
-}
-
-.head_cell {
-    color: #888;
-}
-
-.head_cell:first-child {
-    color: #f87171;
-}
-
-.head_cell:last-child {
-    color: #60a5fa;
-}
-
-.day {
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.day:hover {
-    background-color: #f3f4f6;
-}
-
-.day_selected {
-    background-color: #f97316;
-    color: white;
-}
-
-.day_today {
-    background-color: #fcd9b6;
-    color: black;
-}
-
-.legend {
-    margin-top: 0.8rem;
-    font-size: 0.75rem;
-    color: #666;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.dotToday,
-.dotSelected {
+.DotToday,
+.DotSelected {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: var(--box-10);
+    height: var(--box-10);
     border-radius: 50%;
-    margin-left: 8px;
-    margin-right: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
 }
 
-.dotToday {
-    background-color: #fcd9b6;
+.DotToday {
+    background-color: rgba(255, 149, 0, 0.2); /* 연한 주황색 */
 }
 
-.dotSelected {
-    background-color: #f97316;
+.DotSelected {
+    background-color: #d96b00; /* 진한 주황색 */
+}
+.Item {
+    display: flex;
+    gap: var(--space-7);
+    align-items: center;
+}
+
+.NavButton {
+    // font-size: ;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    .Icon {
+        font-size: var(--font-20);
+    }
 }

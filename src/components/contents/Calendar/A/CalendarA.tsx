@@ -1,44 +1,75 @@
-import React, { useState } from 'react';
-import { DayPicker } from 'react-day-picker';
+import React, { useEffect, useState } from 'react';
+import { DayPicker, useDayPicker, useNavigation } from 'react-day-picker';
 import { ko } from 'date-fns/locale';
 import styles from './CalendarA.module.scss';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+// import 'react-day-picker/style.css';
 
-const CalendarA = () => {
-    const [selected, setSelected] = useState<Date>();
+type CalendarAProps = {
+    value: Date | undefined;
+    onChangeDate: (value: Date) => void;
+};
 
+const CalendarA = ({ value, onChangeDate }: CalendarAProps) => {
     return (
-        <div className={styles.wrapper}>
-            <DayPicker
-                captionLayout="dropdown"
-                locale={ko}
-                mode="single"
-                selected={selected}
-                onSelect={setSelected}
-                showOutsideDays
-                footer={
-                    <div className={styles.legend}>
-                        <span className={styles.dotToday}></span> 오늘 날짜
-                        <span className={styles.dotSelected}></span> 선택한 날짜
+        <DayPicker
+            required
+            captionLayout="dropdown"
+            navLayout="after"
+            locale={ko}
+            mode="single"
+            selected={value}
+            onSelect={onChangeDate}
+            showOutsideDays
+            components={{ PreviousMonthButton, NextMonthButton }}
+            footer={
+                <div className={styles.Legend}>
+                    <div className={styles.Item}>
+                        <span className={styles.DotToday}></span>
+                        <span>오늘 날짜</span>
                     </div>
-                }
-                classNames={{
-                    root: styles.calendarRoot,
-                    month: styles.month,
-                    caption: styles.caption,
-                    nav: styles.nav,
-                    nav_button: styles.navButton,
-                    table: styles.table,
-                    head_row: styles.head_row,
-                    head_cell: styles.head_cell,
-                    row: styles.row,
-                    cell: styles.cell,
-                    day: styles.day,
-                    day_selected: styles.day_selected,
-                    day_today: styles.day_today,
-                }}
-            />
-        </div>
+                    <div className={styles.Item}>
+                        <span className={styles.DotSelected}></span>
+                        <span>선택한 날짜</span>
+                    </div>
+                </div>
+            }
+        />
     );
 };
 
 export default CalendarA;
+
+export const PreviousMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+    const { previousMonth, goToMonth } = useDayPicker();
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (!previousMonth) {
+            return;
+        }
+        props.onClick?.(e);
+        goToMonth(previousMonth);
+    };
+
+    return (
+        <button type="button" {...props} onClick={handleClick} className={styles.NavButton}>
+            <MdKeyboardArrowLeft className={styles.Icon} />
+        </button>
+    );
+};
+export const NextMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+    const { nextMonth, goToMonth } = useDayPicker();
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (!nextMonth) return null;
+        props.onClick?.(e);
+        goToMonth(nextMonth);
+    };
+
+    return (
+        <button type="button" {...props} onClick={handleClick} className={styles.NavButton}>
+            <MdKeyboardArrowRight className={styles.Icon} />
+        </button>
+    );
+};
