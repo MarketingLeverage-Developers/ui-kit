@@ -5,11 +5,19 @@
 
     align-items: var(--align-items);
     justify-content: var(--justify-content);
-
+    flex-wrap: var(--wrap);
     width: var(--width, auto);
     height: var(--height, auto);
 
+    // 기존 모바일(<=768px) 적용
     @media (max-width: 768px) {
         flex-direction: var(--responsive);
+    }
+
+    // data-tablet 어트리뷰트가 있는 경우에만 1024px 이상에서 적용
+    &[data-tablet] {
+        @media (max-width: 1024px) {
+            flex-direction: var(--responsive);
+        }
     }
 }

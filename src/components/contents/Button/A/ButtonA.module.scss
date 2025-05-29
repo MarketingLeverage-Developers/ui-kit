@@ -5,6 +5,8 @@
     cursor: pointer;
     background-color: var(--color, var(--primary-color));
 
+    word-break: keep-all;
+
     &.Sm {
         padding: var(--space-15) var(--space-25);
         font-size: var(--font-18);
