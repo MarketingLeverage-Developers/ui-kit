@@ -18,6 +18,8 @@ export interface CardBProps extends React.ComponentProps<typeof Box> {
     borderWeight?: number;
     borderColor?: HexColor;
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
+    children?: React.ReactNode;
+    numberBackground?: HexColor;
 }
 
 const CardB: React.FC<CardBProps> = ({
@@ -35,6 +37,8 @@ const CardB: React.FC<CardBProps> = ({
     borderColor = '#E2E2E2',
     backgroundColor = 'inherit',
     boxShadow = 'none',
+    numberBackground = '#000000',
+    children,
     ...boxProps
 }) => {
     const cssVariables: CSSPropertiesWithVars = {
@@ -47,6 +51,7 @@ const CardB: React.FC<CardBProps> = ({
         '--border-color': borderColor,
         '--border-weight': `${borderWeight}px`,
         '--box-shadow': boxShadow,
+        '--number-Background': numberBackground,
     };
     return (
         <div className={styles.Wrapper} style={{ ...cssVariables }}>
@@ -56,6 +61,7 @@ const CardB: React.FC<CardBProps> = ({
                 <Text size={contentSize} weight={contentWeight}>
                     {content}
                 </Text>
+                {children && children}
             </div>
         </div>
     );

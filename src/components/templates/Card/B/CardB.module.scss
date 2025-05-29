@@ -8,7 +8,7 @@
     align-items: center;
     padding: var(--space-30);
     box-sizing: border-box;
-    gap: var(--box-50);
+    gap: var(--box-30);
     box-shadow: var(--box-shadow);
     border: var(--border-weight) solid var(--border-color);
 }
@@ -16,7 +16,7 @@
     width: var(--box-30);
     height: var(--box-30);
     border-radius: 50%;
-    background-color: #222222;
+    background-color: var(--number-Background);
     display: flex;
     justify-content: center;
     align-items: center;
