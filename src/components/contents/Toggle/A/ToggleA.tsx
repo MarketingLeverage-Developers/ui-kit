@@ -17,7 +17,7 @@ const ToggleA = ({ onToggleClick, defaultValue, color }: ToggleAProps) => {
         e.stopPropagation();
 
         const newToggleValue = changeToggle();
-        console.log('newToggleValue', newToggleValue);
+        // console.log('newToggleValue', newToggleValue);
 
         onToggleClick(newToggleValue);
     };

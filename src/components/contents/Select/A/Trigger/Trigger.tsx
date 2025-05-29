@@ -14,7 +14,7 @@ const Trigger = ({}: TriggerProps) => {
 
     // 동적으로 변경되는 부분은 인라인 스타일로 처리합니다.
 
-    console.log('selectGroupValue: ', selectGroupValue);
+    // console.log('selectGroupValue: ', selectGroupValue);
 
     return (
         <Dropdown.Trigger className={styles.Trigger}>

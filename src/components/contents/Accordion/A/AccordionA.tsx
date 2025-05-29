@@ -14,7 +14,7 @@ type AccordionAProps = {
 const AccordionA = ({ visible, hidden }: AccordionAProps) => {
     const { accordionValue } = useAccordion();
 
-    console.log(accordionValue, 'accordionValue');
+    // console.log(accordionValue, 'accordionValue');
 
     return (
         <Accordion.Box className={styles.Box}>
