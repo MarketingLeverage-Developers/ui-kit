@@ -1,17 +1,13 @@
 import { BoxSize, CSSPropertiesWithVars, FontSize, FontWeight, HexColor } from '@/ui-kit/src/types';
-import styles from './TemplateC.module.scss';
+import styles from './CardC.module.scss';
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Flex from '../../../layouts/Flex/Flex';
 
-export interface TemplateCProps extends React.ComponentProps<typeof Box> {
-    content?: string;
-    number?: number;
+export interface CardCProps extends React.ComponentProps<typeof Box> {
     radius?: number;
     image: string;
     title?: string;
-    contentSize?: FontSize;
-    contentWeight?: FontWeight;
     width?: BoxSize;
     height?: BoxSize;
     boxShadow?: string;
@@ -22,22 +18,29 @@ export interface TemplateCProps extends React.ComponentProps<typeof Box> {
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
     buttonBackground?: HexColor;
     buttonColor?: HexColor;
+
+    subLabel?: string;
+    label?: string;
+    subContent?: string;
+    content?: string;
+    buttonText?: string;
 }
 
-const TemplateC: React.FC<TemplateCProps> = ({
-    title,
-    number,
-    content,
+const CardC: React.FC<CardCProps> = ({
+    subLabel = 'subLabel',
+    label = 'label',
+    subContent = 'subContent',
+    content = 'content',
+    buttonText = 'buttonText',
+    title = 'title',
     image,
     radius = 12,
-    contentSize = 40,
-    contentWeight = 400,
     width = 300,
     height = 450,
     imageWidth = '100%',
     imageHeight = 240,
     borderWeight = 0,
-    borderColor = '#000000',
+    borderColor = '#E0E0E0',
     backgroundColor = 'inherit',
     boxShadow = 'none',
     buttonBackground = '#363636',
@@ -66,28 +69,28 @@ const TemplateC: React.FC<TemplateCProps> = ({
                 <Flex direction="column" width="100%" gap={7}>
                     <Flex width="100%" justify="space-between">
                         <Text size={16} weight={500}>
-                            텍스트
+                            {subLabel}
                         </Text>
                         <Text size={16} weight={500}>
-                            가격
+                            {subContent}
                         </Text>
                     </Flex>
                     <Flex width="100%" justify="space-between">
                         <Text size={24} weight={700}>
-                            텍스트
+                            {label}
                         </Text>
                         <Text size={24} weight={700}>
-                            가격
+                            {content}
                         </Text>
                     </Flex>
                 </Flex>
             </div>
             <div className={styles.Button}>
                 <Text size={20} weight={600} color={buttonColor}>
-                    버튼
+                    {buttonText}
                 </Text>
             </div>
         </div>
     );
 };
-export default TemplateC;
+export default CardC;

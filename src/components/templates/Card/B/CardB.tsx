@@ -1,9 +1,9 @@
 import { BoxSize, CSSPropertiesWithVars, FontSize, FontWeight, HexColor } from '@/ui-kit/src/types';
-import styles from './TemplateB.module.scss';
+import styles from './CardB.module.scss';
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 
-export interface TemplateAProps extends React.ComponentProps<typeof Box> {
+export interface CardBProps extends React.ComponentProps<typeof Box> {
     content?: string;
     number?: number;
     radius?: number;
@@ -20,7 +20,7 @@ export interface TemplateAProps extends React.ComponentProps<typeof Box> {
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
 }
 
-const TemplateB: React.FC<TemplateAProps> = ({
+const CardB: React.FC<CardBProps> = ({
     number,
     content,
     icon,
@@ -60,4 +60,4 @@ const TemplateB: React.FC<TemplateAProps> = ({
         </div>
     );
 };
-export default TemplateB;
+export default CardB;
