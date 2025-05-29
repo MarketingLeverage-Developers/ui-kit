@@ -53,7 +53,7 @@ const TemplateA: React.FC<TemplateAProps> = ({
                 </Text>
             </Flex>
             <Flex justify="end">
-                <Image image={icon} width={60} height={60} />
+                <Image image={icon} width={45} height={45} />
             </Flex>
         </Flex>
     </Box>

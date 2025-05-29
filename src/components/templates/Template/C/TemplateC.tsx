@@ -20,6 +20,8 @@ export interface TemplateCProps extends React.ComponentProps<typeof Box> {
     borderWeight?: number;
     borderColor?: HexColor;
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
+    buttonBackground?: HexColor;
+    buttonColor?: HexColor;
 }
 
 const TemplateC: React.FC<TemplateCProps> = ({
@@ -38,6 +40,8 @@ const TemplateC: React.FC<TemplateCProps> = ({
     borderColor = '#000000',
     backgroundColor = 'inherit',
     boxShadow = 'none',
+    buttonBackground = '#363636',
+    buttonColor = '#ffffff',
     ...boxProps
 }) => {
     const cssVariables: CSSPropertiesWithVars = {
@@ -50,24 +54,39 @@ const TemplateC: React.FC<TemplateCProps> = ({
         '--border-color': borderColor,
         '--border-weight': `${borderWeight}px`,
         '--box-shadow': boxShadow,
+        '--buttonBackground': buttonBackground,
     };
     return (
         <div className={styles.Wrapper} style={{ ...cssVariables }} {...boxProps}>
             <img src={image} />
             <div className={styles.ContentWrapper}>
-                <Text size={15} weight={700}>
+                <Text size={24} weight={700}>
                     {title}
                 </Text>
-                <Flex width="100%" justify="space-between">
-                    <div>텍스트</div>
-                    <div>가격</div>
-                </Flex>
-                <Flex width="100%" justify="space-between">
-                    <div>텍스트</div>
-                    <div>가격</div>
+                <Flex direction="column" width="100%" gap={7}>
+                    <Flex width="100%" justify="space-between">
+                        <Text size={16} weight={500}>
+                            텍스트
+                        </Text>
+                        <Text size={16} weight={500}>
+                            가격
+                        </Text>
+                    </Flex>
+                    <Flex width="100%" justify="space-between">
+                        <Text size={24} weight={700}>
+                            텍스트
+                        </Text>
+                        <Text size={24} weight={700}>
+                            가격
+                        </Text>
+                    </Flex>
                 </Flex>
             </div>
-            <div className={styles.Button}>버튼</div>
+            <div className={styles.Button}>
+                <Text size={20} weight={600} color={buttonColor}>
+                    버튼
+                </Text>
+            </div>
         </div>
     );
 };
