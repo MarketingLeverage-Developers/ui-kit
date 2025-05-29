@@ -1,4 +1,4 @@
-import { BoxSize, CSSPropertiesWithVars } from '@/types/types';
+import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
 import styles from './IconArray.module.scss';
 import { dimensionToVariable } from '@/ui-kit/src/utils';
 import React from 'react';
