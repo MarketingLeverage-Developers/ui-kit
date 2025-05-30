@@ -12,7 +12,7 @@ const Visible = ({}: VisibleProps) => {
     const { accordionValue } = useAccordion();
     const isSelected = selectGroupValue !== '';
 
-    console.log('selectGroupValue: ', selectGroupValue);
+    // console.log('selectGroupValue: ', selectGroupValue);
 
     return (
         <Accordion.Visible>

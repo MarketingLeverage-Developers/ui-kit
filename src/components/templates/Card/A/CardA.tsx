@@ -5,7 +5,7 @@ import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Image from '@/ui-kit/src/components/contents/Image/Image';
 import { BoxSize, FontSize, HexColor } from '@/ui-kit/src/types';
 
-export interface TemplateAProps extends React.ComponentProps<typeof Box> {
+export interface CardAProps extends React.ComponentProps<typeof Box> {
     title?: string;
     content?: string;
     radius?: number;
@@ -19,7 +19,7 @@ export interface TemplateAProps extends React.ComponentProps<typeof Box> {
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
 }
 
-const TemplateA: React.FC<TemplateAProps> = ({
+const CardA: React.FC<CardAProps> = ({
     title,
     content,
     icon,
@@ -53,10 +53,10 @@ const TemplateA: React.FC<TemplateAProps> = ({
                 </Text>
             </Flex>
             <Flex justify="end">
-                <Image image={icon} width={60} height={60} />
+                <Image image={icon} width={45} height={45} />
             </Flex>
         </Flex>
     </Box>
 );
 
-export default TemplateA;
+export default CardA;

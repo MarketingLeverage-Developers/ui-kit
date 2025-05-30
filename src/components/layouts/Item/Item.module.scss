@@ -1,8 +1,10 @@
 .Item {
     flex: var(--flex);
+    width: var(--width, auto);
+    height: var(--height, auto);
 
     &.Mobile {
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             display: none;
         }
     }
@@ -15,6 +17,13 @@
 
     &.Common {
         @media (max-width: 768px) {
+            align-self: stretch;
+        }
+    }
+
+    &.Tablet {
+        // tablet 전용 (<=1024px) stretch
+        @media (max-width: 1024px) {
             align-self: stretch;
         }
     }

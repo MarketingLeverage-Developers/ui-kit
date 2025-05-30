@@ -1,0 +1,19 @@
+.BtnWrapper {
+    width: var(--box-50);
+    height: var(--box-50);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #929292;
+    cursor: pointer;
+    img {
+        width: var(--box-20);
+        height: var(--box-20);
+    }
+    &:hover {
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+    }
+}

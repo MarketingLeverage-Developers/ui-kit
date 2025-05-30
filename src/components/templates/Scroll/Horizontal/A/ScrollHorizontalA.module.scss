@@ -1,0 +1,51 @@
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    max-width: 100%;
+    width: var(--width);
+    height: var(--height);
+    margin: 0 auto;
+    overflow: hidden;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.ScrollContent {
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    --animation-duration: 40s;
+    --animation-direction: forwards;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.ListWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--gap);
+    min-width: 100%;
+    width: max-content;
+    animation: scroll var(--animation-duration) linear infinite;
+    animation-direction: var(--animation-direction);
+    &:hover {
+        animation-play-state: paused;
+    }
+    li {
+        flex-shrink: 0;
+        img {
+            width: var(--image-width);
+            height: var(--image-height);
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes scroll {
+    100% {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}

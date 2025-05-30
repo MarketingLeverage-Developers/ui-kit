@@ -1,0 +1,34 @@
+.Wrapper {
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--backgroundColor);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-30);
+    box-sizing: border-box;
+    gap: var(--box-30);
+    box-shadow: var(--box-shadow);
+    border: var(--border-weight) solid var(--border-color);
+}
+.Number {
+    width: var(--box-30);
+    height: var(--box-30);
+    border-radius: 50%;
+    background-color: var(--number-Background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.ContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-15);
+    img {
+        width: var(--IconWidth);
+        height: var(--IconHeight);
+    }
+}
