@@ -5,16 +5,20 @@
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: var(--space-30);
     box-sizing: border-box;
-    gap: var(--box-30);
     box-shadow: var(--box-shadow);
     border: var(--border-weight) solid var(--border-color);
+    @media (max-width: 768px) {
+        width: calc(var(--width) / 1.2);
+        height: calc(var(--height) / 1.2);
+    }
 }
 .Number {
-    width: var(--box-30);
-    height: var(--box-30);
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: var(--number-Background);
     display: flex;
@@ -28,7 +32,7 @@
     align-items: center;
     gap: var(--space-15);
     img {
-        width: var(--IconWidth);
-        height: var(--IconHeight);
+        width: 150px;
+        height: 150px;
     }
 }
