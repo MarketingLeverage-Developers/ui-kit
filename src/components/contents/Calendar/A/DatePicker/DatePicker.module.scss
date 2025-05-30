@@ -1,3 +1,13 @@
+.Content {
+    &.Open {
+        transition: opacity 400ms, transform 400ms;
+    }
+
+    &.Close {
+        transition: opacity 400ms, transform 400ms;
+    }
+}
+
 :global {
     .rdp-root {
         background-color: #fff;
