@@ -11,10 +11,10 @@ import classNames from 'classnames';
 
 type DatePickerProps = {
     // value: Date | undefined;
-    // onChangeDate: (value: Date) => void;
+    onChangeDate: (value: Date) => void;
 };
 
-const DatePicker = ({}: DatePickerProps) => {
+const DatePicker = ({ onChangeDate }: DatePickerProps) => {
     const { calendarValue, setCalendarValue } = useCalendarA();
 
     const { dropdownValue } = useDropdown();
@@ -23,6 +23,11 @@ const DatePicker = ({}: DatePickerProps) => {
         [styles.Open]: dropdownValue, // dropdownValue가 true일 때 Open 클래스 적용
         [styles.Closed]: !dropdownValue, // dropdownValue가 false일 때 Closed 클래스 적용
     });
+
+    const handleDateChange = (date: Date) => {
+        onChangeDate(date);
+        setCalendarValue(date);
+    };
 
     return (
         <Dropdown.Content className={combinedStyle}>
@@ -33,7 +38,7 @@ const DatePicker = ({}: DatePickerProps) => {
                 locale={ko}
                 mode="single"
                 selected={calendarValue}
-                onSelect={setCalendarValue}
+                onSelect={handleDateChange}
                 showOutsideDays
                 components={{ PreviousMonthButton, NextMonthButton }}
                 footer={

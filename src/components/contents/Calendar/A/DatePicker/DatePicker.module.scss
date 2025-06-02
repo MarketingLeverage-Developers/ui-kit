@@ -1,4 +1,9 @@
 .Content {
+    position: absolute;
+    left: 0;
+    top: calc(100% + var(--space-7));
+    z-index: 100;
+
     &.Open {
         transition: opacity 400ms, transform 400ms;
     }
