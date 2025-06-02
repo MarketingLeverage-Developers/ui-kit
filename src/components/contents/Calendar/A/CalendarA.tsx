@@ -1,5 +1,5 @@
 // CalendarA.js
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import DatePicker from './DatePicker/DatePicker';
 import Display from './Display/Display';
 import Dropdown from '@/headless/Dropdown/Dropdown';
@@ -16,10 +16,15 @@ const CalendarAContext = createContext<CalendarAContextType>({
 
 type CalendarAProps = {
     children: React.ReactNode;
+    defaultValue: Date;
 };
 
-const CalendarA = ({ children }: CalendarAProps) => {
-    const [calendarValue, setCalendarValue] = useState<Date | undefined>(new Date());
+const CalendarA = ({ defaultValue, children }: CalendarAProps) => {
+    const [calendarValue, setCalendarValue] = useState<Date | undefined>(defaultValue ?? new Date());
+
+    useEffect(() => {
+        setCalendarValue(defaultValue ?? new Date());
+    }, [defaultValue]);
 
     return (
         <CalendarAContext.Provider value={{ calendarValue, setCalendarValue }}>
