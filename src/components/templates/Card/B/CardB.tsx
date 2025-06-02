@@ -29,8 +29,8 @@ const CardB: React.FC<CardBProps> = ({
     radius = 0,
     contentSize = 40,
     contentWeight = 400,
-    width = 300,
-    height = 330,
+    width = 350,
+    height = 350,
     IconWidth = 80,
     IconHeight = 80,
     borderWeight = 0,
@@ -61,8 +61,8 @@ const CardB: React.FC<CardBProps> = ({
                 <Text size={contentSize} weight={contentWeight}>
                     {content}
                 </Text>
-                {children && children}
             </div>
+            {children && children}
         </div>
     );
 };
