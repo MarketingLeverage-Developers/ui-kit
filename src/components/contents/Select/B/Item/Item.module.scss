@@ -1,0 +1,20 @@
+.Item {
+    height: var(--box-35);
+    padding: 0 var(--space-15);
+    // margin: 0 8px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-15);
+    font-weight: 400; /* Block: basic-select */
+
+    color: #474747;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+}

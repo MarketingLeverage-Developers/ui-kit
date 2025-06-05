@@ -1,0 +1,23 @@
+/* Block: basic-select-trigger */
+.Trigger {
+    width: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    height: var(--box-50);
+    // height: var(--box-45);
+    padding: var(--space-20) var(--space-20);
+    text-align: left;
+    background-color: #fff;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--font-15);
+    color: #474747;
+}
+
+.Icon {
+    font-size: var(--font-20);
+}
