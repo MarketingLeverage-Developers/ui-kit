@@ -2,26 +2,32 @@
     width: fit-content;
     border-radius: var(--radius);
     color: var(--color);
-    background-color: #fff;
+    background-color: var(--background-color);
     border: 1px solid var(--borderColor);
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 
+    cursor: pointer;
+    &.Xxs {
+        padding: var(--space-7);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10);
+        font-size: var(--font-16);
+    }
     &.Sm {
-        width: var(--space-25);
-        height: var(--space-25);
+        padding: var(--space-15);
         font-size: var(--font-15);
     }
     &.Md {
-        width: var(--space-30);
-        height: var(--space-30);
+        padding: var(--space-20);
         font-size: var(--font-20);
     }
     &.Lg {
-        width: var(--space-35);
-        height: var(--space-35);
+        padding: var(--space-25);
         font-size: var(--font-22);
     }
     &.Full {

@@ -7,11 +7,25 @@ type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     full?: boolean;
+    radius?: number;
+    borderColor?: HexColor;
+    backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
 };
 
-const ButtonE = ({ color, size = 'md', full, ...props }: ButtonEProps) => {
+const ButtonE = ({
+    color,
+    size = 'md',
+    radius = 0,
+    borderColor,
+    full,
+    backgroundColor = 'inherit',
+    ...props
+}: ButtonEProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
+        '--radius': `${radius}px`,
+        '--borderColor': borderColor,
+        '--background-color': backgroundColor,
     };
 
     const combinedStyles = classNames(styles.ButtonE, props.className, {
