@@ -7,7 +7,7 @@ type RowProps = HTMLAttributes<HTMLTableRowElement> & {
     bgColor?: HexColor;
 };
 
-const Row = ({ children, onMouseEnter, onMouseLeave, bgColor, ...props }: RowProps) => {
+const Row = ({ children, onMouseEnter, onMouseLeave, bgColor = '#fff', ...props }: RowProps) => {
     const variables: CSSPropertiesWithVars = {
         '--background-color': bgColor,
     };
