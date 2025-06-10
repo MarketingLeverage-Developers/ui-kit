@@ -1,0 +1,50 @@
+.Cell {
+    // border: 1px solid #eaeaea;
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    color: #474747;
+    font-size: var(--font-14);
+    border: 1px solid #e2e2e2; // 나중에 삭제
+    background-color: var(--background);
+
+    &.Left {
+        text-align: left;
+    }
+    &.Center {
+        text-align: center;
+    }
+    &.Right {
+        text-align: right;
+    }
+    &.AsHeader {
+        // background: var(--base-color-senary);
+        font-weight: 500;
+        color: #161616;
+    }
+    &.Editable {
+        outline: none;
+    }
+    &.Fixed {
+        width: var(--cell-width);
+        min-width: var(--cell-width);
+        white-space: normal;
+        overflow-wrap: break-word; // 긴 단어가 넘칠 경우 줄바꿈 처리
+        word-break: break-all;
+    }
+
+    input {
+        all: unset; /* 모든 기본 스타일 제거 (border, padding, outline 등) */
+        width: 100%; /* 부모 요소를 가득 채우도록 */
+        font: inherit; /* 주변 텍스트와 동일한 글꼴 사용 */
+        color: inherit; /* 부모 요소의 글자색을 따름 */
+        text-align: inherit; /* 정렬 방식도 상속 */
+        background: transparent; /* 배경 투명 */
+        cursor: text; /* 일반 텍스트처럼 보이게 */
+    }
+}
+
+// .basic-table-cell:focus {
+//     outline: none;
+// }
