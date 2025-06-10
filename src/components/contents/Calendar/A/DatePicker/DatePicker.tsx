@@ -32,14 +32,16 @@ const DatePicker = ({ onChangeDate }: DatePickerProps) => {
     return (
         <Dropdown.Content className={combinedStyle}>
             <DayPicker
+                month={calendarValue} // 밖에 nav버튼으로 달 이동 시 캘린더 업데이트 X
                 required
                 captionLayout="dropdown"
                 navLayout="after"
                 locale={ko}
                 mode="single"
                 selected={calendarValue}
-                onSelect={handleDateChange}
+                onSelect={handleDateChange} // 캘린더 업데이트를 위해 위 추가 시 안쪽에 nav, select 작동 X 해결
                 showOutsideDays
+                onMonthChange={setCalendarValue}
                 components={{ PreviousMonthButton, NextMonthButton }}
                 footer={
                     <div className={styles.Legend}>

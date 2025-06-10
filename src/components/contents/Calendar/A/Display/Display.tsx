@@ -1,12 +1,26 @@
 import Dropdown from '@/headless/Dropdown/Dropdown';
+import styles from './Display.module.scss';
 import React from 'react';
 import { useCalendarA } from '../CalendarA';
 import moment from 'moment';
+import classNames from 'classnames';
 
-const Display = () => {
+type DisplayProps = React.HTMLAttributes<HTMLButtonElement> & {
+    type?: 'A' | 'B';
+};
+
+const Display = ({ type }: DisplayProps) => {
     const { calendarValue } = useCalendarA();
 
-    return <Dropdown.Trigger>{moment(calendarValue).format('YYYY/MM/DD (dd)')}</Dropdown.Trigger>;
+    const combinedStyles = classNames(styles.default, {
+        [styles.CalendarA]: type === 'A',
+    });
+
+    return (
+        <div className={combinedStyles}>
+            <Dropdown.Trigger>{moment(calendarValue).format('YYYY/MM/DD (dd)')}</Dropdown.Trigger>
+        </div>
+    );
 };
 
 export default Display;

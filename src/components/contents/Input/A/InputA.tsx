@@ -12,6 +12,8 @@ type InputAProps = BaseInputProps & {
 const InputA = forwardRef<HTMLInputElement, InputAProps>(({ size = 'md', full, className, style, ...props }, ref) => {
     const cssVariables: CSSPropertiesWithVars = {};
     const combinedStyles = classNames(styles.InputA, className, {
+        [styles.Xxs]: size === '2xs',
+        [styles.Xs]: size === 'xs',
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',

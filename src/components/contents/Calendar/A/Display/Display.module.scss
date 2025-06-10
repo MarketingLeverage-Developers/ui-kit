@@ -1,0 +1,18 @@
+.default {
+    button {
+        cursor: pointer;
+        height: 100%;
+    }
+}
+
+.CalendarA {
+    button {
+        font-size: var(--font-15);
+        font-weight: 400;
+        padding: 0 var(--space-20);
+        border-radius: 8px;
+        background-color: #fff;
+        border: 1px solid #d5d5d5;
+        height: 100%;
+    }
+}

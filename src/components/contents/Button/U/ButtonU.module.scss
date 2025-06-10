@@ -1,0 +1,36 @@
+.ButtonV {
+    width: fit-content;
+    border-radius: var(--radius);
+    color: var(--color);
+    background-color: var(--background-color);
+    border: 1px solid var(--borderColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    &.Xxs {
+        padding: var(--space-7);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        padding: var(--space-15);
+        font-size: var(--font-15);
+    }
+    &.Md {
+        padding: var(--space-20);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25);
+        font-size: var(--font-22);
+    }
+    &.Full {
+        width: 100%;
+    }
+}

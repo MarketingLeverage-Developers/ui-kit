@@ -84,14 +84,18 @@ export type BoxSize =
     | 150
     | 175
     | 200
+    | 240
     | 250
     | 300
     | 350
     | 400
+    | 450
     | 500
     | 550
+    | 600
     | 650
-    | 700;
+    | 700
+    | 750;
 
 export type ContentSize = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
