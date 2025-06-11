@@ -1,0 +1,40 @@
+/* Item.module.scss */
+.Wrapper {
+    border: none;
+    background-color: inherit;
+}
+
+.Content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-15);
+
+    .Circle {
+        position: relative; /* ::after 위치 기준 */
+        width: var(--box-25);
+        height: var(--box-25);
+
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 1px solid #909090;
+
+        &.Active {
+            background-color: var(--color, var(--primary-color));
+            border: none;
+            color: #fff;
+            .CheckIcon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 65%;
+                height: 65%;
+            }
+        }
+    }
+
+    .Text {
+        font-size: var(--font-15);
+        color: #474747;
+    }
+}
