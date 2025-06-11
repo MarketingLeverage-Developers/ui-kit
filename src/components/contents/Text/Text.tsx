@@ -36,11 +36,11 @@ const Text = ({
     ...props
 }: TextProps) => {
     // size가 number면 'px' 단위를 붙이고, 문자열이면 그대로 사용
-    const computedsize = `var(--font-size-${size})`;
+    const computedsize = `var(--font-${size})`;
     const computedweight = weight;
     const computedColor = color;
     const computedTextAlign = align;
-    const computedLieHeight = `var(--font-size-${height})`;
+    const computedLieHeight = `var(--font-${height})`;
 
     const cssVariables: CSSPropertiesWithVars = {
         '--font-size': computedsize,

@@ -1,30 +1,5 @@
 /* Text.module.scss */
 .Text {
-    --font-size-14: clamp(12px, calc(14 / var(--inner) * 100vw), 14px);
-    --font-size-15: clamp(13px, calc(15 / var(--inner) * 100vw), 15px);
-    --font-size-16: clamp(14px, calc(16 / var(--inner) * 100vw), 16px);
-    --font-size-17: clamp(14px, calc(17 / var(--inner) * 100vw), 17px);
-    --font-size-18: clamp(15px, calc(18 / var(--inner) * 100vw), 18px);
-    --font-size-20: clamp(16px, calc(20 / var(--inner) * 100vw), 20px);
-    --font-size-22: clamp(16px, calc(22 / var(--inner) * 100vw), 22px);
-    --font-size-24: clamp(16px, calc(24 / var(--inner) * 100vw), 24px);
-    --font-size-26: clamp(17px, calc(26 / var(--inner) * 100vw), 26px);
-    --font-size-28: clamp(18px, calc(28 / var(--inner) * 100vw), 28px);
-    --font-size-30: clamp(18px, calc(30 / var(--inner) * 100vw), 30px);
-    --font-size-32: clamp(18px, calc(32 / var(--inner) * 100vw), 32px);
-    --font-size-35: clamp(19px, calc(35 / var(--inner) * 100vw), 35px);
-    --font-size-38: clamp(19px, calc(38 / var(--inner) * 100vw), 38px);
-    --font-size-40: clamp(20px, calc(40 / var(--inner) * 100vw), 40px);
-    --font-size-46: clamp(23px, calc(46 / var(--inner) * 100vw), 46px);
-    --font-size-50: clamp(24px, calc(50 / var(--inner) * 100vw), 50px);
-    --font-size-56: clamp(24px, calc(56 / var(--inner) * 100vw), 56px);
-    --font-size-60: clamp(25px, calc(60 / var(--inner) * 100vw), 60px);
-    --font-size-64: clamp(26px, calc(64 / var(--inner) * 100vw), 64px);
-    --font-size-70: clamp(32px, calc(70 / var(--inner) * 100vw), 70px);
-    --font-size-100: clamp(34px, calc(100 / var(--inner) * 100vw), 100px);
-    --font-size-120: clamp(36px, calc(120 / var(--inner) * 100vw), 120px);
-    --inner: 1920;
-
     font-size: var(--font-size);
     font-weight: var(--font-weight);
     color: var(--color, var(--text-color));
