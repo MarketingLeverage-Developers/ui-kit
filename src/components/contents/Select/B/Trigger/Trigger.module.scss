@@ -1,0 +1,47 @@
+/* Block: basic-select-trigger */
+.Trigger {
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: inherit;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--font-15);
+    color: #474747;
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-14);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-15);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-16);
+    }
+
+    &.Full {
+        width: 100%;
+    }
+}
+
+.Icon {
+    font-size: var(--font-20);
+}
