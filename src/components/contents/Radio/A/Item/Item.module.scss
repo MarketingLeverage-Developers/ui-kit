@@ -1,0 +1,32 @@
+/* Item.module.scss */
+.Wrapper {
+    border: none;
+    background-color: inherit;
+}
+
+.Item {
+    position: relative; /* ::after 위치 기준 */
+    width: var(--box-25);
+    height: var(--box-25);
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    border: 1px solid #e2e2e2;
+
+    &.Active {
+        border: 1px solid var(--color, var(--primary-color));
+
+        &::after {
+            content: ''; // pseudo-element를 보여주기 위한 필수 속성
+            display: block; // 블록 수준 요소로 렌더링
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 65%;
+            border-radius: 50%;
+            background-color: var(--color, var(--primary-color));
+            transform: translate(-50%, -50%);
+        }
+    }
+}
