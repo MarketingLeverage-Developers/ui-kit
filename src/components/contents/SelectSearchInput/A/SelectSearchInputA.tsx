@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from './SelectSearchInputA.module.scss';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
+import { BoxSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import Image from '../../Image/Image';
 import Select from './Select/Select';
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
@@ -12,12 +12,14 @@ type SelectSearchInputAProps = InputHTMLAttributes<HTMLInputElement> & {
     buttonColor?: HexColor;
     onButtonClick?: () => void;
     children: React.ReactNode;
+    height?: BoxSize;
 };
-const SelectSearchInputA = ({ color, onButtonClick, children, ...props }: SelectSearchInputAProps) => {
+const SelectSearchInputA = ({ color, onButtonClick, height, children, ...props }: SelectSearchInputAProps) => {
     const select = children;
 
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
+        '--height': `${height}px`,
     };
 
     return (

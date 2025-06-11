@@ -1,9 +1,9 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import styles from './ButtonE.module.scss';
+import React, { HTMLAttributes } from 'react';
+import styles from './ButtonU.module.scss';
 import classNames from 'classnames';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types';
 
-type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonUProps = HTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     full?: boolean;
@@ -12,15 +12,15 @@ type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
 };
 
-const ButtonE = ({
+const ButtonU = ({
     color,
     size = 'md',
-    radius = 0,
-    borderColor,
     full,
-    backgroundColor = 'inherit',
+    radius = 0,
+    borderColor = '#d5d5d5',
+    backgroundColor = '#fff',
     ...props
-}: ButtonEProps) => {
+}: ButtonUProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
         '--radius': `${radius}px`,
@@ -28,7 +28,7 @@ const ButtonE = ({
         '--background-color': backgroundColor,
     };
 
-    const combinedStyles = classNames(styles.ButtonE, props.className, {
+    const combinedStyles = classNames(styles.ButtonV, props.className, {
         [styles.Xxs]: size === '2xs',
         [styles.Xs]: size === 'xs',
         [styles.Sm]: size === 'sm',
@@ -40,4 +40,4 @@ const ButtonE = ({
     return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;
 };
 
-export default ButtonE;
+export default ButtonU;
