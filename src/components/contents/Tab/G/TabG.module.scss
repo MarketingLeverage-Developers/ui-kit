@@ -1,0 +1,48 @@
+.TabG {
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    border-radius: 30px;
+
+    &.Xxs {
+        height: var(--box-20);
+        font-size: var(--font-14);
+        button {
+            padding: var(--space-7) var(--space-10);
+            font-size: var(--font-14);
+        }
+    }
+
+    &.Xs {
+        height: var(--box-30);
+        font-size: var(--font-16);
+        button {
+            padding: var(--space-10) var(--space-15);
+            font-size: var(--font-16);
+        }
+    }
+    &.Sm {
+        font-size: var(--font-18);
+
+        button {
+            height: var(--box-40);
+            padding: var(--space-15) var(--space-25);
+            font-size: var(--font-18);
+        }
+    }
+    &.Md {
+        font-size: var(--font-20);
+        button {
+            height: var(--box-50);
+            padding: var(--space-20) var(--space-30);
+            font-size: var(--font-20);
+        }
+    }
+    &.Lg {
+        height: var(--box-60);
+        font-size: var(--font-22);
+        button {
+            padding: var(--space-25) var(--space-40);
+            font-size: var(--font-22);
+        }
+    }
+}

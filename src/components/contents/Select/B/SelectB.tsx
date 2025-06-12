@@ -4,10 +4,10 @@ import SelectGroup from '@/headless/SelectGroup/SelectGroup';
 import styles from './SelectB.module.scss';
 import Item from './Item/Item';
 import Content from './Content/Content';
-import Trigger from './Trigger/Trigger';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 import { ContentSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
 import classNames from 'classnames';
+import Trigger from './Trigger/Trigger';
 
 export interface SelectBContextType {
     size: ContentSize;
