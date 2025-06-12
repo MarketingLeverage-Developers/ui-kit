@@ -1,6 +1,8 @@
 .Content {
     // background-color: red;
     // height: var(--box-40);
+    display: flex;
+    align-items: center;
     height: var(--box-40);
     padding: 0 var(--space-15);
     font-size: var(--font-14);
