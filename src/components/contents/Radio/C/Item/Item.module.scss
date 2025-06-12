@@ -7,12 +7,12 @@
 .Content {
     display: flex;
     align-items: center;
-    gap: var(--space-15);
+    gap: var(--space-7);
 
     .Circle {
         position: relative; /* ::after 위치 기준 */
-        width: var(--box-25);
-        height: var(--box-25);
+        width: var(--box-20);
+        height: var(--box-20);
 
         border-radius: 50%;
         box-sizing: border-box;

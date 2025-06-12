@@ -14,7 +14,7 @@ const RadioC = ({ color, ...props }: RadioCProps) => {
 
     return (
         <TabGroup {...props}>
-            <Flex gap={15} wrap="wrap" style={{ ...cssVariables }}>
+            <Flex gap={7} wrap="wrap" style={{ ...cssVariables }}>
                 {props.children}
             </Flex>
         </TabGroup>
