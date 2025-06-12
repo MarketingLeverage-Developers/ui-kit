@@ -5,9 +5,10 @@ import styles from './SelectB.module.scss';
 import Item from './Item/Item';
 import Content from './Content/Content';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
-import { ContentSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
+import { BoxSize, ContentSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
 import classNames from 'classnames';
 import Trigger from './Trigger/Trigger';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export interface SelectBContextType {
     size: ContentSize;
@@ -27,19 +28,26 @@ type SelectBProps = {
     children: React.ReactNode;
     defaultValue: SelectGroupValue;
     size?: ContentSize;
+    width?: BoxSize | string;
     full?: boolean;
 };
 
-const SelectB = ({ children, defaultValue, size = 'md', full }: SelectBProps) => {
+const SelectB = ({ children, defaultValue, width, size = 'md', full }: SelectBProps) => {
     const combinedStyle = classNames(styles.Box, {
         [styles.Full]: full,
     });
+
+    const cssVariables: React.CSSProperties = {
+        '--width': dimensionToVariable(width),
+    } as React.CSSProperties;
 
     return (
         <SelectBContext.Provider value={{ size }}>
             <SelectGroup defaultValue={defaultValue}>
                 <Dropdown>
-                    <Dropdown.Box className={combinedStyle}>{children}</Dropdown.Box>
+                    <Dropdown.Box className={combinedStyle} style={{ ...cssVariables }}>
+                        {children}
+                    </Dropdown.Box>
                 </Dropdown>
             </SelectGroup>
         </SelectBContext.Provider>
