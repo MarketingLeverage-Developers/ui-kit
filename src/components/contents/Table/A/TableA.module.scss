@@ -6,12 +6,12 @@
     // border: 1px solid var(--base-color-quaternary);
     // border-radius: var(--border-radius);
     // background: var(--base-color-secondary);
-    overflow: auto;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .TableA {
-    width: 100%;
+    table-layout: fixed;
+    width: 1200px;
     border-collapse: collapse;
-    border-style: hidden;
-    table-layout: auto;
 }

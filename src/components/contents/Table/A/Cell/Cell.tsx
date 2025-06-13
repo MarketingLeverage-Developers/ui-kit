@@ -51,8 +51,10 @@ const Cell = ({
 
     return (
         <td className={cellClasses} {...props} style={{ ...cssVariables }}>
+            {/* <div className={styles.Content} style={{ ...cssVariables }}>
+                {children}
+            </div> */}
             {children}
-            {isEditable && <input type="text" defaultValue={value as string} onChange={handleTableCellChange} />}
         </td>
     );
 };

@@ -1,0 +1,16 @@
+/* ResizableCell.module.scss */
+
+/* td 요소 자체에 기본 스타일 */
+.Resizer {
+    display: table-cell;
+    position: relative; /* .Resizer 절대 위치용 */
+
+    background-color: var(--background);
+
+    width: var(--cell-width);
+    min-width: var(--cell-width);
+    max-width: var(--cell-width);
+    overflow: hidden;
+}
+
+/* 실제 셀 콘텐츠 래퍼 */

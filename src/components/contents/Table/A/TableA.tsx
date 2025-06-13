@@ -5,6 +5,7 @@ import Row from './Row/Row';
 import Cell from './Cell/Cell';
 import Body from './Body/Body';
 import Content from './Content/Content';
+import ResizableCell from './Resizer/Resizer';
 
 type TableAProps = {
     children: React.ReactNode;
@@ -47,3 +48,4 @@ TableA.Row = Row;
 TableA.Cell = Cell;
 TableA.Body = Body;
 TableA.Content = Content;
+TableA.ResizableCell = ResizableCell;
