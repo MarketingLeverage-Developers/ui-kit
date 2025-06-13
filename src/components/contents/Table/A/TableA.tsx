@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { HTMLAttributes, useEffect, useRef } from 'react';
 import styles from './TableA.module.scss';
 import Header from './Header/Header';
 import Row from './Row/Row';
@@ -7,11 +7,11 @@ import Body from './Body/Body';
 import Content from './Content/Content';
 import ResizableCell from './Resizer/Resizer';
 
-type TableAProps = {
+type TableAProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 };
 
-const TableA = ({ children }: TableAProps) => {
+const TableA = ({ children, ...props }: TableAProps) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const TableA = ({ children }: TableAProps) => {
     }, []);
 
     return (
-        <div className={styles.TableAWrapper}>
+        <div className={styles.TableAWrapper} {...props}>
             <table className={styles.TableA}>{children}</table>
         </div>
     );
