@@ -41,7 +41,7 @@ const TableA = ({ children, totalWidth, ...props }: TableAProps) => {
     };
 
     return (
-        <div className={styles.TableAWrapper} {...props} style={{ ...cssVariables }}>
+        <div className={styles.TableAWrapper} {...props} style={{ ...cssVariables, ...props.style }}>
             <table className={styles.TableA}>{children}</table>
         </div>
     );
