@@ -3,6 +3,9 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import DatePicker from './DatePicker/DatePicker';
 import Display from './Display/Display';
 import Dropdown from '@/headless/Dropdown/Dropdown';
+import Today from './Today/Today';
+import PrevDay from './PrevDay/PrevDay';
+import NextDay from './NextDay/NextDay';
 
 type CalendarAContextType = {
     calendarValue: Date | undefined;
@@ -43,3 +46,6 @@ export default CalendarA;
 
 CalendarA.Display = Display;
 CalendarA.DatePicker = DatePicker;
+CalendarA.ToDay = Today;
+CalendarA.PrevDay = PrevDay;
+CalendarA.NextDay = NextDay;
