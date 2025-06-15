@@ -6,12 +6,14 @@ import Cell from './Cell/Cell';
 import Body from './Body/Body';
 import Content from './Content/Content';
 import ResizableCell from './Resizer/Resizer';
+import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
 
 type TableAProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
+    totalWidth?: number;
 };
 
-const TableA = ({ children, ...props }: TableAProps) => {
+const TableA = ({ children, totalWidth, ...props }: TableAProps) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -34,8 +36,12 @@ const TableA = ({ children, ...props }: TableAProps) => {
         };
     }, []);
 
+    const cssVariables: CSSPropertiesWithVars = {
+        '--width': `${totalWidth}px`,
+    };
+
     return (
-        <div className={styles.TableAWrapper} {...props}>
+        <div className={styles.TableAWrapper} {...props} style={{ ...cssVariables }}>
             <table className={styles.TableA}>{children}</table>
         </div>
     );

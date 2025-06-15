@@ -12,6 +12,6 @@
 
 .TableA {
     table-layout: fixed;
-    width: 1200px;
+    width: var(--width);
     border-collapse: collapse;
 }
