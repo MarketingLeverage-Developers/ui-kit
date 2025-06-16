@@ -2,6 +2,7 @@ import { BoxSize, CSSPropertiesWithVars, FontSize, FontWeight, HexColor } from '
 import styles from './CardB.module.scss';
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export interface CardBProps extends React.ComponentProps<typeof Box> {
     content?: string;
@@ -42,10 +43,10 @@ const CardB: React.FC<CardBProps> = ({
     ...boxProps
 }) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--width': `${width}px`,
-        '--height': `${height}px`,
-        '--IconWidth': `${IconWidth}px`,
-        '--IconHeight': `${IconHeight}px`,
+        '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
+        '--IconWidth': dimensionToVariable(IconWidth),
+        '--IconHeight': dimensionToVariable(IconHeight),
         '--radius': `${radius}px`,
         '--backgroundColor': `${backgroundColor}`,
         '--border-color': borderColor,

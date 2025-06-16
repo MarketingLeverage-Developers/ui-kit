@@ -11,10 +11,7 @@
     box-sizing: border-box;
     box-shadow: var(--box-shadow);
     border: var(--border-weight) solid var(--border-color);
-    @media (max-width: 768px) {
-        width: calc(var(--width) / 1.2);
-        height: calc(var(--height) / 1.2);
-    }
+    gap: var(--space-30);
 }
 .Number {
     width: 30px;
@@ -32,11 +29,7 @@
     align-items: center;
     gap: var(--space-15);
     img {
-        width: 150px;
-        height: 150px;
-        @media (max-width: 768px) {
-            width: 120px;
-            height: 120px;
-        }
+        width: var(--IconWidth);
+        height: var(--IconHeight);
     }
 }
