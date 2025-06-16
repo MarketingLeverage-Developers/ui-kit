@@ -18,7 +18,9 @@ const Display = ({ type }: DisplayProps) => {
 
     return (
         <div className={combinedStyles}>
-            <Dropdown.Trigger>{moment(calendarValue).format('YYYY/MM/DD (dd)')}</Dropdown.Trigger>
+            <Dropdown.Trigger>
+                {calendarValue ? moment(calendarValue).format('YYYY/MM/DD (dd)') : '날짜 선택'}
+            </Dropdown.Trigger>
         </div>
     );
 };

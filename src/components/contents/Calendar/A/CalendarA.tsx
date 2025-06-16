@@ -19,14 +19,15 @@ const CalendarAContext = createContext<CalendarAContextType>({
 
 type CalendarAProps = {
     children: React.ReactNode;
-    defaultValue: Date;
+    defaultValue: Date | undefined;
 } & Omit<HTMLAttributes<HTMLDivElement>, 'defaultValue'>;
 
 const CalendarA = ({ defaultValue, children, ...props }: CalendarAProps) => {
-    const [calendarValue, setCalendarValue] = useState<Date | undefined>(defaultValue ?? new Date());
+    const [calendarValue, setCalendarValue] = useState<Date | undefined>(defaultValue ?? undefined);
 
     useEffect(() => {
-        setCalendarValue(defaultValue ?? new Date());
+        console.log('초기화 ', calendarValue);
+        setCalendarValue(defaultValue);
     }, [defaultValue]);
 
     return (
