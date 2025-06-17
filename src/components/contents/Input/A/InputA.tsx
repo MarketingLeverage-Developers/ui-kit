@@ -18,6 +18,7 @@ const InputA = forwardRef<HTMLInputElement, InputAProps>(({ size = 'md', full, c
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
         [styles.Full]: full,
+        [styles.Disabled]: props.disabled,
     });
 
     return <input ref={ref} {...props} className={combinedStyles} style={{ ...cssVariables, ...style }} />;
