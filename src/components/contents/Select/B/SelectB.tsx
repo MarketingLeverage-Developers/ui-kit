@@ -12,6 +12,7 @@ import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export interface SelectBContextType {
     size: ContentSize;
+    disabled?: boolean;
 }
 
 const SelectBContext = React.createContext<SelectBContextType | undefined>(undefined);
@@ -30,9 +31,10 @@ type SelectBProps = {
     size?: ContentSize;
     width?: BoxSize | string;
     full?: boolean;
+    disabled?: boolean;
 };
 
-const SelectB = ({ children, defaultValue, width, size = 'md', full }: SelectBProps) => {
+const SelectB = ({ children, defaultValue, width, size = 'md', disabled = false, full }: SelectBProps) => {
     const combinedStyle = classNames(styles.Box, {
         [styles.Full]: full,
     });
@@ -42,7 +44,7 @@ const SelectB = ({ children, defaultValue, width, size = 'md', full }: SelectBPr
     } as React.CSSProperties;
 
     return (
-        <SelectBContext.Provider value={{ size }}>
+        <SelectBContext.Provider value={{ size, disabled }}>
             <SelectGroup defaultValue={defaultValue}>
                 <Dropdown>
                     <Dropdown.Box className={combinedStyle} style={{ ...cssVariables }}>

@@ -40,6 +40,17 @@
     &.Full {
         width: 100%;
     }
+
+    &.Disabled {
+        background-color: #f5f5f5;
+        color: #aaa;
+        border-color: #ddd;
+        cursor: not-allowed;
+
+        .Icon {
+            color: #ccc;
+        }
+    }
 }
 
 .Icon {

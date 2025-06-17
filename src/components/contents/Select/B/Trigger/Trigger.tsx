@@ -15,7 +15,7 @@ type TriggerProps = {
 const Trigger = ({ render }: TriggerProps) => {
     const { selectGroupValue } = useSelectGroup();
     const isSelected = selectGroupValue !== '';
-    const { size } = useSelectBContext();
+    const { size, disabled } = useSelectBContext();
 
     // 동적으로 변경되는 부분은 인라인 스타일로 처리합니다.
 
@@ -27,10 +27,11 @@ const Trigger = ({ render }: TriggerProps) => {
         [styles.Sm]: size === 'sm',
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
+        [styles.Disabled]: disabled,
     });
 
     return (
-        <Dropdown.Trigger className={combinedStyle}>
+        <Dropdown.Trigger className={combinedStyle} disabled={disabled} aria-disabled={disabled}>
             <SelectGroup.Display className={styles.Display} render={render} />
             <MdKeyboardArrowDown className={styles.Icon} />
         </Dropdown.Trigger>
