@@ -11,7 +11,8 @@
 }
 
 .TableA {
-    table-layout: auto;
+    table-layout: fixed;
     width: var(--width);
     border-collapse: collapse;
+    border-style: hidden;
 }
