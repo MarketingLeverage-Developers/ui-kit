@@ -3,10 +3,11 @@ import styles from './CardC.module.scss';
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Flex from '../../../layouts/Flex/Flex';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
 
 export interface CardCProps extends React.ComponentProps<typeof Box> {
     radius?: number;
-    image: string;
+    image?: string;
     title?: string;
     width?: BoxSize;
     height?: BoxSize;
@@ -48,8 +49,8 @@ const CardC: React.FC<CardCProps> = ({
     ...boxProps
 }) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--width': `${width}px`,
-        '--height': `${height}px`,
+        '--width': dimensionToVariable(width),
+        '--height': dimensionToVariable(height),
         '--imageWidth': `${imageWidth}px`,
         '--imageHeight': `${imageHeight}px`,
         '--radius': `${radius}px`,
