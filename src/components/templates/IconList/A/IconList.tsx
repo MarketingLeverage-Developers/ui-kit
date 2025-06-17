@@ -1,5 +1,5 @@
 import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
-import styles from './IconArray.module.scss';
+import styles from './IconList.module.scss';
 import { dimensionToVariable } from '@/ui-kit/src/utils';
 import React from 'react';
 
@@ -8,13 +8,13 @@ interface IconItem {
     Icon: string;
 }
 
-interface IconFlexProps {
+interface IconListProps {
     Icon: IconItem[];
     width?: BoxSize | string;
     height?: BoxSize | string;
 }
 
-const IconFlex = ({ Icon, width, height }: IconFlexProps) => {
+const IconList = ({ Icon, width, height }: IconListProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--width': dimensionToVariable(width),
         '--height': dimensionToVariable(height),
@@ -34,4 +34,4 @@ const IconFlex = ({ Icon, width, height }: IconFlexProps) => {
     );
 };
 
-export default IconFlex;
+export default IconList;

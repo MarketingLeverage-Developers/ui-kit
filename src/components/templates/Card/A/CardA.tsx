@@ -9,6 +9,7 @@ export interface CardAProps extends React.ComponentProps<typeof Box> {
     title?: string;
     content?: string;
     radius?: number;
+    color?: HexColor;
     icon: string;
     titleSize?: FontSize;
     contentSize?: FontSize;
@@ -20,6 +21,7 @@ export interface CardAProps extends React.ComponentProps<typeof Box> {
 }
 
 const CardA: React.FC<CardAProps> = ({
+    color = '#000',
     title,
     content,
     icon,
@@ -45,10 +47,10 @@ const CardA: React.FC<CardAProps> = ({
     >
         <Flex height="100%" direction="column" gap={15} justify="space-between">
             <Flex direction="column" gap={15}>
-                <Text color="#ffffff" size={titleSize} weight={500} line={1}>
+                <Text color={color} size={titleSize} weight={500} line={1}>
                     {title}
                 </Text>
-                <Text color="#ffffff" size={contentSize} weight={600}>
+                <Text color={color} size={contentSize} weight={600}>
                     {content}
                 </Text>
             </Flex>
