@@ -2,6 +2,12 @@
 .Wrapper {
     border: none;
     background-color: inherit;
+
+    &.Disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        pointer-events: none; // 선택 차단 (선택적)
+    }
 }
 
 .Content {

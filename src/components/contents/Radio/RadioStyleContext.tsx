@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, ReactNode } from 'react';
+import { HexColor } from '@/ui-kit/src/types';
 
 export type RadioStyleContextType = {
     size?: 'sm' | 'md' | 'lg';
-    color?: 'primary' | 'gray' | 'red' | 'blue';
+    color?: HexColor;
     variant?: 'solid' | 'outline' | 'ghost';
     disabled?: boolean;
     fullWidth?: boolean;
@@ -18,4 +19,14 @@ export const useRadioStyleContext = () => {
     return context;
 };
 
-export default RadioStyleContext;
+// ✅ 여기가 핵심: 컴포넌트처럼 쓸 수 있도록 래핑
+type RadioStyleProviderProps = RadioStyleContextType & {
+    children: ReactNode;
+};
+
+export const RadioStyleContextProvider = ({ children, ...style }: RadioStyleProviderProps) => {
+    return <RadioStyleContext.Provider value={style}>{children}</RadioStyleContext.Provider>;
+};
+
+// ✅ 이렇게도 쓰고 싶다면 export default로 설정
+export default RadioStyleContextProvider;
