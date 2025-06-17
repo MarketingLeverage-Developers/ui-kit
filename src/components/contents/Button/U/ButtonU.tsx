@@ -10,6 +10,7 @@ type ButtonUProps = HTMLAttributes<HTMLButtonElement> & {
     radius?: number;
     borderColor?: HexColor;
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
+    disabled?: boolean;
 };
 
 const ButtonU = ({
@@ -19,6 +20,7 @@ const ButtonU = ({
     radius = 0,
     borderColor = '#d5d5d5',
     backgroundColor = '#fff',
+    disabled,
     ...props
 }: ButtonUProps) => {
     const cssVariables: CSSPropertiesWithVars = {
@@ -35,6 +37,7 @@ const ButtonU = ({
         [styles.Md]: size === 'md',
         [styles.Lg]: size === 'lg',
         [styles.Full]: full,
+        [styles.Disabled]: disabled,
     });
 
     return <button {...props} className={combinedStyles} style={{ ...cssVariables, ...props.style }} />;

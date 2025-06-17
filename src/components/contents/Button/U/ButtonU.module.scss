@@ -33,4 +33,10 @@
     &.Full {
         width: 100%;
     }
+
+    &.Disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none; // 모든 클릭/호버 이벤트 차단
+    }
 }
