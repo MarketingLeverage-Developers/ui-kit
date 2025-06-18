@@ -7,4 +7,12 @@
     padding: 0 var(--space-15);
     font-size: var(--font-14);
     box-sizing: border-box;
+
+    &.BottomDivider {
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    &.RightDivider {
+        border-right: 1px solid #e2e2e2;
+    }
 }
