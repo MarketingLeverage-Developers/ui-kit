@@ -6,8 +6,9 @@
     // border: 1px solid var(--base-color-quaternary);
     // border-radius: var(--border-radius);
     // background: var(--base-color-secondary);
-    width: 100%;
+    width: var(--width);
     overflow-x: auto;
+    border: 1px solid #e2e2e2;
 }
 
 .TableA {

@@ -36,9 +36,7 @@ const TableA = ({ children, totalWidth, ...props }: TableAProps) => {
         };
     }, []);
 
-    const cssVariables: CSSPropertiesWithVars = {
-        '--width': `${totalWidth}px`,
-    };
+    const cssVariables: CSSPropertiesWithVars = totalWidth ? { '--width': `${totalWidth}px` } : { '--width': '100%' };
 
     return (
         <div className={styles.TableAWrapper} {...props} style={{ ...cssVariables, ...props.style }}>
