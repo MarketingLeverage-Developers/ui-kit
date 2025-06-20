@@ -1,0 +1,68 @@
+.InputJ {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background-color: #fff;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: var(--padding-y) var(--padding-x);
+    &:focus-within {
+        border: 1px solid var(--primary-color);
+    }
+
+    .InputWrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .Label,
+    .Unit {
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .Required {
+        font-weight: 500;
+        color: #ff2b2b;
+    }
+
+    .Unit {
+        padding: 0 var(--space-10);
+    }
+
+    .InputElement {
+        border: none;
+        outline: none;
+        flex: 1;
+        text-align: right;
+    }
+
+    &.Xxs {
+        font-size: var(--font-14);
+        padding: var(--space-7) var(--space-10);
+    }
+
+    &.Xs {
+        font-size: var(--font-16);
+        padding: var(--space-10) var(--space-15);
+    }
+
+    &.Sm {
+        font-size: var(--font-14);
+        padding: var(--space-15) var(--space-25);
+    }
+
+    &.Md {
+        font-size: var(--font-15);
+        padding: var(--space-20) var(--space-30);
+    }
+
+    &.Lg {
+        font-size: var(--font-16);
+        padding: var(--space-25) var(--space-40);
+    }
+
+    &.Full {
+        width: 100%;
+    }
+}
