@@ -35,6 +35,9 @@
         outline: none;
         flex: 1;
         text-align: right;
+        &::placeholder {
+            color: #bdbdbd;
+        }
     }
 
     &.Xxs {
