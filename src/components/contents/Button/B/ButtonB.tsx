@@ -6,12 +6,14 @@ import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types'
 type ButtonBProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
+    textColor?: HexColor;
     full?: boolean;
 };
 
-const ButtonB = ({ color, size = 'md', full, ...props }: ButtonBProps) => {
+const ButtonB = ({ color, textColor, size = 'md', full, ...props }: ButtonBProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
+        '--text-color': textColor,
     };
 
     const combinedStyles = classNames(styles.ButtonB, props.className, {

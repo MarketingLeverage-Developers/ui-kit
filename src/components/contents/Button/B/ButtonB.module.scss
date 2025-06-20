@@ -1,7 +1,7 @@
 .ButtonB {
     width: fit-content;
     border-radius: 8px;
-    color: #fff;
+    color: var(--text-color, #fff);
     cursor: pointer;
     background-color: var(--color, var(--primary-color));
     border: none;
