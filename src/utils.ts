@@ -18,3 +18,11 @@ export const dimensionToSpace = (dim?: number | string): string => {
     }
     return dim || 'auto';
 };
+
+export const formatNumber = (value: number | null | undefined) =>
+    typeof value === 'number' && isFinite(value) ? value.toLocaleString() : '';
+
+export const parseNumber = (value: string) => {
+    const number = Number(value.replaceAll(',', ''));
+    return isFinite(number) ? number : 0;
+};
