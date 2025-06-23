@@ -1,0 +1,20 @@
+.Item {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    color: #161616;
+    font-size: var(--font-14);
+    height: var(--box-40);
+    padding: 0 var(--space-25);
+    border-radius: 5px;
+    &.Active {
+        border: none;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-weight: 500;
+    }
+
+    &.Disabled {
+        color: #bdbdbd;
+    }
+}
