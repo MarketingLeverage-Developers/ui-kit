@@ -7,11 +7,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: var(--space-30);
+    padding: var(--space-20);
     box-sizing: border-box;
     box-shadow: var(--box-shadow);
     border: var(--border-weight) solid var(--border-color);
-    gap: var(--space-30);
+    gap: var(--space-20);
 }
 .Number {
     width: 30px;
