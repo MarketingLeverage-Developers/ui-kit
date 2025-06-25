@@ -4,6 +4,7 @@ export const defaultVariables: Record<string, string> = {
 
     // --font sizes
     '--font-11': 'clamp(9px, calc(11 / var(--inner) * 100vw), 11px)',
+    '--font-12': 'clamp(10px, calc(12 / var(--inner) * 100vw), 12px)',
     '--font-13': 'clamp(12px, calc(14 / var(--inner) * 100vw), 13px)',
     '--font-14': 'clamp(12px, calc(14 / var(--inner) * 100vw), 14px)',
     '--font-15': 'clamp(13px, calc(15 / var(--inner) * 100vw), 15px)',
@@ -31,8 +32,10 @@ export const defaultVariables: Record<string, string> = {
 
     // spacing
     '--space-0': '0',
+    '--space-8': 'clamp(6px, calc(8 / var(--inner) * 100vw), 8px)',
     '--space-7': 'clamp(5px, calc(7 / var(--inner) * 100vw), 7px)',
     '--space-10': 'clamp(7px, calc(10 / var(--inner) * 100vw), 10px)',
+    '--space-12': 'clamp(10px, calc(10 / var(--inner) * 100vw), 12px)',
     '--space-15': 'clamp(10px, calc(15 / var(--inner) * 100vw), 15px)',
     '--space-20': 'clamp(10px, calc(20 / var(--inner) * 100vw), 20px)',
     '--space-25': 'clamp(12px, calc(25 / var(--inner) * 100vw), 25px)',

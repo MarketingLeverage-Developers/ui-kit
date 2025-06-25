@@ -5,30 +5,26 @@ import Flex from '../../../layouts/Flex/Flex';
 import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types';
 import classNames from 'classnames';
 import Item from './Item/Item';
+import TabStyleContextProvider from '../TabStyleContext';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
 
-type TabProps = React.ComponentProps<typeof TabGroup> & {
-    color?: HexColor;
-    size?: ContentSize;
-};
+type TabProps = React.ComponentProps<typeof TabGroup> & React.ComponentProps<typeof TabStyleContextProvider>;
 
-const TabG = ({ size = 'md', color, ...props }: TabProps) => {
-    const className = classNames(styles.TabG, {
-        [styles.Xxs]: size === '2xs',
-        [styles.Xs]: size === 'xs',
-        [styles.Sm]: size === 'sm',
-        [styles.Md]: size === 'md',
-        [styles.Lg]: size === 'lg',
-    });
-
+const TabG = ({ ...props }: TabProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--color': color,
+        '--background-color': props?.wrapperStyle?.bgColor,
+        '--border-color': props?.wrapperStyle?.borderColor,
+        '--width': dimensionToVariable(props?.wrapperStyle?.width),
     };
+
     return (
-        <TabGroup {...props}>
-            <Flex className={className} style={{ ...cssVariables }}>
-                {props.children}
-            </Flex>
-        </TabGroup>
+        <TabStyleContextProvider {...props}>
+            <TabGroup {...props}>
+                <Flex className={styles.TabG} style={{ ...cssVariables }}>
+                    {props.children}
+                </Flex>
+            </TabGroup>
+        </TabStyleContextProvider>
     );
 };
 

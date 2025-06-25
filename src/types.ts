@@ -8,6 +8,9 @@ export type HexColor = `#${string}`;
 export type SpaceSize =
     | 0
     | 7
+    | 8
+    | 10
+    | 12
     | 15
     | 20
     | 25
@@ -28,6 +31,7 @@ export type SpaceSize =
     | 200;
 export type FontSize =
     | 11
+    | 12
     | 13
     | 14
     | 15
@@ -100,6 +104,28 @@ export type BoxSize =
     | 750;
 
 export type ContentSize = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+type RadiusValue = number | string;
+
+export type BorderRadius =
+    | RadiusValue
+    | {
+          topLeft?: RadiusValue;
+          topRight?: RadiusValue;
+          bottomLeft?: RadiusValue;
+          bottomRight?: RadiusValue;
+      };
+
+export type PaddingSize =
+    | SpaceSize
+    | {
+          x?: SpaceSize;
+          y?: SpaceSize;
+          l?: SpaceSize;
+          r?: SpaceSize;
+          t?: SpaceSize;
+          b?: SpaceSize;
+      };
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
     paddingY?: SpaceSize;
