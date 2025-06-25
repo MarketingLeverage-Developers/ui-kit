@@ -1,36 +1,31 @@
-import TabGroup from '@/headless/TabGroup/TabGroup';
+import React from 'react';
 import styles from './TabW.module.scss';
-import Item from './Item/Item';
-import classNames from 'classnames';
-import { BoxSize, ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types';
+import TabGroup from '@/headless/TabGroup/TabGroup';
 import Flex from '../../../layouts/Flex/Flex';
-import { dimensionToVariable } from '@/ui-kit/src/utils';
-import { HTMLAttributes } from 'react';
+import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types';
+import classNames from 'classnames';
+import Item from './Item/Item';
+import TabStyleContextProvider from '../TabStyleContext';
+import { dimensionToSpace, dimensionToVariable } from '@/ui-kit/src/utils';
 
-type TabWProps = React.ComponentProps<typeof TabGroup> & {
-    color?: HexColor;
-    size?: ContentSize;
-    width?: BoxSize | string;
-} & HTMLAttributes<HTMLDivElement>;
+type TabProps = React.ComponentProps<typeof TabGroup> & React.ComponentProps<typeof TabStyleContextProvider>;
 
-const TabW = ({ size = 'md', width, color, ...props }: TabWProps) => {
-    const className = classNames(styles.TabW, {
-        [styles.Sm]: size === 'sm',
-        [styles.Md]: size === 'md',
-        [styles.Lg]: size === 'lg',
-    });
-
+const TabW = ({ ...props }: TabProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--color': color,
-        '--width': dimensionToVariable(width),
+        '--background-color': props?.wrapperStyle?.bgColor,
+        '--border-color': props?.wrapperStyle?.borderColor,
+        '--width': dimensionToVariable(props?.wrapperStyle?.width),
+        '--gap': dimensionToSpace(props?.wrapperStyle?.gap),
     };
 
     return (
-        <TabGroup {...props}>
-            <Flex className={className} style={{ ...cssVariables, ...props.style }}>
-                {props.children}
-            </Flex>
-        </TabGroup>
+        <TabStyleContextProvider {...props}>
+            <TabGroup {...props}>
+                <Flex className={styles.TabW} style={{ ...cssVariables }}>
+                    {props.children}
+                </Flex>
+            </TabGroup>
+        </TabStyleContextProvider>
     );
 };
 

@@ -1,10 +1,11 @@
 import React, { useContext, ReactNode } from 'react';
-import { BoxSize, ContentSize, FontSize, HexColor, PaddingSize } from '@/ui-kit/src/types';
+import { BoxSize, ContentSize, FontSize, HexColor, PaddingSize, SpaceSize } from '@/ui-kit/src/types';
 
 export type TabWrapperStyle = {
     bgColor?: HexColor;
     borderColor?: HexColor;
     width?: BoxSize | string;
+    gap?: SpaceSize;
 };
 
 export type TabItemStyle = {
