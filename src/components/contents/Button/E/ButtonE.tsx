@@ -24,7 +24,7 @@ const ButtonE = ({
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
         '--radius': `${radius}px`,
-        '--borderColor': borderColor,
+        '--border-color': borderColor,
         '--background-color': backgroundColor,
     };
 
