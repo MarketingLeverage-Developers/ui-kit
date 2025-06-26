@@ -3,6 +3,9 @@
 
 .Box {
     width: var(--width);
+    border-radius: 8px;
+
+    background-color: var(--background-color);
 
     &.Full {
         width: 100%;

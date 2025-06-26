@@ -5,7 +5,7 @@ import styles from './SelectB.module.scss';
 import Item from './Item/Item';
 import Content from './Content/Content';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
-import { BoxSize, ContentSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
+import { BoxSize, ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import classNames from 'classnames';
 import Trigger from './Trigger/Trigger';
 import { dimensionToVariable } from '@/ui-kit/src/utils';
@@ -29,18 +29,28 @@ type SelectBProps = {
     children: React.ReactNode;
     defaultValue: SelectGroupValue;
     size?: ContentSize;
+    bgColor?: HexColor;
     width?: BoxSize | string;
     full?: boolean;
     disabled?: boolean;
 };
 
-const SelectB = ({ children, defaultValue, width, size = 'md', disabled = false, full }: SelectBProps) => {
+const SelectB = ({
+    children,
+    defaultValue,
+    width,
+    bgColor = '#fff',
+    size = 'md',
+    disabled = false,
+    full,
+}: SelectBProps) => {
     const combinedStyle = classNames(styles.Box, {
         [styles.Full]: full,
     });
 
     const cssVariables: React.CSSProperties = {
         '--width': dimensionToVariable(width),
+        '--background-color': bgColor,
     } as React.CSSProperties;
 
     return (

@@ -9,8 +9,8 @@ export interface CardCProps extends React.ComponentProps<typeof Box> {
     radius?: number;
     image?: string;
     title?: string;
-    width?: BoxSize;
-    height?: BoxSize;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
     boxShadow?: string;
     imageWidth?: BoxSize;
     imageHeight?: BoxSize;

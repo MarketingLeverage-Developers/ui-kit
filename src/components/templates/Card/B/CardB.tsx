@@ -11,8 +11,8 @@ export interface CardBProps extends React.ComponentProps<typeof Box> {
     icon: string;
     contentSize?: FontSize;
     contentWeight?: FontWeight;
-    width?: BoxSize;
-    height?: BoxSize;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
     boxShadow?: string;
     IconWidth?: BoxSize;
     IconHeight?: BoxSize;
@@ -30,10 +30,10 @@ const CardB: React.FC<CardBProps> = ({
     radius = 0,
     contentSize = 40,
     contentWeight = 400,
-    width = 350,
-    height = 350,
-    IconWidth = 80,
-    IconHeight = 80,
+    width,
+    height,
+    IconWidth,
+    IconHeight,
     borderWeight = 0,
     borderColor = '#E2E2E2',
     backgroundColor = 'inherit',

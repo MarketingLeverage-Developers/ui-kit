@@ -6,6 +6,7 @@ import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types'
 type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
+    textColor?: HexColor;
     full?: boolean;
     radius?: number;
     borderColor?: HexColor;
@@ -14,6 +15,7 @@ type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const ButtonE = ({
     color,
+    textColor,
     size = 'md',
     radius = 0,
     borderColor,
@@ -26,6 +28,7 @@ const ButtonE = ({
         '--radius': `${radius}px`,
         '--border-color': borderColor,
         '--background-color': backgroundColor,
+        '--text-color': textColor,
     };
 
     const combinedStyles = classNames(styles.ButtonE, props.className, {
