@@ -1,5 +1,5 @@
+import Image from '@/ui-kit/src/components/contents/Image/Image';
 import styles from './CardD.module.scss';
-import star from '@/assets/images/star.webp';
 
 interface CardDProps {
     data: {
@@ -8,9 +8,10 @@ interface CardDProps {
         name?: string;
         content?: string;
     };
+    starImg: string;
 }
 
-const CardD = ({ data }: CardDProps) => {
+const CardD = ({ data, starImg }: CardDProps) => {
     return (
         <div className={styles.CardWrapper}>
             <div className={styles.HeaderWrapper}>
@@ -21,7 +22,7 @@ const CardD = ({ data }: CardDProps) => {
                 </div>
             </div>
             <div className={styles.starWrapper}>
-                <img src={star.src} alt="별점" />
+                <Image image={starImg} alt="별점" />
             </div>
             <div className={styles.Content}>{data.content}</div>
         </div>
