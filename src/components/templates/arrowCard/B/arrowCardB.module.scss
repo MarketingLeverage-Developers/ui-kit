@@ -1,0 +1,36 @@
+/* bottomNotchCard.module.scss */
+.card {
+    width: 280px;
+    height: 338px;
+    position: relative;
+    background: #fff;
+    border: 2px solid #ebb910;
+    border-radius: 8px;
+    padding: 70px 30px;
+    overflow: visible;
+    box-sizing: border-box;
+
+    &.first {
+        padding: 35px 30px !important;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -22px;
+        transform: translateX(-50%) rotate(45deg);
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-bottom: 2px solid #ebb910;
+        border-right: 2px solid #ebb910;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 8px;
+        z-index: 1;
+    }
+
+    &.last::after {
+        display: none !important;
+    }
+}

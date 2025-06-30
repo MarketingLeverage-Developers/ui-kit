@@ -1,0 +1,111 @@
+.container {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    width: 400px;
+    height: 268px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ffffff66;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        width: 320px;
+        height: 255px;
+    }
+    &:hover {
+        /* hover 시에만 의사요소에 테두리를 보여줌 */
+
+        &::before {
+            opacity: 1;
+        }
+        .titleLine,
+        .buttonLine {
+            display: none;
+        }
+        .absoluteWrap {
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            display: block;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 20px;
+        background: linear-gradient(115.26deg, #f9e84f 1.95%, #2db5f0 98.64%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+    .titleLine {
+        display: flex;
+        justify-content: flex-start;
+        font-family: Pretendard;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        color: #ffffff;
+        padding-left: 40px;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+    .buttonLine {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 28px;
+        padding-bottom: 28px;
+        box-sizing: border-box;
+        .buttonWrap {
+            width: 55px;
+            height: 55px;
+            border-radius: 100px;
+            border: 1px solid #ffffff66;
+            background-color: #ffffff1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}
+.absoluteWrap {
+    display: none;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    background-color: #ffffff33;
+    box-sizing: border-box;
+    z-index: 5;
+}
+.contactButton {
+    width: 100%;
+    height: 46px;
+    background-color: #ffffff33;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.content {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    .itemContent {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+}

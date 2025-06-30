@@ -1,0 +1,30 @@
+.Container {
+    display: inline-flex;
+    flex: none;
+    align-self: flex-start;
+    background-color: #b4b1a84d;
+    padding: 10px 24px 10px 10px;
+    border-radius: 100px;
+}
+
+.Wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: auto;
+}
+.IconWrap {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 100px;
+}
+.text {
+    font-size: var(--font-24);
+    font-weight: 500;
+    color: #121212;
+}

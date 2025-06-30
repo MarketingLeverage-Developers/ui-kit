@@ -1,0 +1,23 @@
+.Area {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-20);
+    // background-color: #fff;
+
+    .Head {
+        font-size: var(--font-24);
+        font-weight: 600;
+        color: var(--base-color-primary);
+    }
+
+    .Sub {
+        font-size: var(--font-15);
+        color: var(--base-color-tertiary);
+        text-align: center;
+        line-height: 1.2;
+    }
+}

@@ -1,0 +1,27 @@
+.container {
+    width: 230px;
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-color);
+    @media (max-width: 768px) {
+        width: 210px;
+        height: 100px;
+        box-shadow: 2.6px 3.47px 13.01px 0px #00000026;
+    }
+}
+.title {
+    background-color: var(--primary-color);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content {
+    background-color: #fff;
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.mouse {
+    width: 35px;
+    height: 70px;
+    border-radius: 15px;
+    position: relative;
+    box-sizing: border-box;
+    p {
+        position: absolute;
+        bottom: 0;
+        font-family: Pretendard;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        color: #a4a4a4;
+    }
+}
+
+.wheel {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheelScroll 2s ease-in-out infinite;
+    img {
+        width: 14px;
+        height: 20px;
+    }
+}
+
+@keyframes wheelScroll {
+    0% {
+        top: 8px;
+    }
+    100% {
+        top: 40px;
+        opacity: 0;
+    }
+}

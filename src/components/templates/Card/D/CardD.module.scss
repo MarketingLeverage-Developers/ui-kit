@@ -1,0 +1,71 @@
+.CardWrapper {
+    width: 340px;
+    height: 346px;
+    box-shadow: 0px 4px 17px 0px #00000033;
+    border-radius: 20px;
+    padding: 32px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    @media (max-width: 768px) {
+        padding: 34px 20px;
+        width: 320px;
+        height: 326px;
+        margin-bottom: 10px;
+    }
+}
+.HeaderWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-15);
+    img {
+        width: 70px;
+        height: 70px;
+    }
+    .HeaderContent {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-7);
+        .Title {
+            color: #161616;
+            font-size: var(--font-17);
+            font-weight: 500;
+        }
+        .NameDate {
+            color: #161616;
+            font-size: var(--font-17);
+            font-weight: 500;
+        }
+    }
+}
+.starWrapper {
+    margin: 18px 0;
+}
+.SubTitle {
+    color: #141414;
+    font-size: var(--font-20);
+    font-weight: 600;
+    line-height: 100%;
+}
+.Content {
+    color: #474747;
+    font-size: var(--font-18);
+    font-weight: 400;
+    line-height: 140%;
+}
+.TagsWrapper {
+    margin-top: var(--space-60);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .Tag {
+        background-color: #6190eb;
+        border-radius: var(--space-25);
+        box-sizing: border-box;
+        padding: 7.5px 20px;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
