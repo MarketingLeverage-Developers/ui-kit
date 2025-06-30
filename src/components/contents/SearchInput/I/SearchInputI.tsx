@@ -1,15 +1,23 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from './SearchInputI.module.scss';
-import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
+import { BoxSize, CSSPropertiesWithVars, PaddingSize } from '@/ui-kit/src/types';
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
+import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString } from '@/ui-kit/src/utils';
 
 type SearchInputIProps = InputHTMLAttributes<HTMLInputElement> & {
     onButtonClick?: () => void;
+    width?: BoxSize | string;
+    height?: BoxSize | string;
+    s?: boolean;
+    padding?: PaddingSize;
 };
 
-const SearchInputI = ({ color, onButtonClick, ...props }: SearchInputIProps) => {
+const SearchInputI = ({ width, height, color, s, onButtonClick, ...props }: SearchInputIProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
+        '--width': s ? dimensionToString(width) : dimensionToVariable(width),
+        '--height': s ? dimensionToString(height) : dimensionToVariable(height),
+        '--padding': s ? spacingToString(props.padding) : spacingToSpace(props.padding),
     };
 
     return (

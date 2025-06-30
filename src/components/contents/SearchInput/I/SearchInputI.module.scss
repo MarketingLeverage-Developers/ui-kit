@@ -1,8 +1,9 @@
 .SearchInputI {
     position: relative;
     display: flex;
-    width: 100%;
-    // height: var(--box-50);
+    width: var(--width);
+    height: var(--height);
+
     background-color: #fff;
     border: 1px solid #e2e2e2;
     border-radius: 8px;
@@ -10,7 +11,7 @@
 
     input {
         width: 100%;
-        padding: var(--space-10) var(--space-15);
+        padding: var(--padding);
         font-size: var(--font-16);
         box-sizing: border-box;
         border-radius: 30px;
