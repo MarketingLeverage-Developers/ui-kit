@@ -13,6 +13,7 @@
     width: var(--width);
     height: var(--height);
     padding: var(--padding);
+    white-space: nowrap;
 
     &.Active {
         background-color: var(--active-background-color, var(--primary-color));
