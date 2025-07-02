@@ -1,6 +1,6 @@
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
-import animationData from 'assets/etc/payment_loading.json';
+import animationData from '../../../assets/etc/payment_loading.json';
 import React from 'react';
 import Lottie from 'react-lottie';
 import styles from './PaymentLoadingArea.module.scss';
