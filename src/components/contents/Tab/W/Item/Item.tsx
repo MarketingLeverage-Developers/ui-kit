@@ -4,7 +4,7 @@ import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
 import { ContentSize, CSSPropertiesWithVars } from '../../../../../types';
 import classNames from 'classnames';
 import { TabItemStyle, useTabStyleContext } from '../../TabStyleContext';
-import { dimensionToVariable, spacingToString, toFont } from '@/ui-kit/src/utils';
+import { dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & TabItemStyle;
 
@@ -29,7 +29,7 @@ const Item = ({ ...props }: ItemProps) => {
         '--active-background-color': props.activeBgColor ?? itemStyle?.activeBgColor,
         '--font-size': toFont(props.fontSize ?? itemStyle?.fontSize),
         '--color': props.color ?? itemStyle?.color,
-        '--padding': spacingToString(props.padding ?? itemStyle?.padding),
+        '--padding': spacingToSpace(props.padding ?? itemStyle?.padding),
         '--width': dimensionToVariable(props.width ?? itemStyle?.width),
         '--height': dimensionToVariable(props.height ?? itemStyle?.height),
     };

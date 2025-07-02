@@ -12,6 +12,7 @@
     width: var(--width);
     height: var(--height);
     padding: var(--padding);
+    white-space: nowrap;
 
     &:first-child {
         border-radius: 30px;

@@ -14,6 +14,7 @@ export type TextProps = React.HTMLAttributes<HTMLSpanElement> & {
     line?: number;
     p?: boolean;
     wbreak?: 'break-all' | 'keep-all' | 'break-word';
+    whiteSpace?: 'wrap' | 'nowrap';
 };
 
 interface CSSPropertiesWithVars extends React.CSSProperties {
@@ -33,6 +34,7 @@ const Text = ({
     className,
     p,
     wbreak = 'break-word',
+    whiteSpace = 'wrap',
     ...props
 }: TextProps) => {
     // size가 number면 'px' 단위를 붙이고, 문자열이면 그대로 사용
@@ -51,6 +53,7 @@ const Text = ({
         '--line-height': computedLieHeight,
         '--line': line,
         '--word-break': wbreak,
+        '--white-space': whiteSpace,
     };
 
     const combinedStyles = classNames(styles.Text, {
