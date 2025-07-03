@@ -118,13 +118,14 @@ export type BorderRadius =
 
 export type PaddingSize =
     | SpaceSize
+    | number
     | {
-          x?: SpaceSize;
-          y?: SpaceSize;
-          l?: SpaceSize;
-          r?: SpaceSize;
-          t?: SpaceSize;
-          b?: SpaceSize;
+          x?: SpaceSize | number;
+          y?: SpaceSize | number;
+          l?: SpaceSize | number;
+          r?: SpaceSize | number;
+          t?: SpaceSize | number;
+          b?: SpaceSize | number;
       };
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {

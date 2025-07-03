@@ -3,26 +3,26 @@
     border: none;
     border-radius: 8px;
 
-    &.Sm {
-        height: var(--box-40);
-        font-size: var(--font-15);
+    // &.Sm {
+    //     height: var(--box-40);
+    //     font-size: var(--font-15);
 
-        button {
-            font-size: var(--font-15);
-        }
-    }
-    &.Md {
-        height: var(--box-50);
-        font-size: var(--font-18);
-        button {
-            font-size: var(--font-18);
-        }
-    }
-    &.Lg {
-        height: var(--box-60);
-        font-size: var(--font-20);
-        button {
-            font-size: var(--font-20);
-        }
-    }
+    //     button {
+    //         font-size: var(--font-15);
+    //     }
+    // }
+    // &.Md {
+    //     height: var(--box-50);
+    //     font-size: var(--font-18);
+    //     button {
+    //         font-size: var(--font-18);
+    //     }
+    // }
+    // &.Lg {
+    //     height: var(--box-60);
+    //     font-size: var(--font-20);
+    //     button {
+    //         font-size: var(--font-20);
+    //     }
+    // }
 }

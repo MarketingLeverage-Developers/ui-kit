@@ -1,15 +1,14 @@
 .Item {
-    // font-size: var(--font-22);
-
-    flex: 1;
     border: none;
     box-sizing: border-box;
     background-color: inherit;
 
-    // &.Outlined {
-    //     border: 1px solid #e2e2e2;
-    // }
     height: 100%;
+    font-size: var(--font-size, --font-12);
+    width: var(--width);
+    height: var(--height);
+    padding: var(--padding);
+    white-space: nowrap;
 
     &.Active {
         border-bottom: 2px solid var(--color, var(--primary-color));
@@ -17,14 +16,35 @@
         font-weight: 500;
     }
 
-    &:first-child {
-        // border-top-left-radius: 8px;
-        // border-bottom-left-radius: 8px;
+    &.Disabled {
+        background-color: var(--disabled-background-color, #f0f0f0);
+        color: var(--disabled-color, #e2e2e2);
     }
 
-    /* 3) 마지막 아이템 오른쪽 모서리 둥글게 */
-    &:last-child {
-        // border-top-right-radius: 8px;
-        // border-bottom-right-radius: 8px;
+    &.Xxs {
+        height: var(--box-20);
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-12);
+    }
+
+    &.Xs {
+        height: var(--box-30);
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        font-size: var(--font-18);
+        height: var(--box-40);
+        padding: var(--space-15) var(--space-25);
+    }
+    &.Md {
+        font-size: var(--font-20);
+        height: var(--box-50);
+        padding: var(--space-20) var(--space-30);
+    }
+    &.Lg {
+        height: var(--box-60);
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
     }
 }
