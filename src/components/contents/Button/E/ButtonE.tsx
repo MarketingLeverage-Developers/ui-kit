@@ -1,25 +1,34 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import styles from './ButtonE.module.scss';
 import classNames from 'classnames';
-import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types';
+import { BoxSize, ContentSize, CSSPropertiesWithVars, FontSize, HexColor, PaddingSize } from '../../../../types';
+import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 
 type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: ContentSize;
     color?: HexColor;
     textColor?: HexColor;
     full?: boolean;
+    height?: BoxSize | number;
     radius?: number;
     borderColor?: HexColor;
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
+    fontSize?: FontSize | string;
+    padding?: PaddingSize;
+    s?: boolean;
 };
 
 const ButtonE = ({
     color,
     textColor,
-    size = 'md',
+    padding,
+    size,
     radius = 0,
     borderColor,
     full,
+    fontSize,
+    height,
+    s,
     backgroundColor = 'inherit',
     ...props
 }: ButtonEProps) => {
@@ -29,6 +38,9 @@ const ButtonE = ({
         '--border-color': borderColor,
         '--background-color': backgroundColor,
         '--text-color': textColor,
+        '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
+        '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
+        '--height': s ? dimensionToString(height) : dimensionToVariable(height),
     };
 
     const combinedStyles = classNames(styles.ButtonE, props.className, {
