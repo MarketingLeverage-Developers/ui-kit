@@ -1,11 +1,17 @@
 .ButtonB {
     width: fit-content;
+    height: var(--height);
     border-radius: 8px;
     color: var(--text-color, #fff);
     cursor: pointer;
-    background-color: var(--color, var(--primary-color));
+    background-color: var(--background-color, var(--primary-color));
     border: none;
     word-break: keep-all;
+
+    padding: var(--padding);
+    box-sizing: border-box;
+    font-size: var(--font-size);
+    line-height: 0;
 
     &.Xxs {
         padding: var(--space-7) var(--space-10);
