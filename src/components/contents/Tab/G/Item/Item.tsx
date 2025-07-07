@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from './Item.module.scss';
 import TabGroup, { useTabGroup } from '@/headless/TabGroup/TabGroup';
-import { ContentSize, CSSPropertiesWithVars } from '../../../../../types';
+import { CSSPropertiesWithVars } from '../../../../../types';
 import classNames from 'classnames';
 import { TabItemStyle, useTabStyleContext } from '../../TabStyleContext';
-import { dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
+import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 
 type ItemProps = React.ComponentProps<typeof TabGroup.Item> & TabItemStyle;
 
 const Item = ({ ...props }: ItemProps) => {
     const { isActiveTab } = useTabGroup();
-    const { itemStyle, size } = useTabStyleContext();
+    const { itemStyle, size, s } = useTabStyleContext();
 
     console.log('사이즈', size);
 
@@ -29,8 +29,8 @@ const Item = ({ ...props }: ItemProps) => {
         '--font-size': toFont(props.fontSize ?? itemStyle?.fontSize),
         '--color': props.color ?? itemStyle?.color,
         '--padding': spacingToSpace(props.padding ?? itemStyle?.padding),
-        '--width': dimensionToVariable(props.width ?? itemStyle?.width),
-        '--height': dimensionToVariable(props.height ?? itemStyle?.height),
+        '--width': s ? dimensionToString(itemStyle?.width) : dimensionToVariable(itemStyle?.width),
+        '--height': s ? dimensionToString(itemStyle?.height) : dimensionToVariable(itemStyle?.height),
     };
 
     return (

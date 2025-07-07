@@ -4,7 +4,8 @@ import { BoxSize, ContentSize, FontSize, HexColor, PaddingSize, SpaceSize } from
 export type TabWrapperStyle = {
     bgColor?: HexColor;
     borderColor?: HexColor;
-    width?: BoxSize | string;
+    width?: BoxSize | string | number;
+    height?: BoxSize | string | number;
     gap?: SpaceSize;
 };
 
@@ -16,11 +17,12 @@ export type TabItemStyle = {
     borderColor?: HexColor;
     disabled?: boolean;
     padding?: PaddingSize;
-    width?: BoxSize | string;
-    height?: BoxSize | string;
+    width?: BoxSize | string | number;
+    height?: BoxSize | string | number;
 };
 
 export type TabStyleContextType = {
+    s?: boolean;
     size?: ContentSize;
     wrapperStyle?: TabWrapperStyle;
     itemStyle?: TabItemStyle;

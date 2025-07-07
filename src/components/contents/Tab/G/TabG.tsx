@@ -6,7 +6,7 @@ import { ContentSize, CSSPropertiesWithVars, HexColor } from '../../../../types'
 import classNames from 'classnames';
 import Item from './Item/Item';
 import TabStyleContextProvider from '../TabStyleContext';
-import { dimensionToVariable } from '@/ui-kit/src/utils';
+import { dimensionToString, dimensionToVariable } from '@/ui-kit/src/utils';
 
 type TabProps = React.ComponentProps<typeof TabGroup> & React.ComponentProps<typeof TabStyleContextProvider>;
 
@@ -14,7 +14,12 @@ const TabG = ({ ...props }: TabProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--background-color': props?.wrapperStyle?.bgColor,
         '--border-color': props?.wrapperStyle?.borderColor,
-        '--width': dimensionToVariable(props?.wrapperStyle?.width),
+        '--width': props.s
+            ? dimensionToString(props?.wrapperStyle?.width)
+            : dimensionToVariable(props?.wrapperStyle?.width),
+        '--height': props.s
+            ? dimensionToString(props?.wrapperStyle?.height)
+            : dimensionToVariable(props?.wrapperStyle?.height),
     };
 
     return (

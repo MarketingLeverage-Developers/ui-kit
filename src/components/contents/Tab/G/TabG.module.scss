@@ -1,5 +1,6 @@
 .TabG {
     width: var(--width, 100%);
+    height: var(--height, auto);
     background-color: var(--background-color, inherit);
     border: 1px solid var(--border-color, #e2e2e2);
     border-radius: 30px;
