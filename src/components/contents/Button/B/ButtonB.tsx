@@ -11,17 +11,31 @@ type ButtonBProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     full?: boolean;
     fontSize?: FontSize | string;
     padding?: PaddingSize;
+    width?: BoxSize | number;
     height?: BoxSize | number;
     s?: boolean;
 };
 
-const ButtonB = ({ color, textColor, size, full, fontSize, height, bgColor, padding, s, ...props }: ButtonBProps) => {
+const ButtonB = ({
+    color,
+    textColor,
+    size,
+    full,
+    fontSize,
+    height,
+    width,
+    bgColor,
+    padding,
+    s,
+    ...props
+}: ButtonBProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--color': color,
         '--text-color': textColor,
         '--background-color': bgColor,
         '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
         '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
+        '--width': s ? dimensionToString(width) : dimensionToVariable(width),
         '--height': s ? dimensionToString(height) : dimensionToVariable(height),
     };
 

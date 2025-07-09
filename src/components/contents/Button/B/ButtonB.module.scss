@@ -1,5 +1,5 @@
 .ButtonB {
-    width: fit-content;
+    width: var(--width, fit-content);
     height: var(--height);
     border-radius: 8px;
     color: var(--text-color, #fff);
