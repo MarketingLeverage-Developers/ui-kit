@@ -1,10 +1,13 @@
 .InputA {
-    width: fit-content;
-    padding: var(--padding-y) var(--padding-x);
+    width: var(--width, fit-content);
+    height: var(--height, auto);
+    padding: var(--padding);
+    font-size: var(--font-size);
     box-sizing: border-box;
     border-radius: 5px;
     background-color: #ffffff;
     border: 1px solid #e2e2e2;
+
     &.Xxs {
         padding: var(--space-7) var(--space-10);
         font-size: var(--font-14);
