@@ -6,24 +6,32 @@ import Dropdown from '@/headless/Dropdown/Dropdown';
 import Today from './Today/Today';
 import PrevDay from './PrevDay/PrevDay';
 import NextDay from './NextDay/NextDay';
+import DateRangePicker from './DateRangePicker/DateRangePicker';
+import { DateRange } from 'react-day-picker';
+import RangeSelect from './RangeSelect/RangeSelect';
 
 type CalendarAContextType = {
-    calendarValue: Date | undefined;
-    setCalendarValue: React.Dispatch<React.SetStateAction<Date | undefined>>;
+    calendarValue: Date | DateRange | undefined;
+    setCalendarValue: React.Dispatch<React.SetStateAction<Date | DateRange | undefined>>;
+    range: DateRange | undefined;
+    setRange: React.Dispatch<React.SetStateAction<DateRange | undefined>>;
 };
 
 const CalendarAContext = createContext<CalendarAContextType>({
     calendarValue: undefined,
     setCalendarValue: () => {},
+    range: undefined,
+    setRange: () => {},
 });
 
 type CalendarAProps = {
     children: React.ReactNode;
-    defaultValue: Date | undefined;
+    defaultValue: Date | DateRange | undefined;
 } & Omit<HTMLAttributes<HTMLDivElement>, 'defaultValue'>;
 
 const CalendarA = ({ defaultValue, children, ...props }: CalendarAProps) => {
-    const [calendarValue, setCalendarValue] = useState<Date | undefined>(defaultValue ?? undefined);
+    const [calendarValue, setCalendarValue] = useState<Date | DateRange | undefined>(defaultValue ?? undefined);
+    const [range, setRange] = useState<DateRange | undefined>(undefined);
 
     useEffect(() => {
         console.log('초기화 ', calendarValue);
@@ -31,7 +39,7 @@ const CalendarA = ({ defaultValue, children, ...props }: CalendarAProps) => {
     }, [defaultValue]);
 
     return (
-        <CalendarAContext.Provider value={{ calendarValue, setCalendarValue }}>
+        <CalendarAContext.Provider value={{ calendarValue, setCalendarValue, range, setRange }}>
             <Dropdown>
                 <Dropdown.Box style={props.style}>{children}</Dropdown.Box>
             </Dropdown>
@@ -50,3 +58,5 @@ CalendarA.DatePicker = DatePicker;
 CalendarA.ToDay = Today;
 CalendarA.PrevDay = PrevDay;
 CalendarA.NextDay = NextDay;
+CalendarA.DateRangePicker = DateRangePicker;
+CalendarA.RangeSelect = RangeSelect;

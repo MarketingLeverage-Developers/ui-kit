@@ -1,21 +1,23 @@
-import React from 'react';
-import { DayPicker, useDayPicker } from 'react-day-picker';
+import React, { useEffect, useState } from 'react';
+import { DayPicker, DateRange, useDayPicker } from 'react-day-picker';
 import { ko } from 'date-fns/locale';
-import styles from './DatePicker.module.scss';
-import { MdKeyboardArrowLeft } from 'react-icons/md';
-import { MdKeyboardArrowRight } from 'react-icons/md';
-import Dropdown, { useDropdown } from '@/headless/Dropdown/Dropdown';
-import { useCalendarA } from '../CalendarA';
+import styles from '../DatePicker/DatePicker.module.scss';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import classNames from 'classnames';
-// import 'react-day-picker/style.css';
+import { useCalendarA } from '../CalendarA';
+import Dropdown, { useDropdown } from '@/headless/Dropdown/Dropdown';
 
-type DatePickerProps = {
-    // value: Date | undefined;
-    onChangeDate: (value: Date) => void;
+type DateRangePickerProps = {
+    onChangeDateRange: (value: DateRange | undefined) => void;
 };
 
-const DatePicker = ({ onChangeDate }: DatePickerProps) => {
+const DateRangePicker = ({ onChangeDateRange }: DateRangePickerProps) => {
+    const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
     const { calendarValue, setCalendarValue } = useCalendarA();
+    const handleSelect = (range: DateRange | undefined) => {
+        setCalendarValue(range);
+        onChangeDateRange(range);
+    };
 
     const { dropdownValue } = useDropdown();
 
@@ -24,24 +26,25 @@ const DatePicker = ({ onChangeDate }: DatePickerProps) => {
         [styles.Closed]: !dropdownValue, // dropdownValue가 false일 때 Closed 클래스 적용
     });
 
-    const handleDateChange = (date: Date) => {
-        onChangeDate(date);
-        setCalendarValue(date);
-    };
+    const range = calendarValue as DateRange;
+
+    useEffect(() => {
+        console.log('초기화 ', calendarValue);
+    }, [calendarValue]);
 
     return (
         <Dropdown.Content className={combinedStyle}>
             <DayPicker
-                month={calendarValue as Date} // 밖에 nav버튼으로 달 이동 시 캘린더 업데이트 X
-                required
+                mode="range"
+                selected={range as DateRange}
+                onSelect={handleSelect}
+                numberOfMonths={2}
+                month={currentMonth}
+                onMonthChange={setCurrentMonth}
+                locale={ko}
+                showOutsideDays
                 captionLayout="dropdown"
                 navLayout="after"
-                locale={ko}
-                mode="single"
-                selected={calendarValue as Date}
-                onSelect={handleDateChange} // 캘린더 업데이트를 위해 위 추가 시 안쪽에 nav, select 작동 X 해결
-                showOutsideDays
-                onMonthChange={setCalendarValue}
                 components={{ PreviousMonthButton, NextMonthButton }}
                 footer={
                     <div className={styles.Legend}>
@@ -56,19 +59,27 @@ const DatePicker = ({ onChangeDate }: DatePickerProps) => {
                     </div>
                 }
             />
+            {/* <div className={styles.RangeSummary}>
+                {range?.from && range?.to ? (
+                    <p>
+                        선택한 범위: {range.from.toLocaleDateString()} ~ {range.to.toLocaleDateString()}
+                    </p>
+                ) : (
+                    <p>날짜 범위를 선택하세요.</p>
+                )}
+            </div> */}
         </Dropdown.Content>
     );
 };
 
-export default DatePicker;
+export default DateRangePicker;
 
+// 이전 달 버튼
 export const PreviousMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
     const { previousMonth, goToMonth } = useDayPicker();
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (!previousMonth) {
-            return;
-        }
+        if (!previousMonth) return;
         props.onClick?.(e);
         goToMonth(previousMonth);
     };
@@ -79,11 +90,13 @@ export const PreviousMonthButton = (props: React.ButtonHTMLAttributes<HTMLButton
         </button>
     );
 };
+
+// 다음 달 버튼
 export const NextMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
     const { nextMonth, goToMonth } = useDayPicker();
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (!nextMonth) return null;
+        if (!nextMonth) return;
         props.onClick?.(e);
         goToMonth(nextMonth);
     };
