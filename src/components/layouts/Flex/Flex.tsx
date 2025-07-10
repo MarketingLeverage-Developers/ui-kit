@@ -15,7 +15,7 @@ export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline';
     justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
-    gap?: SpaceSize;
+    gap?: SpaceSize | number;
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
     width?: BoxSize | string | number;
     height?: BoxSize | string | number;
@@ -43,7 +43,7 @@ const Flex = ({
         '--align-items': align,
         '--justify-content': justify,
         '--wrap': wrap,
-        '--gap': `var(--space-${gap})`,
+        '--gap': s ? spacingToString(gap) : spacingToSpace(gap),
         '--width': s ? dimensionToString(width) : dimensionToVariable(width),
         '--height': s ? dimensionToString(height) : dimensionToVariable(height),
         '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
