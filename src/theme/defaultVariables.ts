@@ -1,6 +1,6 @@
 export const defaultVariables: Record<string, string> = {
     // viewport 기준값
-    '--inner': '1920',
+    '--inner': '1600',
 
     // --font sizes
     '--font-11': 'clamp(9px, calc(11 / var(--inner) * 100vw), 11px)',
