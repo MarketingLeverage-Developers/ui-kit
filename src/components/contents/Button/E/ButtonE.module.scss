@@ -1,6 +1,6 @@
 .ButtonE {
     width: fit-content;
-    height: var(--height);
+    height: var(--height, auto);
     border-radius: 8px;
     cursor: pointer;
     // background-color: var(--color, var(--primary-color));
@@ -11,6 +11,7 @@
     padding: var(--padding);
     box-sizing: border-box;
     font-size: var(--font-size);
+    font-weight: var(--font-weight);
     line-height: 0;
 
     &.Xxs {

@@ -14,6 +14,7 @@ type ButtonEProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     borderColor?: HexColor;
     backgroundColor?: HexColor | 'inherit' | 'transparent' | 'none';
     fontSize?: FontSize | string;
+    fontWeight?: number;
     padding?: PaddingSize;
     s?: boolean;
 };
@@ -27,6 +28,7 @@ const ButtonE = ({
     borderColor,
     full,
     fontSize,
+    fontWeight,
     height,
     s,
     backgroundColor = 'inherit',
@@ -38,6 +40,7 @@ const ButtonE = ({
         '--border-color': borderColor,
         '--background-color': backgroundColor,
         '--text-color': textColor,
+        '--font-weight': fontWeight,
         '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
         '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
         '--height': s ? dimensionToString(height) : dimensionToVariable(height),
