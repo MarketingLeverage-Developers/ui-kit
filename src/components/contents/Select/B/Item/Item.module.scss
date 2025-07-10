@@ -1,10 +1,14 @@
 .Item {
+    width: var(--width);
+    height: var(--height, auto);
+    padding: var(--padding);
+    font-size: var(--font-size);
+
     // margin: 0 8px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--font-15);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     font-weight: 400; /* Block: basic-select */
 
     color: #474747;

@@ -67,8 +67,16 @@ const RangeSelect = ({ onChangeRange, defaultValue = 'today' }: RangeSelectProps
     const currentLabel = rangePresets.find((r) => r.value === selected)?.label || '날짜 선택';
 
     return (
-        <SelectB defaultValue={selected}>
+        <SelectB
+            wrapperStyle={{ width: 150 }}
+            itemStyle={{ height: 30, padding: { x: 15, y: 8 }, fontSize: 14 }}
+            defaultValue={selected}
+        >
             <SelectB.Trigger
+                padding={{ x: 20, y: 8 }}
+                bgColor="#fff"
+                height={45}
+                fontSize={15}
                 render={() => (
                     <div>
                         <span>{currentLabel}</span>

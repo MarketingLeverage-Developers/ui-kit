@@ -1,21 +1,19 @@
 import { useDropdown } from '@/headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from '@/headless/SelectGroup/SelectGroup';
 import React from 'react';
-import { FaCheck } from 'react-icons/fa6';
 import styles from './Item.module.scss';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 import classNames from 'classnames';
-import { ContentSize } from '@/ui-kit/src/types';
-import { useSelectBContext } from '../SelectB';
+import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
+import { SelectItemStyle, useSelectBContext } from '../SelectBContext';
+import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 
-type Item = React.ComponentProps<typeof SelectGroup.Item> & {};
+type ItemProps = React.ComponentProps<typeof SelectGroup.Item> & SelectItemStyle;
 
-const Item = ({ value, onSelectGroupItemClick, children }: Item) => {
+const Item = ({ value, onSelectGroupItemClick, children, ...props }: ItemProps) => {
     const { closeDropdown } = useDropdown();
     const { selectGroupValue } = useSelectGroup();
-    const { size } = useSelectBContext();
-
-    console.log('사이즈', size);
+    const { size, s, itemStyle } = useSelectBContext();
 
     const isCurrentItem = value === selectGroupValue;
 
@@ -32,11 +30,30 @@ const Item = ({ value, onSelectGroupItemClick, children }: Item) => {
         [styles.Lg]: size === 'lg',
     });
 
+    const cssVariables: CSSPropertiesWithVars = {
+        '--background-color': props.bgColor ?? itemStyle?.bgColor,
+        '--active-background-color': props.activeBgColor ?? itemStyle?.activeBgColor,
+        '--font-size': s
+            ? dimensionToString(props.fontSize ?? itemStyle?.fontSize)
+            : toFont(props.fontSize ?? itemStyle?.fontSize),
+        '--color': props.color ?? itemStyle?.color,
+        '--padding': s
+            ? spacingToString(props.padding ?? itemStyle?.padding)
+            : spacingToSpace(props.padding ?? itemStyle?.padding),
+        '--width': s
+            ? dimensionToString(props.width ?? itemStyle?.width)
+            : dimensionToVariable(props.width ?? itemStyle?.width),
+        '--height': s
+            ? dimensionToString(props.height ?? itemStyle?.height)
+            : dimensionToVariable(props.height ?? itemStyle?.height),
+    };
+
     return (
         <SelectGroup.Item
             className={combinedStyle}
             value={value}
             onSelectGroupItemClick={handleBaiscSelectItemPageSizeItemClick}
+            style={{ ...cssVariables, ...props.style }}
         >
             {/* <FlexBox justifyContent="space-between" width={`100%`}> */}
 

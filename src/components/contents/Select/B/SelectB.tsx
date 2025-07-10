@@ -4,65 +4,40 @@ import SelectGroup from '@/headless/SelectGroup/SelectGroup';
 import styles from './SelectB.module.scss';
 import Item from './Item/Item';
 import Content from './Content/Content';
-import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
-import { BoxSize, ContentSize, CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
+import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
 import classNames from 'classnames';
 import Trigger from './Trigger/Trigger';
-import { dimensionToVariable } from '@/ui-kit/src/utils';
+import { dimensionToSpace, dimensionToString, dimensionToVariable } from '@/ui-kit/src/utils';
+import SelectBContextProvider from './SelectBContext';
 
-export interface SelectBContextType {
-    size: ContentSize;
-    disabled?: boolean;
-}
+type SelectBProps = React.ComponentProps<typeof SelectGroup> &
+    React.ComponentProps<typeof SelectBContextProvider> & { width?: string };
 
-const SelectBContext = React.createContext<SelectBContextType | undefined>(undefined);
-
-export const useSelectBContext = () => {
-    const context = React.useContext(SelectBContext);
-    if (!context) {
-        throw new Error('useSelectBContext must be used within a SelectBProvider');
-    }
-    return context;
-};
-
-type SelectBProps = {
-    children: React.ReactNode;
-    defaultValue: SelectGroupValue;
-    size?: ContentSize;
-    bgColor?: HexColor;
-    width?: BoxSize | string;
-    full?: boolean;
-    disabled?: boolean;
-};
-
-const SelectB = ({
-    children,
-    defaultValue,
-    width,
-    bgColor = '#fff',
-    size = 'md',
-    disabled = false,
-    full,
-}: SelectBProps) => {
-    const combinedStyle = classNames(styles.Box, {
-        [styles.Full]: full,
+const SelectB = ({ size = 'md', ...props }: SelectBProps) => {
+    const className = classNames(styles.Box, {
+        [styles.Sm]: size === 'sm',
+        [styles.Md]: size === 'md',
+        [styles.Lg]: size === 'lg',
     });
-
-    const cssVariables: React.CSSProperties = {
-        '--width': dimensionToVariable(width),
-        '--background-color': bgColor,
-    } as React.CSSProperties;
+    const cssVariables: CSSPropertiesWithVars = {
+        '--background-color': props?.wrapperStyle?.bgColor,
+        '--border-color': props?.wrapperStyle?.borderColor,
+        '--width': props.s
+            ? dimensionToString(props?.wrapperStyle?.width)
+            : dimensionToVariable(props?.wrapperStyle?.width),
+        // '--gap': dimensionToSpace(props?.wrapperStyle?.gap),
+    };
 
     return (
-        <SelectBContext.Provider value={{ size, disabled }}>
-            <SelectGroup defaultValue={defaultValue}>
+        <SelectBContextProvider {...props}>
+            <SelectGroup {...props}>
                 <Dropdown>
-                    <Dropdown.Box className={combinedStyle} style={{ ...cssVariables }}>
-                        {children}
+                    <Dropdown.Box className={className} style={{ ...cssVariables }}>
+                        {props.children}
                     </Dropdown.Box>
                 </Dropdown>
             </SelectGroup>
-        </SelectBContext.Provider>
+        </SelectBContextProvider>
     );
 };
 

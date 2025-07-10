@@ -1,18 +1,23 @@
 /* Block: basic-select-trigger */
 .Trigger {
     width: 100%;
+    height: var(--height, auto);
+    padding: var(--padding);
+    font-size: var(--font-size);
     text-align: left;
     border: none;
-    background-color: inherit;
+    background-color: var(--background-color, inherit);
     border: 1px solid #e2e2e2;
     border-radius: 6px;
 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    font-size: var(--font-15);
     color: #474747;
 
     &.Xxs {
@@ -53,6 +58,14 @@
     }
 }
 
+.Display {
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .Icon {
-    font-size: var(--font-20);
+    font-size: var(--font-16);
 }
