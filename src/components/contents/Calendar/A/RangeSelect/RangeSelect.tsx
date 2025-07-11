@@ -64,11 +64,11 @@ const RangeSelect = ({ onChangeRange, defaultValue = 'today' }: RangeSelectProps
         }
     };
 
-    const currentLabel = rangePresets.find((r) => r.value === selected)?.label || '날짜 선택';
+    const currentLabel = rangePresets.find((r) => r.value === selected)?.label || '자동 선택';
 
     return (
         <SelectB
-            wrapperStyle={{ width: 150 }}
+            wrapperStyle={{ width: 120 }}
             itemStyle={{ height: 30, padding: { x: 15, y: 8 }, fontSize: 14 }}
             defaultValue={selected}
         >
