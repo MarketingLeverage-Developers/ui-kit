@@ -1,0 +1,13 @@
+.SelectE {
+}
+
+.Box {
+    width: var(--width, auto);
+    border-radius: 100px;
+
+    background-color: var(--background-color);
+
+    &.Full {
+        width: 100%;
+    }
+}

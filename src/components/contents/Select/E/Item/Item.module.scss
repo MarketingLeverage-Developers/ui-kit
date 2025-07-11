@@ -1,0 +1,45 @@
+.Item {
+    width: var(--width);
+    height: var(--height, auto);
+    padding: var(--padding);
+    font-size: var(--font-size);
+
+    // margin: 0 8px;
+    box-sizing: border-box;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    font-weight: 400; /* Block: basic-select */
+    white-space: nowrap;
+
+    color: #474747;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-14);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-15);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-16);
+    }
+}

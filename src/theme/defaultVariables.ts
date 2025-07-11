@@ -32,6 +32,7 @@ export const defaultVariables: Record<string, string> = {
 
     // spacing
     '--space-0': '0',
+    '--space-4': 'clamp(2px, calc(4 / var(--inner) * 100vw), 4px)',
     '--space-8': 'clamp(6px, calc(8 / var(--inner) * 100vw), 8px)',
     '--space-7': 'clamp(5px, calc(7 / var(--inner) * 100vw), 7px)',
     '--space-10': 'clamp(7px, calc(10 / var(--inner) * 100vw), 10px)',
