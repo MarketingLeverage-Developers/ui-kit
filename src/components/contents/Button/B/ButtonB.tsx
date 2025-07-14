@@ -11,8 +11,8 @@ type ButtonBProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     full?: boolean;
     fontSize?: FontSize | string;
     padding?: PaddingSize;
-    width?: BoxSize | number;
-    height?: BoxSize | number;
+    width?: BoxSize | number | string;
+    height?: BoxSize | number | string;
     s?: boolean;
 };
 
