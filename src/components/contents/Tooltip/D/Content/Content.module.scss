@@ -1,25 +1,24 @@
 .Content {
-    position: absolute;
-    top: 50%;
-    left: 100%; // 오른쪽 위치
-    transform: translateY(-50%); // 수직 가운데 정렬
-    padding: var(--space-7);
-    border-radius: 4px;
+    border-radius: 2px;
+
     transition: all 0.2s ease-in-out;
-    border: 1px solid var(--color, var(--primary-color));
-    background-color: #fffaeb;
-    height: var(--height);
-    width: var(--width);
-    // width: 100%;
-    font-size: var(--font-14);
+    border: 1px solid var(--border-color, var(--color, var(--primary-color)));
+    background-color: var(--background-color, var(--color, var(--primary-color)));
+    height: var(--height, auto);
+    width: var(--width, auto);
+    padding: var(--padding);
+    font-size: var(--font-size);
+    line-height: calc(var(--font-size) + 4px);
     display: block;
-    color: #474747;
+    white-space: nowrap;
+    color: #fff;
     z-index: 500;
 
     box-sizing: border-box;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.08);
 
     /* 2) 강제 줄바꿈 허용 */
-    white-space: normal; /* 기본값이 아니라, nowrap 상속을 깨뜨림 */
+    // white-space: normal; /* 기본값이 아니라, nowrap 상속을 깨뜨림 */
     text-align: left;
 
     // &::before {

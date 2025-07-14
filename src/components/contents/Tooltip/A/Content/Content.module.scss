@@ -6,24 +6,66 @@
     padding: var(--space-7) var(--space-15);
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-    background-color: var(--color, var(--primary-color));
+    background-color: var(--background-color, var(--color, var(--primary-color)));
+    border-color: var(--border-color, var(--color, var(--primary-color)));
     display: inline-block;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: var(--font-14);
+    font-size: var(--font-size);
+    line-height: calc(var(--font-size) + 4px);
     color: #fff;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0; /* Content 바깥으로 붙이기 */
-        left: 50%;
-        transform: translateX(-50%) translateY(-100%);
-        border-width: 6px; /* 화살표 크기 */
-        border-style: solid;
-        border-color: transparent /* 왼쪽 */ transparent /* 오른쪽 */ var(--color, var(--primary-color)) /* 아래쪽 */
-            transparent; /* 위쪽 */
-        width: 0;
-        height: 0;
+    &.Top {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--color, var(--primary-color)) transparent transparent transparent;
+            /* 아래 방향 삼각형 */
+        }
+    }
+
+    &.Bottom {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%; /* 툴팁 상단 바깥쪽 */
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent var(--color, var(--primary-color)) transparent;
+            /* 위 방향 삼각형 */
+        }
+    }
+
+    &.Left {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; // 🔴 오른쪽 바깥쪽에 화살표
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--color, var(--primary-color));
+        }
+    }
+
+    &.Right {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%; // 🔴 왼쪽 바깥쪽에 화살표
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent var(--color, var(--primary-color)) transparent transparent;
+        }
     }
 }
