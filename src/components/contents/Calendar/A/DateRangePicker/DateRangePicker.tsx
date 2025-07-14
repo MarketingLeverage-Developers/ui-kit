@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { DayPicker, DateRange, useDayPicker } from 'react-day-picker';
+import { DayPicker, DateRange } from 'react-day-picker';
 import { ko } from 'date-fns/locale';
-import styles from '../DatePicker/DatePicker.module.scss';
+import styles from './DateRangePicker.module.scss';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import classNames from 'classnames';
 import { useCalendarA } from '../CalendarA';
@@ -14,96 +14,105 @@ type DateRangePickerProps = {
 const DateRangePicker = ({ onChangeDateRange }: DateRangePickerProps) => {
     const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
     const { calendarValue, setCalendarValue } = useCalendarA();
-    const handleSelect = (range: DateRange | undefined) => {
-        setCalendarValue(range);
-        onChangeDateRange(range);
-    };
+    const { dropdownValue, closeDropdown } = useDropdown();
 
-    const { dropdownValue } = useDropdown();
-
-    const combinedStyle = classNames(styles.Content, {
-        [styles.Open]: dropdownValue, // dropdownValue가 true일 때 Open 클래스 적용
-        [styles.Closed]: !dropdownValue, // dropdownValue가 false일 때 Closed 클래스 적용
-    });
-
-    const range = calendarValue as DateRange;
+    // ✅ 내부 상태
+    const [internalRange, setInternalRange] = useState<DateRange | undefined>(calendarValue as DateRange);
 
     useEffect(() => {
-        console.log('초기화 ', calendarValue);
+        setInternalRange(calendarValue as DateRange); // 외부 상태 변경 시 내부 초기화
     }, [calendarValue]);
+
+    const getMonthYear = (monthOffset: number) => {
+        const date = new Date(currentMonth);
+        date.setMonth(currentMonth.getMonth() + monthOffset);
+        return `${date.getFullYear()}년 ${date.getMonth() + 1}월`;
+    };
+
+    const handleSelect = (range: DateRange | undefined) => {
+        setInternalRange(range);
+    };
+
+    const handlePreviousMonth = () => {
+        setCurrentMonth((prev) => {
+            const newMonth = new Date(prev);
+            newMonth.setMonth(newMonth.getMonth() - 1);
+            return newMonth;
+        });
+    };
+
+    const handleNextMonth = () => {
+        setCurrentMonth((prev) => {
+            const newMonth = new Date(prev);
+            newMonth.setMonth(newMonth.getMonth() + 1);
+            return newMonth;
+        });
+    };
+
+    const handleApply = () => {
+        setCalendarValue(internalRange);
+        onChangeDateRange(internalRange);
+        closeDropdown();
+    };
+
+    const handleReset = () => {
+        setInternalRange(undefined);
+        closeDropdown();
+    };
+
+    const combinedStyle = classNames(styles.Content, {
+        [styles.Open]: dropdownValue,
+        [styles.Closed]: !dropdownValue,
+    });
 
     return (
         <Dropdown.Content className={combinedStyle}>
+            <div className={styles.NavWrapper}>
+                <button type="button" className={styles.NavButton} onClick={handlePreviousMonth}>
+                    <MdKeyboardArrowLeft className={styles.Icon} />
+                </button>
+                <span className={styles.MonthText}>{getMonthYear(0)}</span>
+                <span className={styles.MonthText}>{getMonthYear(1)}</span>
+                <button type="button" className={styles.NavButton} onClick={handleNextMonth}>
+                    <MdKeyboardArrowRight className={styles.Icon} />
+                </button>
+            </div>
+
             <DayPicker
                 mode="range"
-                selected={range as DateRange}
+                selected={internalRange}
                 onSelect={handleSelect}
                 numberOfMonths={2}
                 month={currentMonth}
                 onMonthChange={setCurrentMonth}
                 locale={ko}
                 showOutsideDays
-                captionLayout="dropdown"
-                navLayout="after"
-                components={{ PreviousMonthButton, NextMonthButton }}
-                footer={
-                    <div className={styles.Legend}>
-                        <div className={styles.Item}>
-                            <span className={styles.DotToday}></span>
-                            <span>오늘 날짜</span>
-                        </div>
-                        <div className={styles.Item}>
-                            <span className={styles.DotSelected}></span>
-                            <span>선택한 날짜</span>
-                        </div>
-                    </div>
-                }
             />
-            {/* <div className={styles.RangeSummary}>
-                {range?.from && range?.to ? (
-                    <p>
-                        선택한 범위: {range.from.toLocaleDateString()} ~ {range.to.toLocaleDateString()}
-                    </p>
-                ) : (
-                    <p>날짜 범위를 선택하세요.</p>
-                )}
-            </div> */}
+
+            <div className={styles.Legend}>
+                <span className={styles.RangeText}>
+                    {internalRange?.from
+                        ? `${internalRange.from.getFullYear()}.${(internalRange.from.getMonth() + 1)
+                              .toString()
+                              .padStart(2, '0')}.${internalRange.from.getDate().toString().padStart(2, '0')}`
+                        : '시작일'}{' '}
+                    ~{' '}
+                    {internalRange?.to
+                        ? `${internalRange.to.getFullYear()}.${(internalRange.to.getMonth() + 1)
+                              .toString()
+                              .padStart(2, '0')}.${internalRange.to.getDate().toString().padStart(2, '0')}`
+                        : '종료일'}
+                </span>
+
+                <button type="button" className={styles.CancelButton} onClick={handleReset}>
+                    취소
+                </button>
+                <button type="button" className={styles.ConfirmButton} onClick={handleApply}>
+                    적용
+                </button>
+            </div>
         </Dropdown.Content>
     );
 };
 
 export default DateRangePicker;
-
-// 이전 달 버튼
-export const PreviousMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-    const { previousMonth, goToMonth } = useDayPicker();
-
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (!previousMonth) return;
-        props.onClick?.(e);
-        goToMonth(previousMonth);
-    };
-
-    return (
-        <button type="button" {...props} onClick={handleClick} className={styles.NavButton}>
-            <MdKeyboardArrowLeft className={styles.Icon} />
-        </button>
-    );
-};
-
-// 다음 달 버튼
-export const NextMonthButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-    const { nextMonth, goToMonth } = useDayPicker();
-
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (!nextMonth) return;
-        props.onClick?.(e);
-        goToMonth(nextMonth);
-    };
-
-    return (
-        <button type="button" {...props} onClick={handleClick} className={styles.NavButton}>
-            <MdKeyboardArrowRight className={styles.Icon} />
-        </button>
-    );
-};

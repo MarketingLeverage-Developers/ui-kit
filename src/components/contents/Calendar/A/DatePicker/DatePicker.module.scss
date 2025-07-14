@@ -11,143 +11,143 @@
     &.Close {
         transition: opacity 400ms, transform 400ms;
     }
-}
 
-:global {
-    .rdp-root {
-        background-color: #fff;
-        width: fit-content;
-        padding: var(--space-20);
-        box-sizing: border-box;
-        border-radius: 20px;
-        border: 1px solid var(--primary-color);
-        box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.2);
-
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-15);
-    }
-
-    .rdp-month {
-        position: relative;
-    }
-
-    .rdp-caption_label {
-        display: none;
-    }
-
-    .rdp-nav {
-        // display: none;
-        position: absolute;
-        inset-block-start: 0;
-        inset-inline-end: 0;
-        // width: 100%;
-    }
-
-    .rdp-weekday {
-        width: var(--box-35);
-        height: var(--box-35);
-        font-size: var(--font-15);
-        vertical-align: middle;
-        color: #7b7b7b;
-
-        &:first-child {
-            color: #ff6363; /* 일요일 */
+    /* 여기부터 DayPicker만 내부 적용 */
+    :global {
+        .rdp-months {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-20);
         }
 
-        &:last-child {
-            color: #778eff; /* 토요일 */
+        .rdp-dropdowns {
+            display: none;
         }
-    }
 
-    .rdp-dropdown {
-        background-color: transparent;
-        border: none;
-        font-weight: 500;
+        .rdp-root {
+            background-color: #fff;
+            width: fit-content;
+            padding: var(--space-20);
+            box-sizing: border-box;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.2);
 
-        option:hover {
-            background-color: orange;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-15);
         }
-    }
 
-    .rdp-day {
-        width: var(--box-35);
-        height: var(--box-30);
-        cursor: pointer;
-        text-align: center;
-        cursor: pointer;
-
-        .rdp-day_button {
-            width: var(--box-30);
-            height: var(--box-30);
-            padding: 0;
-            box-sizing: content-box;
-            font-size: var(--font-14);
-            background-color: inherit;
-            border: none;
-            border-radius: 50%;
-            color: #161616;
+        .rdp-caption_label {
+            display: none;
         }
-        &.rdp-outside {
-            .rdp-day_button {
-                color: #7b7b7b;
+
+        .rdp-nav {
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-end: 0;
+        }
+
+        .rdp-weekday {
+            width: var(--box-35);
+            height: var(--box-35);
+            font-size: var(--font-15);
+            vertical-align: middle;
+            color: #7b7b7b;
+
+            &:first-child {
+                color: #ff6363;
+            }
+
+            &:last-child {
+                color: #778eff;
             }
         }
-        &.rdp-selected {
+
+        .rdp-dropdown {
+            background-color: transparent;
+            border: none;
+            font-weight: 500;
+
+            option:hover {
+                background-color: orange;
+                color: white;
+            }
+        }
+
+        .rdp-day {
+            width: var(--box-35);
+            height: var(--box-30);
+            cursor: pointer;
+            text-align: center;
+
             .rdp-day_button {
+                width: var(--box-30);
+                height: var(--box-30);
+                padding: 0;
+                box-sizing: content-box;
+                font-size: var(--font-14);
+                background-color: inherit;
+                border: none;
+                border-radius: 50%;
+                color: #161616;
+            }
+
+            &.rdp-outside .rdp-day_button {
+                color: #7b7b7b;
+            }
+
+            &.rdp-selected .rdp-day_button {
                 background-color: #e88731;
                 color: #fff;
             }
-        }
 
-        &.rdp-today {
-            .rdp-day_button {
+            &.rdp-today .rdp-day_button {
                 background-color: #ffe8d0;
             }
         }
     }
-}
 
-.Legend {
-    display: flex;
-    align-items: center;
-    gap: var(--space-15);
-    font-size: var(--font-14);
-    color: #333;
-}
+    .Legend {
+        display: flex;
+        align-items: center;
+        gap: var(--space-15);
+        font-size: var(--font-14);
+        color: #333;
+    }
 
-.DotToday,
-.DotSelected {
-    display: inline-block;
-    width: var(--box-10);
-    height: var(--box-10);
-    border-radius: 50%;
-    margin-right: 6px;
-    vertical-align: middle;
-}
+    .DotToday,
+    .DotSelected {
+        display: inline-block;
+        width: var(--box-10);
+        height: var(--box-10);
+        border-radius: 50%;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
 
-.DotToday {
-    background-color: rgba(255, 149, 0, 0.2); /* 연한 주황색 */
-}
+    .DotToday {
+        background-color: rgba(255, 149, 0, 0.2);
+    }
 
-.DotSelected {
-    background-color: #d96b00; /* 진한 주황색 */
-}
-.Item {
-    display: flex;
-    gap: var(--space-7);
-    align-items: center;
-}
+    .DotSelected {
+        background-color: #d96b00;
+    }
 
-.NavButton {
-    // font-size: ;
-    padding: 0;
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
+    .Item {
+        display: flex;
+        gap: var(--space-7);
+        align-items: center;
+    }
 
-    .Icon {
-        font-size: var(--font-20);
+    .NavButton {
+        padding: 0;
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+
+        .Icon {
+            font-size: var(--font-20);
+        }
     }
 }

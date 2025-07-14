@@ -1,0 +1,184 @@
+.Content {
+    position: absolute;
+    left: 0;
+    top: calc(100% + var(--space-7));
+    z-index: 100;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+    padding: var(--space-20);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-15);
+
+    &.Open {
+        transition: opacity 400ms, transform 400ms;
+    }
+
+    &.Closed {
+        transition: opacity 400ms, transform 400ms;
+    }
+
+    :global {
+        .rdp-months {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-20);
+
+            .rdp-nav {
+                display: none;
+            }
+        }
+
+        .rdp-caption,
+        .rdp-caption_label {
+            display: none;
+        }
+
+        .rdp-weekday {
+            width: var(--box-35);
+            height: var(--box-35);
+            font-size: var(--font-15);
+            color: #7b7b7b;
+            text-align: center;
+
+            &:first-child {
+                color: #ff6363;
+            }
+
+            &:last-child {
+                color: #778eff;
+            }
+        }
+
+        .rdp-day {
+            width: var(--box-35);
+            height: var(--box-30);
+            text-align: center;
+
+            .rdp-day_button {
+                width: var(--box-30);
+                height: var(--box-30);
+                padding: 0;
+                font-size: var(--font-14);
+                background-color: inherit;
+                border: none;
+                border-radius: 0;
+                color: #161616;
+            }
+
+            &.rdp-outside .rdp-day_button {
+                color: #7b7b7b;
+            }
+
+            &.rdp-range_start .rdp-day_button,
+            &.rdp-range_end .rdp-day_button {
+                background-color: #e88731;
+                color: #fff;
+                border-radius: 50%;
+            }
+
+            &.rdp-selected:not(.rdp-range_start):not(.rdp-range_end) .rdp-day_button {
+                background-color: rgba(232, 135, 49, 0.2);
+                color: #161616;
+                border-radius: 0;
+            }
+
+            &.rdp-today:not(.rdp-selected) .rdp-day_button {
+                background-color: #ffe8d0;
+            }
+        }
+    }
+
+    .NavWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-15);
+    }
+
+    .NavButton {
+        background-color: inherit;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+
+        .Icon {
+            font-size: var(--font-20);
+        }
+    }
+
+    .MonthText {
+        font-size: var(--font-15);
+        font-weight: 600;
+        color: #333;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    .Legend {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-10);
+        // margin-top: var(--space-15);
+
+        /* ✅ border가 padding 영역까지 확장 */
+        margin-left: calc(var(--space-20) * -1);
+        margin-right: calc(var(--space-20) * -1);
+        margin-bottom: calc(var(--space-20) * -1);
+        padding: var(--space-15) var(--space-20);
+        border-top: 1px solid #e2e2e2;
+
+        .RangeText {
+            text-align: end;
+            font-size: var(--font-14);
+            color: #333;
+            flex: 1;
+        }
+
+        .CancelButton,
+        .ConfirmButton {
+            padding: 6px 12px;
+            font-size: var(--font-14);
+            // font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .CancelButton {
+            background-color: #fff;
+            border: 1px solid #d5d5d5;
+            color: #474747;
+        }
+
+        .ConfirmButton {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    }
+
+    .DotToday,
+    .DotSelected {
+        display: inline-block;
+        width: var(--box-10);
+        height: var(--box-10);
+        border-radius: 50%;
+    }
+
+    .DotToday {
+        background-color: rgba(255, 149, 0, 0.2);
+    }
+
+    .DotSelected {
+        background-color: #d96b00;
+    }
+
+    .Item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-7);
+    }
+}
