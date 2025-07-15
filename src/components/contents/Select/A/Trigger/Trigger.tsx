@@ -6,9 +6,10 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 type TriggerProps = {
     // icon: React.ReactNode;
     // label: React.ReactNode;
+    render?: (value: string) => React.ReactNode;
 };
 
-const Trigger = ({}: TriggerProps) => {
+const Trigger = ({ render }: TriggerProps) => {
     const { selectGroupValue } = useSelectGroup();
     const isSelected = selectGroupValue !== '';
 
@@ -18,7 +19,7 @@ const Trigger = ({}: TriggerProps) => {
 
     return (
         <Dropdown.Trigger className={styles.Trigger}>
-            <SelectGroup.Display className={styles.Display} />
+            <SelectGroup.Display className={styles.Display} render={render} />
             <MdKeyboardArrowDown className={styles.Icon} />
         </Dropdown.Trigger>
     );
