@@ -6,8 +6,8 @@ import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString
 
 type SearchInputIProps = InputHTMLAttributes<HTMLInputElement> & {
     onButtonClick?: () => void;
-    width?: BoxSize | string;
-    height?: BoxSize | string;
+    width?: BoxSize | string | number;
+    height?: BoxSize | string | number;
     s?: boolean;
     padding?: PaddingSize;
 };
