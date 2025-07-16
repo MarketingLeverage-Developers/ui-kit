@@ -8,8 +8,8 @@ type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
 type InputAProps = BaseInputProps & {
     size?: ContentSize;
     full?: boolean;
-    width?: BoxSize | number;
-    height?: BoxSize | number;
+    width?: BoxSize | number | string;
+    height?: BoxSize | number | string;
     padding?: PaddingSize | number;
     fontSize?: FontSize | number;
     s?: boolean;
