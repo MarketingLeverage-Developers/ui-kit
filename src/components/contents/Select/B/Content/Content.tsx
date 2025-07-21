@@ -7,9 +7,9 @@ import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
 type ContentProps = {
     children: React.ReactNode;
     maxHeight?: BoxSize | string | number;
-};
+} & React.ComponentProps<typeof Dropdown.Content>;
 
-const Content = ({ children, maxHeight }: ContentProps) => {
+const Content = ({ children, maxHeight, ...props }: ContentProps) => {
     const { dropdownValue } = useDropdown();
 
     const cssVariables: CSSPropertiesWithVars = {
@@ -24,7 +24,7 @@ const Content = ({ children, maxHeight }: ContentProps) => {
     console.log('맥스', maxHeight);
 
     return (
-        <Dropdown.Content className={combinedStyle} style={{ ...cssVariables }}>
+        <Dropdown.Content className={combinedStyle} style={{ ...cssVariables }} {...props}>
             {children}
         </Dropdown.Content>
     );
