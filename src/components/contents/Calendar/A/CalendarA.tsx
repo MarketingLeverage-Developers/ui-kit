@@ -9,6 +9,7 @@ import NextDay from './NextDay/NextDay';
 import DateRangePicker from './DateRangePicker/DateRangePicker';
 import { DateRange } from 'react-day-picker';
 import RangeSelect from './RangeSelect/RangeSelect';
+import MonthPicker from './MonthPicker/MonthPicker';
 
 type CalendarAContextType = {
     calendarValue: Date | DateRange | undefined;
@@ -60,3 +61,4 @@ CalendarA.PrevDay = PrevDay;
 CalendarA.NextDay = NextDay;
 CalendarA.DateRangePicker = DateRangePicker;
 CalendarA.RangeSelect = RangeSelect;
+CalendarA.MonthPicker = MonthPicker;

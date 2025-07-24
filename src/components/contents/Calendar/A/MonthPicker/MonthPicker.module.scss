@@ -1,0 +1,54 @@
+/* MonthPicker.module.scss */
+.Content {
+    padding: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.yearControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.yearButton {
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.monthGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.monthButton {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background-color: #e0edff;
+    }
+}
+
+.active {
+    background-color: #2d8cf0;
+    color: white;
+    font-weight: bold;
+    border-color: #2d8cf0;
+}
