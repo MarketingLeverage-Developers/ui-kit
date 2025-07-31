@@ -3,7 +3,8 @@
     display: grid;
     grid-template-areas:
         'sidebar header'
-        'sidebar main';
+        'sidebar main'
+        'sidebar footer';
     // grid-template-columns: clamp(30%, 20%, 292px) 1fr;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
