@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    height: 100%;
+    border-radius: 10000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--borderWeight);
+    box-sizing: border-box;
+    background: var(--borderColor, var(--primary-color));
+}
+
+.innerContainer {
+    width: 100%;
+    height: 100%;
+    border-radius: 100000px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.line {
+    width: 24px;
+    height: 1px;
+    background-color: #d5d5d5;
+}
+.flex {
+    display: flex;
+}
