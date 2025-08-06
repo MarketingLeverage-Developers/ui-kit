@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './cardM.module.scss';
-import { HexColor } from '@/ui-kit/src/types';
-import { CSSPropertiesWithVars } from '@/types/types';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 
 type cardMProps = {
     title?: React.ReactNode;
