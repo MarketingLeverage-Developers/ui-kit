@@ -1,9 +1,9 @@
 import Image from '@/ui-kit/src/components/contents/Image/Image';
-import styles from './starRatingCardA.module.scss';
+import styles from './reviewCardA.module.scss';
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
-type StarRatingCardAProps = {
+type ReviewCardAProps = {
     title?: React.ReactNode;
     titleMo?: React.ReactNode;
     content?: React.ReactNode;
@@ -11,7 +11,7 @@ type StarRatingCardAProps = {
     media?: React.ReactNode;
 };
 
-const StarRatingCardA = ({ title, content, img, media, titleMo }: StarRatingCardAProps) => {
+const ReviewCardA = ({ title, content, img, media, titleMo }: ReviewCardAProps) => {
     return (
         <div className={styles.container}>
             <div className={styles.imgWrap}>{img && <Image image={img} />}</div>{' '}
@@ -34,4 +34,4 @@ const StarRatingCardA = ({ title, content, img, media, titleMo }: StarRatingCard
         </div>
     );
 };
-export default StarRatingCardA;
+export default ReviewCardA;
