@@ -1,0 +1,38 @@
+/* arrowAnimation.module.scss */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    font-size: 20px;
+    line-height: 2px;
+    animation: colorCycle 2s ease-in-out infinite;
+}
+
+.arrow:nth-child(1) {
+    animation-delay: 0s;
+}
+.arrow:nth-child(2) {
+    animation-delay: 0.666s;
+}
+.arrow:nth-child(3) {
+    animation-delay: 1.333s;
+}
+
+@keyframes colorCycle {
+    0% {
+        color: #ffffff;
+    }
+    33.333% {
+        color: #ffffffb2;
+    }
+    66.667% {
+        color: #ffffff4d;
+    }
+    100% {
+        color: #ffffff;
+    }
+}
