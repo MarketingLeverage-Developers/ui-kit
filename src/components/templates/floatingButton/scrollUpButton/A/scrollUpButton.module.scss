@@ -1,0 +1,6 @@
+.container {
+    background: var(--bgColor);
+    box-shadow: var(--box-shadow, none);
+    border-radius: 100px;
+    border: var(--borderWeight) solid var(--borderColor);
+}
