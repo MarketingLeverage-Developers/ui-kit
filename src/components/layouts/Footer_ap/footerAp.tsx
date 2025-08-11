@@ -1,24 +1,36 @@
 import React from 'react';
 import styles from './footerAp.module.scss';
 import Image from '../../contents/Image/Image';
-import pc from '@/ui-kit/src/assets/images/footer_pc.png';
-import mo from '@/ui-kit/src/assets/images/footer_mo.png';
 import Item from '@/ui-kit/src/components/layouts/Item/Item';
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
-import { BoxSize } from '@/ui-kit/src/types';
+import { BoxSize, HexColor } from '@/ui-kit/src/types';
 
 type FooterProps = {
     children: React.ReactNode;
     bottomPaddingPc?: BoxSize;
     bottomPaddingMo?: BoxSize;
+    imgPc: string;
+    imgMo: string;
+    bgColor?: HexColor;
+    maxWidth?: number;
 };
 
-const FooterAp = ({ children, bottomPaddingPc, bottomPaddingMo }: FooterProps) => {
+const FooterAp = ({
+    children,
+    bottomPaddingPc,
+    bottomPaddingMo,
+    imgPc,
+    imgMo,
+    bgColor = '#303030',
+    maxWidth = 1320,
+}: FooterProps) => {
     return (
-        <div className={styles.Footer}>
-            <div className={styles.footerContent}>{children}</div>
-            <Image image={pc.src} width="100%" className={styles.pc} />
-            <Image image={mo.src} width="100%" className={styles.mo} />
+        <div className={styles.Footer} style={{ backgroundColor: bgColor }}>
+            <div className={styles.footerContent} style={{ maxWidth: `${maxWidth}px` }}>
+                {children}
+            </div>
+            <Image image={imgPc} width="100%" className={styles.pc} />
+            <Image image={imgMo} width="100%" className={styles.mo} />
             <Item desktop>
                 <Box height={bottomPaddingPc}></Box>
             </Item>

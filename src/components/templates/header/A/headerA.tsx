@@ -17,18 +17,16 @@ export type MenuItem = {
 // 2) HeaderA가 받을 props
 export interface HeaderAProps {
     logo: string;
+    logoClick?: (e: React.MouseEvent) => void;
     logoWidth?: BoxSize;
-    /** 배경색 (Background 컴포넌트에 전달) */
     backgroundColor?: HexColor;
-    /** 최대 너비(px) (MaxWidth 컴포넌트에 전달) */
     maxWidth?: number;
-    /** 상단 네비게이션 메뉴 목록 */
     menuItems: MenuItem[];
-    /** 오른쪽 끝에 들어갈 커스텀 요소 (버튼, 전화번호, 아이콘 등) */
     endContent?: React.ReactNode;
 }
 
 const HeaderA = ({
+    logoClick,
     backgroundColor = '#fff',
     maxWidth = 1680,
     menuItems,
@@ -36,7 +34,6 @@ const HeaderA = ({
     logo,
     logoWidth,
 }: HeaderAProps) => {
-    const router = useRouter();
     const handleClick = (id: string) => {
         const el = document.getElementById(id);
         if (el) {
@@ -51,12 +48,7 @@ const HeaderA = ({
             <Box style={{ borderBottom: ' 1px solid #E2E2E2' }}>
                 <MaxWidth maxWidth={maxWidth} style={{ padding: '0 20px' }}>
                     <Flex height="88px" align="center" justify="space-between">
-                        <Image
-                            image={logo}
-                            width={logoWidth}
-                            onClick={() => router.push('/')}
-                            style={{ cursor: 'pointer' }}
-                        />
+                        <Image image={logo} width={logoWidth} style={{ cursor: 'pointer' }} onClick={logoClick} />
                         <Item desktop flex={1}>
                             <Flex align="center" justify="center" gap={60}>
                                 {menuItems?.map((el, idx) => (
