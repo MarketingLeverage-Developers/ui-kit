@@ -7,7 +7,6 @@ import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import Item from '@/ui-kit/src/components/layouts/Item/Item';
 import MaxWidth from '@/ui-kit/src/components/layouts/MaxWidth/MaxWidth';
 import { BoxSize, HexColor } from '@/ui-kit/src/types';
-import { useRouter } from 'next/navigation';
 
 export type MenuItem = {
     label: string;
