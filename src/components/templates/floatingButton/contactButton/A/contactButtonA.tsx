@@ -1,29 +1,29 @@
 'use client';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
-import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import React from 'react';
-import { FaArrowUp } from 'react-icons/fa6';
-import styles from './scrollUpButton.module.scss';
+import styles from './contactButtonA.module.scss';
 
-type ScrollUpbuttonProps = {
+type ContactButtonAProps = {
     bgColor?: string;
+    icon?: React.ReactNode;
     iconColor?: HexColor;
-    Content?: React.ReactNode;
+    content?: React.ReactNode;
     borderColor?: HexColor;
     borderWeight?: number;
     boxShadow?: string;
 };
 
-const ScrollUpbutton = ({
+const ContactButtonA = ({
+    icon,
     boxShadow,
     bgColor = '#363636CC',
     iconColor = '#fff',
-    Content,
+    content,
     borderColor,
     borderWeight,
-}: ScrollUpbuttonProps) => {
+}: ContactButtonAProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--box-shadow': boxShadow,
         '--bgColor': bgColor,
@@ -39,15 +39,22 @@ const ScrollUpbutton = ({
                 justify="center"
                 align="center"
                 style={{ cursor: 'pointer' }}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => {
+                    const el = document.getElementById('contact');
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        window.location.hash = '#contact';
+                    }
+                }}
             >
-                {Content || (
-                    <Text color={iconColor} size={30}>
-                        <FaArrowUp />{' '}
+                {content || (
+                    <Text color={iconColor} size={35}>
+                        {icon}
                     </Text>
                 )}
             </Flex>
         </div>
     );
 };
-export default ScrollUpbutton;
+export default ContactButtonA;

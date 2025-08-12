@@ -5,25 +5,29 @@ import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import React from 'react';
 import { FaArrowUp } from 'react-icons/fa6';
-import styles from './scrollUpButton.module.scss';
+import styles from './linkButtonA.module.scss';
 
-type ScrollUpbuttonProps = {
+type LinkButtonAProps = {
     bgColor?: string;
     iconColor?: HexColor;
     Content?: React.ReactNode;
     borderColor?: HexColor;
     borderWeight?: number;
     boxShadow?: string;
+    Icon?: React.ReactNode;
+    link?: string;
 };
 
-const ScrollUpbutton = ({
+const LinkButtonA = ({
+    link,
     boxShadow,
     bgColor = '#363636CC',
     iconColor = '#fff',
     Content,
     borderColor,
     borderWeight,
-}: ScrollUpbuttonProps) => {
+    Icon,
+}: LinkButtonAProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--box-shadow': boxShadow,
         '--bgColor': bgColor,
@@ -39,15 +43,15 @@ const ScrollUpbutton = ({
                 justify="center"
                 align="center"
                 style={{ cursor: 'pointer' }}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                onClick={() => link && window.open(link, '_blank', 'noopener,noreferrer')}
             >
                 {Content || (
-                    <Text color={iconColor} size={30}>
-                        <FaArrowUp />{' '}
+                    <Text color={iconColor} size={35}>
+                        {Icon}
                     </Text>
                 )}
             </Flex>
         </div>
     );
 };
-export default ScrollUpbutton;
+export default LinkButtonA;
