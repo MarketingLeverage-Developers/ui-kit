@@ -1,0 +1,24 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 4px 6px 0px #00000014;
+    border: 1px solid #d5d5d5;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-direction: column;
+}
+.title {
+    padding: 0 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--titleBg);
+}
+.content {
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--contentBg);
+}

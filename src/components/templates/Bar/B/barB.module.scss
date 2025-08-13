@@ -1,0 +1,56 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 4px 6px 0px #0000000d;
+    position: relative;
+    border-radius: 100px;
+    border: 1px solid #e0e0e0;
+    @media (max-width: 768px) {
+        box-shadow: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.disable {
+    border-radius: 100px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+        background-color: #f7f7f7;
+        border: 1px solid #eeeeee;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        bottom: -15px;
+    }
+}
+.ActiveWrap {
+    background-color: #fff8f2;
+    border: 1px solid #ff9600;
+    border-radius: 100px;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 20px;
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 50%;
+        position: relative;
+    }
+}
+.ActiveContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 140%;
+}

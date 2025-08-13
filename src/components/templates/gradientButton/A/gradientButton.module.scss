@@ -1,0 +1,75 @@
+.border {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: var(--borderWeight);
+    border-radius: 45px;
+    background: var(--gradient);
+
+    // 배경 색상 애니메이션
+    transition: background 0.5s ease-in-out;
+
+    .ButtonA {
+        // 버튼 배경·글자색 애니메이션
+        transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+
+        span {
+            // span 글자색 애니메이션
+            transition: color 0.3s ease-in-out;
+        }
+    }
+
+    &:hover {
+        background: var(--hoverBgColor);
+
+        .ButtonA {
+            background: var(--hoverBgColor);
+            color: var(--hoverFontColor);
+
+            span {
+                color: var(--hoverFontColor);
+            }
+        }
+    }
+}
+
+.ButtonA {
+    z-index: 3;
+    width: 100%;
+    border-radius: 45px;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--color, var(--primary-color));
+    word-break: keep-all;
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
+    }
+    &.Full {
+        width: 100%;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
