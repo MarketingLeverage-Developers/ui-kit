@@ -23,7 +23,7 @@ const CardG = ({ img, buttonText, content }: CardGProps) => {
                     </div>
                 </div>
             </div>
-            <div className={styles.imgWrap}>{img && <Image image={img} />}</div>
+            <div className={styles.imgWrap}>{img && <Image image={img} alt="카드 이미지" />}</div>
         </div>
     );
 };
