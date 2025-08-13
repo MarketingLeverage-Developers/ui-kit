@@ -1,0 +1,34 @@
+.TabQ {
+    width: var(--width, fit-content);
+    justify-self: start;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--background-color, #f1f2f5);
+    padding: var(--padding);
+    box-sizing: border-box;
+    &.Full {
+        width: 100%;
+    }
+    // &.Sm {
+    //     height: var(--box-40);
+    //     font-size: var(--font-15);
+
+    //     button {
+    //         font-size: var(--font-15);
+    //     }
+    // }
+    // &.Md {
+    //     height: var(--box-50);
+    //     font-size: var(--font-18);
+    //     button {
+    //         font-size: var(--font-18);
+    //     }
+    // }
+    // &.Lg {
+    //     height: var(--box-60);
+    //     font-size: var(--font-20);
+    //     button {
+    //         font-size: var(--font-20);
+    //     }
+    // }
+}
