@@ -15,7 +15,7 @@ type InputAProps = BaseInputProps & {
     s?: boolean;
 };
 
-const InputA = forwardRef<HTMLInputElement, InputAProps>(
+const CustomInputA = forwardRef<HTMLInputElement, InputAProps>(
     ({ size, full, className, style, s, fontSize, padding, width, height, ...props }, ref) => {
         console.log(width, '윗쓰');
 
@@ -39,4 +39,4 @@ const InputA = forwardRef<HTMLInputElement, InputAProps>(
     }
 );
 
-export default InputA;
+export default CustomInputA;

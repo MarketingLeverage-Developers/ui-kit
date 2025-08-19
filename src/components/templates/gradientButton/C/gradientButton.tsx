@@ -13,7 +13,7 @@ type ButtonAProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     borderWeight?: number;
 };
 
-const GradientButtonA = ({
+const GradientButtonC = ({
     bgcolor = '#ffffff',
     hoverFontColor,
     size = 'md',
@@ -48,4 +48,4 @@ const GradientButtonA = ({
     );
 };
 
-export default GradientButtonA;
+export default GradientButtonC;
