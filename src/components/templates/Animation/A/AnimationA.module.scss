@@ -1,0 +1,48 @@
+/* AnimationA.module.scss */
+.AnimationA {
+    width: 100%;
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.965);
+    transform-origin: 50% 60%;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    box-sizing: border-box;
+
+    &.Visible {
+        /* 구간별 이징은 keyframes 안에서 지정 */
+        animation: fadeInPopSmooth 700ms both;
+    }
+}
+
+@keyframes fadeInPopSmooth {
+    /* 0% → 72%: 빠르게 자리에 안착하고 투명도 완성 */
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0) scale(0.965);
+        animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+    }
+
+    /* 살짝 커지며 생동감 → 다음 구간은 완만하게 감쇠 */
+    72% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1.1);
+        animation-timing-function: cubic-bezier(0.2, 0.85, 0.2, 1);
+    }
+
+    /* 72% → 100%: 자연스럽게 원래 크기로 복귀 */
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/* 모션 민감 사용자 배려 */
+@media (prefers-reduced-motion: reduce) {
+    .AnimationA {
+        opacity: 1;
+        transform: none;
+    }
+    .AnimationA.Visible {
+        animation: none;
+    }
+}
