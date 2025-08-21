@@ -1,20 +1,62 @@
 /* Block: basic-select-trigger */
 .Trigger {
-    width: auto;
-    height: var(--box-35);
+    width: 100%;
+    height: var(--height, auto);
     text-align: left;
+    padding: var(--padding);
+    font-size: var(--font-size);
     border: none;
     background-color: inherit;
-
+    color: #474747;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    font-size: var(--font-15);
-    color: #474747;
-}
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
 
-.Icon {
-    font-size: var(--font-20);
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-14);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-15);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-16);
+    }
+
+    &.Full {
+        width: 100%;
+    }
+    .Icon {
+        font-size: var(--font-size);
+    }
+    &.Disabled {
+        color: #777;
+        cursor: not-allowed;
+
+        .Icon {
+            color: #777;
+        }
+    }
+}
+.Display {
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

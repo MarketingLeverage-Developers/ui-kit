@@ -3,11 +3,14 @@
     height: auto;
     width: auto;
     padding: var(--space-7) 0;
-
-    background-color: var(--base-color-secondary);
+    max-height: var(--max-height, 300px);
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;
+    background-color: #fff;
     position: absolute;
     left: 0;
-    top: 28px;
+    top: calc(100% + var(--space-7));
     list-style: none;
     border: none;
     border-radius: 8px;

@@ -6,19 +6,32 @@ import Item from './Item/Item';
 import Content from './Content/Content';
 import Trigger from './Trigger/Trigger';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
+import SelectAContextProvider from './SelectAContext';
+import classNames from 'classnames';
+import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
+import { dimensionToString, dimensionToVariable } from '@/ui-kit/src/utils';
 
-type SelectAProps = {
-    children: React.ReactNode;
-    defaultValue: SelectGroupValue;
-};
+type SelectAProps = React.ComponentProps<typeof SelectGroup> & React.ComponentProps<typeof SelectAContextProvider> & {};
 
-const SelectA = ({ children, defaultValue }: SelectAProps) => {
+const SelectA = ({ size = 'md', ...props }: SelectAProps) => {
+    const className = classNames(styles.Box, {
+        // 추가할것들
+    });
+    const cssVariables: CSSPropertiesWithVars = {
+        '--width': props.s
+            ? dimensionToString(props?.wrapperStyle?.width)
+            : dimensionToVariable(props?.wrapperStyle?.width),
+    };
     return (
-        <SelectGroup defaultValue={defaultValue}>
-            <Dropdown>
-                <Dropdown.Box className={styles.Box}>{children}</Dropdown.Box>
-            </Dropdown>
-        </SelectGroup>
+        <SelectAContextProvider {...props}>
+            <SelectGroup {...props}>
+                <Dropdown>
+                    <Dropdown.Box className={className} style={{ ...cssVariables }}>
+                        {props.children}
+                    </Dropdown.Box>
+                </Dropdown>
+            </SelectGroup>
+        </SelectAContextProvider>
     );
 };
 
