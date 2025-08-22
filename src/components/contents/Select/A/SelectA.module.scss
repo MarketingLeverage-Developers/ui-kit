@@ -1,2 +1,10 @@
 .SelectA {
 }
+
+.Box {
+    width: var(--width);
+
+    &.Full {
+        width: 100%;
+    }
+}
