@@ -10,11 +10,7 @@
 
     &:focus {
         outline: none;
-<<<<<<< HEAD
-        border: 1px solid #ff6565;
-=======
-        border: 1px solid var(--primary-color);
->>>>>>> ecdfbd152b80d8c0b50b6445bdbb30d845b8bb9e
+        border: 1px solid var(--focus-color);
     }
 
     &.Xxs {

@@ -17,6 +17,7 @@ export type MenuItem = {
 export interface HeaderAProps {
     logo: string;
     logoClick?: (e: React.MouseEvent) => void;
+    menuClick?: (id: string) => void;
     logoWidth?: BoxSize;
     backgroundColor?: HexColor;
     maxWidth?: number;
@@ -25,6 +26,7 @@ export interface HeaderAProps {
 }
 
 const HeaderA = ({
+    menuClick,
     logoClick,
     backgroundColor = '#fff',
     maxWidth = 1680,
@@ -33,15 +35,6 @@ const HeaderA = ({
     logo,
     logoWidth,
 }: HeaderAProps) => {
-    const handleClick = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start', // 섹션의 최상단 정렬
-            });
-        }
-    };
     return (
         <Background color={backgroundColor}>
             <Box style={{ borderBottom: ' 1px solid #E2E2E2' }}>
@@ -56,7 +49,7 @@ const HeaderA = ({
                                         weight={600}
                                         key={idx}
                                         style={{ cursor: 'pointer' }}
-                                        onClick={() => handleClick(el.id)}
+                                        onClick={() => menuClick?.(el.id)}
                                     >
                                         {el.label}
                                     </Text>

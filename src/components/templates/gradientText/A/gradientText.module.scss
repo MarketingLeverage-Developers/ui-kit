@@ -1,0 +1,26 @@
+.Text {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: var(--color, var(--text-color));
+    text-align: var(--text-align);
+    text-decoration: var(--text-decoration);
+    line-height: var(--line-height);
+    word-break: var(--word-break);
+    font-family: var(--font-family, inherit);
+
+    &.Line {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: var(--line);
+    }
+
+    &.Gradient {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+}

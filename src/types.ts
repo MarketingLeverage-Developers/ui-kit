@@ -155,4 +155,5 @@ export type InputProps = HTMLAttributes<HTMLInputElement> & {
 export type Theme = {
     '--primary-color': HexColor;
     '--text-color': HexColor;
+    '--focus-color': HexColor;
 };
