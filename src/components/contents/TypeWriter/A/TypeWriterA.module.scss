@@ -1,0 +1,9 @@
+.cursor {
+    display: inline-block;
+    animation: blink 1s steps(1, end) infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
