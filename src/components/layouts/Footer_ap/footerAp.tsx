@@ -13,6 +13,7 @@ type FooterProps = {
     imgMo: string;
     bgColor?: HexColor;
     maxWidth?: number;
+    imageShow?: boolean;
 };
 
 const FooterAp = ({
@@ -23,14 +24,19 @@ const FooterAp = ({
     imgMo,
     bgColor = '#303030',
     maxWidth = 1320,
+    imageShow = true,
 }: FooterProps) => {
     return (
         <div className={styles.Footer} style={{ backgroundColor: bgColor }}>
             <div className={styles.footerContent} style={{ maxWidth: `${maxWidth}px` }}>
                 {children}
             </div>
-            <Image image={imgPc} width="100%" className={styles.pc} />
-            <Image image={imgMo} width="100%" className={styles.mo} />
+            {imageShow && (
+                <>
+                    <Image image={imgPc} width="100%" className={styles.pc} />
+                    <Image image={imgMo} width="100%" className={styles.mo} />
+                </>
+            )}
             <Item desktop>
                 <Box height={bottomPaddingPc}></Box>
             </Item>
