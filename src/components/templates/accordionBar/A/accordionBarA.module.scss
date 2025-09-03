@@ -1,0 +1,74 @@
+.container {
+    width: 100%;
+    padding: 23px 40px;
+    background-color: #f8f8f8;
+    border: 2px solid #eeeeee;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px 0px #0000000f;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    max-height: 72px;
+
+    @media (max-width: 768px) {
+        padding: 19px 14px;
+    }
+
+    &.open {
+        background-color: #fff;
+        border: 2px solid #e5d5bc;
+        max-height: 300px; // → 실제 콘텐츠 최대 높이보다 크게
+        img {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.TitleLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        transition: transform 0.3s ease-in-out;
+    }
+    .title {
+        font-family: var(--font-nanumsquare);
+        color: #121212;
+        font-weight: 700;
+        font-style: Medium;
+        font-size: var(--font-18);
+        line-height: 130%;
+        letter-spacing: -2%;
+        @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 130%;
+            letter-spacing: -2%;
+        }
+    }
+}
+.Content {
+    color: #777777;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    letter-spacing: -2%;
+}
+.AnswerWrapper {
+    transition: all 0.3s cubic-bezier(0.31, 0.27, 0.15, 0.99);
+    overflow: hidden;
+    opacity: 0;
+
+    &.open {
+        overflow: visible;
+        opacity: 1;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+}
