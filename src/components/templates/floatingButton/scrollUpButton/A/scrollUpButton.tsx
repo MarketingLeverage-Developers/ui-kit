@@ -6,6 +6,7 @@ import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import React from 'react';
 import { FaArrowUp } from 'react-icons/fa6';
 import styles from './scrollUpButton.module.scss';
+import Item from '@/ui-kit/src/components/layouts/Item/Item';
 
 type ScrollUpbuttonProps = {
     bgColor?: string;
@@ -33,20 +34,38 @@ const ScrollUpbutton = ({
 
     return (
         <div className={styles.container} style={cssVariables}>
-            <Flex
-                width={70}
-                height={70}
-                justify="center"
-                align="center"
-                style={{ cursor: 'pointer' }}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-                {Content || (
-                    <Text color={iconColor} size={30}>
-                        <FaArrowUp />{' '}
-                    </Text>
-                )}
-            </Flex>
+            <Item desktop>
+                <Flex
+                    width={70}
+                    height={70}
+                    justify="center"
+                    align="center"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    {Content || (
+                        <Text color={iconColor} size={30}>
+                            <FaArrowUp />{' '}
+                        </Text>
+                    )}
+                </Flex>
+            </Item>{' '}
+            <Item mobile>
+                <Flex
+                    width={'44px'}
+                    height={'44px'}
+                    justify="center"
+                    align="center"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    {Content || (
+                        <Text color={iconColor} size={46}>
+                            <FaArrowUp />{' '}
+                        </Text>
+                    )}
+                </Flex>
+            </Item>
         </div>
     );
 };
