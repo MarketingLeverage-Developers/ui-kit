@@ -17,8 +17,6 @@ type InputAProps = BaseInputProps & {
 
 const CustomInputA = forwardRef<HTMLInputElement, InputAProps>(
     ({ size, full, className, style, s, fontSize, padding, width, height, ...props }, ref) => {
-        console.log(width, '윗쓰');
-
         const cssVariables: CSSPropertiesWithVars = {
             '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
             '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
