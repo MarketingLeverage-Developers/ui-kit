@@ -25,6 +25,7 @@ export interface CardCProps extends React.ComponentProps<typeof Box> {
     subContent?: string;
     content?: string;
     buttonText?: string;
+    highLightColor?: HexColor;
 }
 
 const CardC: React.FC<CardCProps> = ({
@@ -46,6 +47,7 @@ const CardC: React.FC<CardCProps> = ({
     boxShadow = 'none',
     buttonBackground = '#363636',
     buttonColor = '#ffffff',
+    highLightColor = '#121212',
     ...boxProps
 }) => {
     const cssVariables: CSSPropertiesWithVars = {
@@ -77,10 +79,10 @@ const CardC: React.FC<CardCProps> = ({
                         </Text>
                     </Flex>
                     <Flex width="100%" justify="space-between">
-                        <Text size={24} weight={700}>
+                        <Text size={24} weight={700} color={highLightColor}>
                             {label}
                         </Text>
-                        <Text size={24} weight={700}>
+                        <Text size={24} weight={700} color={highLightColor}>
                             {content}
                         </Text>
                     </Flex>
