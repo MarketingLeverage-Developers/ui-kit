@@ -1,4 +1,3 @@
-// LinkButtonA.tsx
 'use client';
 import Text from '@/ui-kit/src/components/contents/Text/Text';
 import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
@@ -6,6 +5,7 @@ import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import React from 'react';
 import { FaPhone } from 'react-icons/fa6';
 import styles from './callButtonA.module.scss';
+import Item from '@/ui-kit/src/components/layouts/Item/Item';
 
 type LinkButtonAProps = {
     /** 전화번호 (예: "010-1234-5678" 또는 "+82 10-1234-5678") */
@@ -44,7 +44,7 @@ const LinkButtonA = ({
         '--borderWeight': borderWeight ? `${borderWeight}px` : undefined,
     };
 
-    // tel: href 생성 (국제번호 + 허용, 나머지는 숫자만)
+    // tel: href 생성
     const telHref = React.useMemo(() => {
         if (!phone) return undefined;
         const trimmed = phone.trim();
@@ -75,9 +75,16 @@ const LinkButtonA = ({
         <div className={styles.container} style={cssVariables}>
             {telHref ? (
                 <a href={telHref} onClick={handleClick} aria-label={`전화 걸기 ${phone}`} className={styles.blockLink}>
-                    <Flex width={70} height={70} justify="center" align="center" style={{ cursor: 'pointer' }}>
-                        {contentNode}
-                    </Flex>
+                    <Item desktop>
+                        <Flex width={70} height={70} justify="center" align="center" style={{ cursor: 'pointer' }}>
+                            {contentNode}
+                        </Flex>
+                    </Item>
+                    <Item mobile>
+                        <Flex width={44} height={44} justify="center" align="center" style={{ cursor: 'pointer' }}>
+                            {contentNode}
+                        </Flex>
+                    </Item>
                 </a>
             ) : (
                 <div
@@ -92,9 +99,22 @@ const LinkButtonA = ({
                     }}
                     aria-label={link ? '외부 링크 열기' : '버튼'}
                 >
-                    <Flex width={70} height={70} justify="center" align="center" style={{ cursor: 'pointer' }}>
-                        {contentNode}
-                    </Flex>
+                    <Item desktop>
+                        <Flex width={70} height={70} justify="center" align="center" style={{ cursor: 'pointer' }}>
+                            {contentNode}
+                        </Flex>
+                    </Item>
+                    <Item mobile>
+                        <Flex
+                            width={'44px'}
+                            height={'44px'}
+                            justify="center"
+                            align="center"
+                            style={{ cursor: 'pointer' }}
+                        >
+                            {contentNode}
+                        </Flex>
+                    </Item>
                 </div>
             )}
         </div>
