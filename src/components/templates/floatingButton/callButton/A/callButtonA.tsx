@@ -5,7 +5,7 @@ import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import React from 'react';
 import { FaPhone } from 'react-icons/fa6';
-import styles from './linkButtonA.module.scss';
+import styles from './callButtonA.module.scss';
 
 type LinkButtonAProps = {
     /** 전화번호 (예: "010-1234-5678" 또는 "+82 10-1234-5678") */
