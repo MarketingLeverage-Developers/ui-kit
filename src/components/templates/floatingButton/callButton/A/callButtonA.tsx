@@ -81,7 +81,13 @@ const LinkButtonA = ({
                         </Flex>
                     </Item>
                     <Item mobile>
-                        <Flex width={44} height={44} justify="center" align="center" style={{ cursor: 'pointer' }}>
+                        <Flex
+                            width={'44px'}
+                            height={'44px'}
+                            justify="center"
+                            align="center"
+                            style={{ cursor: 'pointer' }}
+                        >
                             {contentNode}
                         </Flex>
                     </Item>
