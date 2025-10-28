@@ -51,7 +51,7 @@ const Text = ({
         '--color': computedColor,
         '--text-align': computedTextAlign,
         '--text-decoration': decoration,
-        '--line-height': s ? dimensionToString(size) : toFont(size),
+        '--line-height': s ? dimensionToString(height) : toFont(height),
         '--line': line,
         '--word-break': wbreak,
         '--white-space': whiteSpace,
