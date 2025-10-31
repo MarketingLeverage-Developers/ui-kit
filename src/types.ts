@@ -29,6 +29,7 @@ export type SpaceSize =
     | 120
     | 130
     | 150
+    | 180
     | 200;
 export type FontSize =
     | 11

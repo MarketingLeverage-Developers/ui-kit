@@ -54,6 +54,7 @@ export const defaultVariables: Record<string, string> = {
     '--space-120': 'clamp(60px, calc(120 / var(--inner) * 100vw), 120px)',
     '--space-130': 'clamp(65px, calc(130 / var(--inner) * 100vw), 130px)',
     '--space-150': 'clamp(75px, calc(150 / var(--inner) * 100vw), 150px)',
+    '--space-180': 'clamp(90px, calc(180 / var(--inner) * 100vw), 180px)',
     '--space-200': 'clamp(100px, calc(150 / var(--inner) * 100vw), 200px)',
 
     // --box sizes
