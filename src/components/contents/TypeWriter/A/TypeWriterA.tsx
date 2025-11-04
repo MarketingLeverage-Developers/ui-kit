@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Text, { TextProps } from '@/ui-kit/src/components/contents/Text/Text';
-import styles from './TypewriterA.module.scss';
 import { FontSize, FontWeight } from '@/ui-kit/src/types';
+import styles from './TypeWriterA.module.scss';
 
 type TypewriterAPhase = 'typing' | 'pausing' | 'deleting' | 'completed';
 
