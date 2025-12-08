@@ -64,7 +64,7 @@ const CardC: React.FC<CardCProps> = ({
     };
     return (
         <div className={styles.Wrapper} style={{ ...cssVariables }} {...boxProps}>
-            <img src={image} />
+            <img src={image} alt="card-image" />
             <div className={styles.ContentWrapper}>
                 <Text size={24} weight={700}>
                     {title}
