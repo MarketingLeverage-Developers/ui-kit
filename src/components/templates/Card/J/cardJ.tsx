@@ -14,7 +14,7 @@ const CardJ = ({ img, label, value, subLabel, subValue }: CardJProps) => {
     return (
         <div className={styles.container}>
             <div className={styles.imgWrap}>
-                <Image image={img} />
+                <Image image={img} alt="card-img" />
             </div>
             <div className={styles.contentWrap}>
                 <div className={styles.contentRow}>

@@ -23,7 +23,7 @@ const CardW = ({ s = false, icon, content, iconWidth }: cardWProps) => {
         : (iconWidth as BoxSize | undefined);
     return (
         <div className={styles.container}>
-            <Image width={widthValue} image={icon} />
+            <Image width={widthValue} image={icon} alt="card-img" />
             <div className={styles.flex}>{content}</div>
         </div>
     );

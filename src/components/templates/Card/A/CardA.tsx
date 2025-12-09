@@ -55,7 +55,7 @@ const CardA: React.FC<CardAProps> = ({
                 </Text>
             </Flex>
             <Flex justify="end">
-                <Image image={icon} width={45} height={45} />
+                <Image image={icon} width={45} height={45} alt="icon-img" />
             </Flex>
         </Flex>
     </Box>

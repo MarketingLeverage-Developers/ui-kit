@@ -17,7 +17,7 @@ const CardH = ({ title, content, icon, bgColor = '#ffffff' }: CardH) => {
                 <div className={styles.title}>{title}</div>
                 <div className={styles.content}>{content}</div>
             </div>
-            <div className={styles.imgWrap}>{icon && <Image image={icon} />}</div>
+            <div className={styles.imgWrap}>{icon && <Image image={icon} alt="icon-img" />}</div>
         </div>
     );
 };
