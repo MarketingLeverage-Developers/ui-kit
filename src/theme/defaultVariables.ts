@@ -98,6 +98,7 @@ export const defaultVariables: Record<string, string> = {
     '--box-500': 'clamp(248px, calc(500 / var(--inner) * 100vw), 500px)',
     '--box-550': 'clamp(274px, calc(550 / var(--inner) * 100vw), 550px)',
     '--box-600': 'clamp(292px, calc(600 / var(--inner) * 100vw), 600px)',
+    '--box-625': 'clamp(308px, calc(625 / var(--inner) * 100vw), 625px)',
     '--box-650': 'clamp(323px, calc(650 / var(--inner) * 100vw), 650px)',
     '--box-700': 'clamp(348px, calc(700 / var(--inner) * 100vw), 700px)',
     '--box-750': 'clamp(374px, calc(750 / var(--inner) * 100vw), 750px)',
