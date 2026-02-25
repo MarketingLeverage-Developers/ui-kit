@@ -1,7 +1,7 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import styles from './InputA.module.scss';
 import classNames from 'classnames';
-import { BoxSize, ContentSize, CSSPropertiesWithVars, FontSize, PaddingSize } from '../../../../types';
+import { BoxSize, ContentSize, CSSPropertiesWithVars, FontSize, HexColor, PaddingSize } from '../../../../types';
 import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 
 type BaseInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
@@ -13,15 +13,17 @@ type InputAProps = BaseInputProps & {
     padding?: PaddingSize | number;
     fontSize?: FontSize | number;
     s?: boolean;
+    borderColor?: HexColor;
 };
 
 const CustomInputA = forwardRef<HTMLInputElement, InputAProps>(
-    ({ size, full, className, style, s, fontSize, padding, width, height, ...props }, ref) => {
+    ({ size, full, className, style, s, fontSize, padding, width, height, borderColor = '#adadad', ...props }, ref) => {
         const cssVariables: CSSPropertiesWithVars = {
             '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
             '--padding': s ? spacingToString(padding) : spacingToSpace(padding),
             '--width': s ? dimensionToString(width) : dimensionToVariable(width),
             '--height': s ? dimensionToString(height) : dimensionToVariable(height),
+            '--border-color': borderColor,
         };
         const combinedStyles = classNames(styles.InputA, className, {
             [styles.Xxs]: size === '2xs',

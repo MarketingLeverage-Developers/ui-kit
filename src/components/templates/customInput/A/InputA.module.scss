@@ -6,7 +6,7 @@
     box-sizing: border-box;
     border-radius: 8px;
     background-color: #ffffff;
-    border: 1px solid #adadad;
+    border: 1px solid var(--border-color, #adadad);
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
