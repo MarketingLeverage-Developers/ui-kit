@@ -13,7 +13,7 @@ const BarB = ({ icon, disableContent, activeContent }: BarBProps) => {
         <div className={styles.container}>
             <div className={styles.disable}>{disableContent}</div>
             <div className={styles.ActiveWrap}>
-                {icon && <Image image={icon} />}
+                {icon && <Image image={icon} alt="icon-img" />}
                 <div className={styles.ActiveContent}>{activeContent}</div>
             </div>
         </div>

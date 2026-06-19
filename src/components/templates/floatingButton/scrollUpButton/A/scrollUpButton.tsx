@@ -52,8 +52,8 @@ const ScrollUpbutton = ({
             </Item>{' '}
             <Item mobile>
                 <Flex
-                    width={'44px'}
-                    height={'44px'}
+                    width={70}
+                    height={70}
                     justify="center"
                     align="center"
                     style={{ cursor: 'pointer' }}

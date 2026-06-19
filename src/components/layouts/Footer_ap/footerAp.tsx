@@ -33,8 +33,8 @@ const FooterAp = ({
             </div>
             {imageShow && (
                 <>
-                    <Image image={imgPc} width="100%" className={styles.pc} />
-                    <Image image={imgMo} width="100%" className={styles.mo} />
+                    {imgPc && imgPc !== '' && <Image image={imgPc} width="100%" className={styles.pc} alt="imgPc" />}
+                    {imgMo && imgMo !== '' && <Image image={imgMo} width="100%" className={styles.mo} alt="imgMo" />}
                 </>
             )}
             <Item desktop>

@@ -40,7 +40,13 @@ const HeaderA = ({
             <Box style={{ borderBottom: ' 1px solid #E2E2E2' }}>
                 <MaxWidth maxWidth={maxWidth} style={{ padding: '0 20px' }}>
                     <Flex height="88px" align="center" justify="space-between">
-                        <Image image={logo} width={logoWidth} style={{ cursor: 'pointer' }} onClick={logoClick} />
+                        <Image
+                            image={logo}
+                            alt="logo-img"
+                            width={logoWidth}
+                            style={{ cursor: 'pointer' }}
+                            onClick={logoClick}
+                        />
                         <Item desktop flex={1}>
                             <Flex align="center" justify="center" gap={60}>
                                 {menuItems?.map((el, idx) => (

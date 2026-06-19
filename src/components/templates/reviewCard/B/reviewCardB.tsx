@@ -10,7 +10,7 @@ const ReviewCardB: React.FC<ReviewCardBProps> = ({ thumb, content, title }) => {
     const isString = (v: unknown): v is string => typeof v === 'string';
     return (
         <div className={styles.Container}>
-            <Image image={thumb} width="100%" />
+            <Image image={thumb} width="100%" alt="card-img" />
             <div className={styles.content}>
                 {title ? <div className={styles.title}>{title}</div> : null}
                 <div className={styles.textWrap}>

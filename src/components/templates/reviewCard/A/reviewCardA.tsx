@@ -14,7 +14,7 @@ type ReviewCardAProps = {
 const ReviewCardA = ({ title, content, img, media, titleMo }: ReviewCardAProps) => {
     return (
         <div className={styles.container}>
-            <div className={styles.imgWrap}>{img && <Image image={img} />}</div>{' '}
+            <div className={styles.imgWrap}>{img && <Image image={img} alt="card-img" />}</div>{' '}
             <div className={styles.contentWrap}>
                 <div className={styles.starWrap}>
                     {Array(5)
