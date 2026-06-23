@@ -10,7 +10,7 @@ type cardMProps = {
     contentBg?: HexColor;
 };
 
-const CardM = ({ content, title, style, titleBg = '#000', contentBg = '#fff' }: cardMProps) => {
+const CardM = ({ content, title, style, titleBg = '#1B1B1B', contentBg = '#fff' }: cardMProps) => {
     const cssVariables: CSSPropertiesWithVars = {
         '--titleBg': titleBg,
         '--contentBg': contentBg,

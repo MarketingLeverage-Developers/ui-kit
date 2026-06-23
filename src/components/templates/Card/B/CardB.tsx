@@ -38,7 +38,7 @@ const CardB: React.FC<CardBProps> = ({
     borderColor = '#E2E2E2',
     backgroundColor = 'inherit',
     boxShadow = 'none',
-    numberBackground = '#000000',
+    numberBackground = '#1B1B1B',
     children,
     ...boxProps
 }) => {

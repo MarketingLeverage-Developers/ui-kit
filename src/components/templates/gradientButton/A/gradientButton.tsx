@@ -43,7 +43,11 @@ const GradientButtonA = ({
 
     return (
         <div className={styles.border} style={wrapperVars as React.CSSProperties}>
-            <button {...props} className={combinedButtonClass} style={{ '--color': bgcolor } as React.CSSProperties} />
+            <button
+                {...props}
+                className={combinedButtonClass}
+                style={{ '--color': bgcolor, '--hoverFontColor': hoverFontColor } as React.CSSProperties}
+            />
         </div>
     );
 };

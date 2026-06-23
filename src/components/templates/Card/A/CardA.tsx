@@ -21,7 +21,7 @@ export interface CardAProps extends React.ComponentProps<typeof Box> {
 }
 
 const CardA: React.FC<CardAProps> = ({
-    color = '#000',
+    color = '#1B1B1B',
     title,
     content,
     icon,
