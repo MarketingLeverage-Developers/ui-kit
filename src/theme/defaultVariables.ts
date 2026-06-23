@@ -54,7 +54,8 @@ export const defaultVariables: Record<string, string> = {
     '--space-120': 'clamp(60px, calc(120 / var(--inner) * 100vw), 120px)',
     '--space-130': 'clamp(65px, calc(130 / var(--inner) * 100vw), 130px)',
     '--space-150': 'clamp(75px, calc(150 / var(--inner) * 100vw), 150px)',
-    '--space-200': 'clamp(100px, calc(150 / var(--inner) * 100vw), 200px)',
+    '--space-180': 'clamp(90px, calc(180 / var(--inner) * 100vw), 180px)',
+    '--space-200': 'clamp(100px, calc(200 / var(--inner) * 100vw), 200px)',
 
     // --box sizes
     '--box-10': 'clamp(6px, calc(10 / var(--inner) * 100vw), 10px)',
@@ -88,6 +89,7 @@ export const defaultVariables: Record<string, string> = {
     '--box-150': 'clamp(86px, calc(150 / var(--inner) * 100vw), 150px)',
     '--box-175': 'clamp(92px, calc(200 / var(--inner) * 100vw), 175px)',
     '--box-200': 'clamp(100px, calc(200 / var(--inner) * 100vw), 200px)',
+    '--box-220': 'clamp(100px, calc(220 / var(--inner) * 100vw), 220px)',
     '--box-240': 'clamp(112px, calc(240 / var(--inner) * 100vw), 240px)',
     '--box-250': 'clamp(123px, calc(250 / var(--inner) * 100vw), 250px)',
     '--box-300': 'clamp(148px, calc(300 / var(--inner) * 100vw), 300px)',
@@ -97,12 +99,14 @@ export const defaultVariables: Record<string, string> = {
     '--box-500': 'clamp(248px, calc(500 / var(--inner) * 100vw), 500px)',
     '--box-550': 'clamp(274px, calc(550 / var(--inner) * 100vw), 550px)',
     '--box-600': 'clamp(292px, calc(600 / var(--inner) * 100vw), 600px)',
+    '--box-625': 'clamp(308px, calc(625 / var(--inner) * 100vw), 625px)',
     '--box-650': 'clamp(323px, calc(650 / var(--inner) * 100vw), 650px)',
     '--box-700': 'clamp(348px, calc(700 / var(--inner) * 100vw), 700px)',
     '--box-750': 'clamp(374px, calc(750 / var(--inner) * 100vw), 750px)',
     '--box-800': 'clamp(392px, calc(800 / var(--inner) * 100vw), 800px)',
     '--box-850': 'clamp(423px, calc(850 / var(--inner) * 100vw), 850px)',
     '--box-900': 'clamp(448px, calc(900 / var(--inner) * 100vw), 900px)',
+    '--box-1000': 'clamp(492px, calc(1000 / var(--inner) * 100vw), 1000px)',
     '--box-1060': 'clamp(528px, calc(1060 / var(--inner) * 100vw), 1060px)',
     '--box-1300': 'clamp(648px, calc(1300 / var(--inner) * 100vw), 1300px)',
 };

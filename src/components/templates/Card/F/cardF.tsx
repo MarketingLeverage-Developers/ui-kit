@@ -17,7 +17,7 @@ const CardF = ({ num = 0, img, title, content }: CardFProps) => {
                 <div className={styles.title}>{title}</div>
                 <div className={styles.content}>{content}</div>
             </div>
-            <div className={styles.imgWrap}>{img && <Image image={img} />}</div>
+            <div className={styles.imgWrap}>{img && <Image image={img} alt={`${title}-image`} />}</div>
         </div>
     );
 };

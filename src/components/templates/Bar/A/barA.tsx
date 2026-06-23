@@ -13,7 +13,7 @@ const BarA = ({ Icon, content, highlight, number }: BarAProps) => {
         <div className={styles.Container}>
             <div className={styles.Wrapper}>
                 <div className={styles.IconWrap}>
-                    {Icon && <Image image={Icon} />}
+                    {Icon && <Image image={Icon} alt="icon-img" />}
                     {number && number}
                 </div>
                 {highlight ? highlight : <div className={styles.text}>{content}</div>}

@@ -12,7 +12,9 @@ const Display = ({}: DisplayProps) => {
     const { toggleDropdown } = useDropdown();
     return (
         <Dropdown.Trigger className={styles.Display}>
-            <MdDateRange /> {moment(pickerValue).format('YYYY. MM')}
+            {/* 이전코드 */}
+            {/* <MdDateRange /> {moment(pickerValue).format('YYYY. MM')} */}
+            <MdDateRange /> {pickerValue ? moment(pickerValue).format('YYYY. MM') : ''}
         </Dropdown.Trigger>
     );
 };

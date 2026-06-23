@@ -25,7 +25,7 @@ const BarW: React.FC<BarWProps> = ({ s = false, style, iconWidth, icon, content,
 
     return (
         <div className={styles.container} style={style}>
-            <Image width={widthValue} image={icon} />
+            <Image width={widthValue} image={icon} alt="icon-img" />
             <div className={styles.flex}>{content}</div>
         </div>
     );

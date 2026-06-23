@@ -64,7 +64,7 @@ const CardC: React.FC<CardCProps> = ({
     };
     return (
         <div className={styles.Wrapper} style={{ ...cssVariables }} {...boxProps}>
-            <img src={image} />
+            <img src={image} alt="card-image" />
             <div className={styles.ContentWrapper}>
                 <Text size={24} weight={700}>
                     {title}
@@ -79,10 +79,10 @@ const CardC: React.FC<CardCProps> = ({
                         </Text>
                     </Flex>
                     <Flex width="100%" justify="space-between">
-                        <Text size={24} weight={700} color={highLightColor}>
+                        <Text size={20} weight={700} color={highLightColor}>
                             {label}
                         </Text>
-                        <Text size={24} weight={700} color={highLightColor}>
+                        <Text size={20} weight={700} color={highLightColor}>
                             {content}
                         </Text>
                     </Flex>

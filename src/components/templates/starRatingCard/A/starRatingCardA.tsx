@@ -14,7 +14,7 @@ type StarRatingCardAProps = {
 const StarRatingCardA = ({ title, content, img, media, titleMo }: StarRatingCardAProps) => {
     return (
         <div className={styles.container}>
-            <div className={styles.imgWrap}>{img && <Image image={img} />}</div>{' '}
+            <div className={styles.imgWrap}>{img && <Image image={img} alt="img" />}</div>{' '}
             <div className={styles.contentWrap}>
                 <div className={styles.starWrap}>
                     {Array(5)

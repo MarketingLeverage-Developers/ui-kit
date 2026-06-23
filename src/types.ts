@@ -29,6 +29,7 @@ export type SpaceSize =
     | 120
     | 130
     | 150
+    | 180
     | 200;
 export type FontSize =
     | 11
@@ -91,6 +92,7 @@ export type BoxSize =
     | 150
     | 175
     | 200
+    | 220
     | 240
     | 250
     | 300
@@ -100,12 +102,14 @@ export type BoxSize =
     | 500
     | 550
     | 600
+    | 625
     | 650
     | 700
     | 750
     | 800
     | 850
     | 900
+    | 1000
     | 1060
     | 1300;
 
