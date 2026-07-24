@@ -28,7 +28,9 @@ export const defaultVariables: Record<string, string> = {
     '--font-64': 'clamp(26px, calc(64 / var(--inner) * 100vw), 64px)',
     '--font-70': 'clamp(32px, calc(70 / var(--inner) * 100vw), 70px)',
     '--font-100': 'clamp(34px, calc(100 / var(--inner) * 100vw), 100px)',
+    '--font-110': 'clamp(55px, calc(110 / var(--inner) * 100vw), 110px)',
     '--font-120': 'clamp(36px, calc(120 / var(--inner) * 100vw), 120px)',
+    '--font-145': 'clamp(72px, calc(145 / var(--inner) * 100vw), 145px)',
 
     // spacing
     '--space-0': '0',
